@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfpxve3ufoxfq"]
+
+[ext_resource type="Script" path="res://tutorialDeFluidos/scripts/water_body.gd" id="1_yvt0a"]
+
+[node name="Water_Body" type="Node2D"]
+script = ExtResource("1_yvt0a")
+d = 0.015
+
+[node name="Water_Polygon" type="Polygon2D" parent="."]
+position = Vector2(8, 40)
+color = Color(0, 0.690196, 0.929412, 1)
+antialiased = true
