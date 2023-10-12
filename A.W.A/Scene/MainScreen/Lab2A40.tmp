@@ -1,0 +1,264 @@
+[gd_scene load_steps=12 format=3 uid="uid://dsavltsoufo77"]
+
+[ext_resource type="Script" path="res://Scripts/Lab.gd" id="1_2t6wo"]
+[ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://Sprites/Background.png" id="1_3kb5q"]
+[ext_resource type="Texture2D" uid="uid://d11total1yswu" path="res://Sprites/Mesa.png" id="2_kqldp"]
+[ext_resource type="Texture2D" uid="uid://dpokrkiyy635t" path="res://Sprites/Componentes48x48.png" id="2_o85ks"]
+[ext_resource type="PackedScene" uid="uid://c4jyprru63f33" path="res://Scene/Prefabs/button_prefab.tscn" id="3_6lr12"]
+[ext_resource type="Texture2D" uid="uid://d2rl2v0foistu" path="res://Sprites/componentes 48x32.png" id="4_er2qv"]
+[ext_resource type="Texture2D" uid="uid://c8tk7w7hr2b6x" path="res://Sprites/individuais/bexiga.png" id="5_jin3a"]
+[ext_resource type="Texture2D" uid="uid://dgcluw3mi0xry" path="res://Sprites/Moldura.png" id="6_sekne"]
+[ext_resource type="Texture2D" uid="uid://3e531b34sgv4" path="res://Sprites/Componentes16x128.png" id="7_y4a64"]
+[ext_resource type="Texture2D" uid="uid://dkkf14r4l2td2" path="res://Sprites/tubinhosDecorativos.png" id="9_tvsot"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mdqtg"]
+texture = ExtResource("6_sekne")
+
+[node name="Lab" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2t6wo")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_3kb5q")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_kqldp")
+
+[node name="sodaCaustica" parent="." instance=ExtResource("3_6lr12")]
+position = Vector2(1080, 328)
+
+[node name="ButtonPrefab" parent="sodaCaustica" index="0"]
+tooltip_text = "Soda Caústica"
+metadata/_edit_use_anchors_ = true
+
+[node name="azulDeMetileno" parent="." instance=ExtResource("3_6lr12")]
+position = Vector2(1072, 448)
+frame = 1
+
+[node name="ButtonPrefab" parent="azulDeMetileno" index="0"]
+tooltip_text = "Azul de Metileno
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="bicarbonatoDeSodio" parent="." instance=ExtResource("3_6lr12")]
+position = Vector2(1120, 448)
+frame = 2
+
+[node name="ButtonPrefab" parent="bicarbonatoDeSodio" index="0"]
+tooltip_text = "Bicarbonato de Sódio
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="aguaOxigenada" parent="." instance=ExtResource("3_6lr12")]
+position = Vector2(1160, 448)
+frame = 3
+
+[node name="ButtonPrefab" parent="aguaOxigenada" index="0"]
+tooltip_text = "Água Oxigenada
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="iodetoDePotassio" parent="." instance=ExtResource("3_6lr12")]
+position = Vector2(1200, 448)
+frame = 5
+
+[node name="ButtonPrefab" parent="iodetoDePotassio" index="0"]
+tooltip_text = "Iodeto De Potassio
+
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="vinagre" parent="." instance=ExtResource("3_6lr12")]
+position = Vector2(1032, 304)
+texture = ExtResource("4_er2qv")
+hframes = 3
+
+[node name="ButtonPrefab" parent="vinagre" index="0"]
+tooltip_text = "Vinagre
+
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="glicose" parent="." instance=ExtResource("3_6lr12")]
+position = Vector2(1128, 304)
+texture = ExtResource("4_er2qv")
+hframes = 3
+frame = 2
+
+[node name="ButtonPrefab" parent="glicose" index="0"]
+tooltip_text = "Glicose"
+metadata/_edit_use_anchors_ = true
+
+[node name="bexiga" parent="." instance=ExtResource("3_6lr12")]
+position = Vector2(1184, 320)
+scale = Vector2(6.39998, 6.22222)
+texture = ExtResource("5_jin3a")
+hframes = 1
+
+[node name="ButtonPrefab" parent="bexiga" index="0"]
+anchors_preset = -1
+anchor_left = -0.152638
+anchor_top = -0.0951038
+anchor_right = -0.152638
+anchor_bottom = -0.0951038
+offset_left = -6.23681
+offset_top = -10.1441
+offset_right = 3.76319
+offset_bottom = 5.85593
+tooltip_text = "Glicose"
+metadata/_edit_use_anchors_ = true
+
+[node name="GarrafaPet" parent="." instance=ExtResource("3_6lr12")]
+position = Vector2(912, 480)
+texture = ExtResource("4_er2qv")
+hframes = 3
+frame = 1
+
+[node name="ButtonPrefab" parent="GarrafaPet" index="0"]
+anchors_preset = -1
+anchor_top = -0.15625
+anchor_bottom = 0.25
+tooltip_text = "Garrafa de Pet
+
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="TuboDeEnsaio" parent="." instance=ExtResource("3_6lr12")]
+position = Vector2(856, 456)
+texture = ExtResource("2_o85ks")
+hframes = 4
+
+[node name="ButtonPrefab" parent="TuboDeEnsaio" index="0"]
+anchors_preset = -1
+anchor_top = -0.15625
+anchor_bottom = 0.25
+tooltip_text = "Tubo de Ensaio"
+metadata/_edit_use_anchors_ = true
+
+[node name="tubinho" parent="." instance=ExtResource("3_6lr12")]
+position = Vector2(808, 456)
+texture = ExtResource("2_o85ks")
+hframes = 4
+frame = 1
+
+[node name="ButtonPrefab" parent="tubinho" index="0"]
+anchors_preset = -1
+anchor_top = -0.15625
+anchor_bottom = 0.25
+tooltip_text = "Tubinho
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="tubinho2" parent="." instance=ExtResource("3_6lr12")]
+position = Vector2(760, 456)
+texture = ExtResource("2_o85ks")
+hframes = 4
+frame = 2
+
+[node name="ButtonPrefab" parent="tubinho2" index="0"]
+anchors_preset = -1
+anchor_top = -0.15625
+anchor_bottom = 0.25
+tooltip_text = "Tubinho
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Erlenmeyer" parent="." instance=ExtResource("3_6lr12")]
+position = Vector2(712, 456)
+texture = ExtResource("2_o85ks")
+hframes = 4
+frame = 3
+
+[node name="ButtonPrefab" parent="Erlenmeyer" index="0"]
+anchors_preset = -1
+anchor_top = -0.15625
+anchor_bottom = 0.25
+tooltip_text = "Erlenmeyer
+
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="itemContainer" type="GridContainer" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_left = 512.0
+offset_top = 144.0
+offset_right = 728.0
+offset_bottom = 208.0
+theme_override_constants/h_separation = 10
+columns = 3
+
+[node name="slot0" type="Panel" parent="itemContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_mdqtg")
+
+[node name="sprite" type="Sprite2D" parent="itemContainer/slot0"]
+position = Vector2(32, 32)
+scale = Vector2(3, 3)
+texture = ExtResource("7_y4a64")
+hframes = 9
+
+[node name="slot1" type="Panel" parent="itemContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_mdqtg")
+
+[node name="sprite" type="Sprite2D" parent="itemContainer/slot1"]
+position = Vector2(32, 32)
+scale = Vector2(3, 3)
+texture = ExtResource("7_y4a64")
+hframes = 9
+
+[node name="slot2" type="Panel" parent="itemContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_mdqtg")
+
+[node name="sprite" type="Sprite2D" parent="itemContainer/slot2"]
+position = Vector2(32, 32)
+scale = Vector2(3, 3)
+texture = ExtResource("7_y4a64")
+hframes = 9
+
+[node name="Tubo de ensaio decorativo" type="Sprite2D" parent="."]
+position = Vector2(128, 472)
+scale = Vector2(5.05263, 6.38334)
+texture = ExtResource("9_tvsot")
+
+[connection signal="pressed" from="sodaCaustica/ButtonPrefab" to="." method="_on_button_prefab_pressed"]
+[connection signal="pressed" from="azulDeMetileno/ButtonPrefab" to="." method="_on_button_prefab_pressed"]
+[connection signal="pressed" from="bicarbonatoDeSodio/ButtonPrefab" to="." method="_on_button_prefab_pressed"]
+[connection signal="pressed" from="aguaOxigenada/ButtonPrefab" to="." method="_on_button_prefab_pressed"]
+[connection signal="pressed" from="iodetoDePotassio/ButtonPrefab" to="." method="_on_button_prefab_pressed"]
+[connection signal="pressed" from="vinagre/ButtonPrefab" to="." method="_on_button_prefab_pressed"]
+[connection signal="pressed" from="glicose/ButtonPrefab" to="." method="_on_button_prefab_pressed"]
+[connection signal="pressed" from="bexiga/ButtonPrefab" to="." method="_on_button_prefab_pressed"]
+
+[editable path="sodaCaustica"]
+[editable path="azulDeMetileno"]
+[editable path="bicarbonatoDeSodio"]
+[editable path="aguaOxigenada"]
+[editable path="iodetoDePotassio"]
+[editable path="vinagre"]
+[editable path="glicose"]
+[editable path="bexiga"]
+[editable path="GarrafaPet"]
+[editable path="TuboDeEnsaio"]
+[editable path="tubinho"]
+[editable path="tubinho2"]
+[editable path="Erlenmeyer"]

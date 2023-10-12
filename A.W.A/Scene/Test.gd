@@ -56,11 +56,11 @@ func _on_blue_dust_pressed():
 	if(emptyBottom == false):
 		emptyBottom = true
 		$emptyBottom.color = Color(0,0,255,255)
-		colorBottom = "BLUE"
+		colorBottom = "AZUL DE METILENO"
 	elif(emptyMiddle == false):
 		emptyMiddle = true
 		$emptyMiddle.color = Color(0,0,255,255)
-		colorMiddle = "BLUE"
+		colorMiddle = "AZUL DE METILENO"
 
 func _on_clear_pressed():
 	emptyBottom = false
@@ -104,3 +104,7 @@ func _on_h_2o_2_pressed():
 		emptyMiddle = true
 		$emptyMiddle.color = Color(0.411765, 0.411765, 0.411765, 1)
 		colorMiddle = "H2O2"
+
+
+func _on_garrafa_pet_pressed():
+	pass # Replace with function body.

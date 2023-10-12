@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://btcv435du6k3g"]
 
-[ext_resource type="Texture2D" uid="uid://fd1gxmrppjt6" path="res://icon.svg" id="1_qi4ee"]
+[ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://Sprites/Background.png" id="1_6m33x"]
 [ext_resource type="Texture2D" uid="uid://bx24xvu3ri83y" path="res://Placeholders/fluidSimulationBecauseIDK.png" id="1_vlcbn"]
 [ext_resource type="Shader" path="res://tutorialDeFluidos/shadert/waterShader.gdshader" id="2_hs7ee"]
 [ext_resource type="PackedScene" uid="uid://cfpxve3ufoxfq" path="res://tutorialDeFluidos/scenes/water_body.tscn" id="2_w3a8l"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h75vk"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8hpgg"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1vsat"]
 noise = SubResource("FastNoiseLite_h75vk")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1e4ms"]
@@ -16,7 +16,7 @@ shader_parameter/refraction_stretch = Vector2(1, 1)
 shader_parameter/refraction_strength = 0.01
 shader_parameter/water_tint = Color(0.2, 0.6, 1, 0.0823529)
 shader_parameter/speed = 0.05
-shader_parameter/refraction_map = SubResource("NoiseTexture2D_8hpgg")
+shader_parameter/refraction_map = SubResource("NoiseTexture2D_1vsat")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xhkms"]
 emission_shape = 1
@@ -33,12 +33,13 @@ scale_max = 8.0
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(572, 53)
-texture = ExtResource("1_qi4ee")
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(742, 281)
+scale = Vector2(10, 10)
+texture = ExtResource("1_6m33x")
 
 [node name="Water_Body" parent="." instance=ExtResource("2_w3a8l")]
-position = Vector2(472, 72)
+position = Vector2(527, 119)
 scale = Vector2(0.5, 0.5)
 distance_between_springs = 16
 springNumber = 25
@@ -50,16 +51,9 @@ position = Vector2(0, 2)
 color = Color(1, 1, 1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(568, 296)
+position = Vector2(623, 343)
 scale = Vector2(10, 10)
 texture = ExtResource("1_vlcbn")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(448.5, 28.55)
-scale = Vector2(0.9375, 0.979753)
-polygon = PackedVector2Array(-17.6, 3.52131, -9.06668, -4.64401, 16, 32, 24, 48, 24, 88, 24, 392, 24, 472, 24, 536, 32, 552, 56, 560, 200, 560, 216, 552, 232, 536, 232, 40, 248, 24, 264, 16, 264, 0, 280, 0, 272, 24, 256, 32, 248, 40, 240, 48, 240, 104, 240, 176, 240, 528, 232, 552, 208, 568, 160, 568, 56, 568, 24, 560, 16, 536, 16, 352, 16, 64, 16, 40, 0, 32, -17.6, 19.852)
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -74,7 +68,7 @@ CHACOALHE"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 modulate = Color(1, 1, 1, 0.129412)
-position = Vector2(566, 500)
+position = Vector2(632, 579)
 rotation = -1.54271
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_xhkms")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsavltsoufo77"]
+
+[ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://Sprites/Background.png" id="1_3kb5q"]
+[ext_resource type="Texture2D" uid="uid://d11total1yswu" path="res://Sprites/Mesa.png" id="2_kqldp"]
+[ext_resource type="PackedScene" uid="uid://c4jyprru63f33" path="res://Scene/Prefabs/button_prefab.tscn" id="3_6lr12"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_3kb5q")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_kqldp")
+
+[node name="ButtonPrefab" parent="." instance=ExtResource("3_6lr12")]
+position = Vector2(1024, 328)
+
+[editable path="ButtonPrefab"]
