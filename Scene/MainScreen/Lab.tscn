@@ -298,6 +298,8 @@ position = Vector2(1072, 448)
 frame = 1
 
 [node name="ButtonPrefab" parent="azulDeMetileno" index="0"]
+anchors_preset = -1
+anchor_top = 0.3125
 tooltip_text = "Azul de Metileno
 "
 metadata/_edit_use_anchors_ = true
@@ -307,6 +309,8 @@ position = Vector2(1120, 448)
 frame = 2
 
 [node name="ButtonPrefab" parent="bicarbonatoDeSodio" index="0"]
+anchors_preset = -1
+anchor_top = 0.375
 tooltip_text = "Bicarbonato de Sódio
 "
 metadata/_edit_use_anchors_ = true
@@ -316,6 +320,8 @@ position = Vector2(1160, 448)
 frame = 3
 
 [node name="ButtonPrefab" parent="aguaOxigenada" index="0"]
+anchors_preset = -1
+anchor_top = 0.25
 tooltip_text = "Água Oxigenada
 "
 metadata/_edit_use_anchors_ = true
@@ -325,6 +331,8 @@ position = Vector2(1200, 448)
 frame = 5
 
 [node name="ButtonPrefab" parent="iodetoDePotassio" index="0"]
+anchors_preset = -1
+anchor_top = 0.5
 tooltip_text = "Iodeto De Potassio
 
 "
@@ -336,6 +344,8 @@ texture = ExtResource("5_reoch")
 hframes = 3
 
 [node name="ButtonPrefab" parent="vinagre" index="0"]
+anchors_preset = -1
+anchor_bottom = 0.25
 tooltip_text = "Vinagre
 
 "
@@ -348,6 +358,10 @@ hframes = 3
 frame = 2
 
 [node name="ButtonPrefab" parent="glicose" index="0"]
+anchors_preset = -1
+anchor_top = 0.21875
+anchor_right = 0.125
+anchor_bottom = 0.25
 tooltip_text = "Glicose"
 metadata/_edit_use_anchors_ = true
 
@@ -360,11 +374,11 @@ hframes = 1
 [node name="ButtonPrefab" parent="bexiga" index="0"]
 anchors_preset = -1
 anchor_left = -0.152638
-anchor_top = -0.0951038
+anchor_top = -0.0951033
 anchor_right = -0.152638
-anchor_bottom = -0.0951038
-offset_left = -6.23681
-offset_top = -10.1441
+anchor_bottom = -0.0951033
+offset_left = -1.23681
+offset_top = -3.14407
 offset_right = 3.76319
 offset_bottom = 5.85593
 tooltip_text = "Glicose"
@@ -378,7 +392,7 @@ frame = 1
 
 [node name="ButtonPrefab" parent="GarrafaPet" index="0"]
 anchors_preset = -1
-anchor_top = -0.15625
+anchor_top = -0.03125
 anchor_bottom = 0.25
 tooltip_text = "Garrafa de Pet
 
