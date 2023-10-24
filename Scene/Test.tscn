@@ -1,0 +1,179 @@
+[gd_scene load_steps=9 format=3 uid="uid://cvymyomjcu0sh"]
+
+[ext_resource type="Script" path="res://Scene/Test.gd" id="1_rks7f"]
+[ext_resource type="Texture2D" uid="uid://c0gkphgn3vpjm" path="res://assets/sprites/Placeholders/AguaOxigenada.png" id="2_8rgik"]
+[ext_resource type="Texture2D" uid="uid://b80pl2ftakxnb" path="res://assets/sprites/Placeholders/PurpleDust.png" id="2_gmlaj"]
+[ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://assets/sprites/Background.png" id="2_kwtpm"]
+[ext_resource type="Texture2D" uid="uid://c20mehjqrcylg" path="res://assets/sprites/Placeholders/Hidróxido de Sódio.png" id="3_h6eq1"]
+[ext_resource type="Texture2D" uid="uid://d11total1yswu" path="res://assets/sprites/Mesa.png" id="3_n2pe8"]
+[ext_resource type="Texture2D" uid="uid://boc8pif47ie8c" path="res://assets/sprites/Placeholders/GlicoseDissolvidaEmLiquido.png" id="4_d13us"]
+[ext_resource type="Texture2D" uid="uid://fo3i76mmjim2" path="res://assets/sprites/Placeholders/IodetoDePotassio.png" id="6_445wo"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rks7f")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_kwtpm")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 728.0
+texture = ExtResource("3_n2pe8")
+
+[node name="h2o2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 200.0
+offset_right = 1008.0
+offset_bottom = 360.0
+tooltip_text = "Água Oxigenada"
+texture_normal = ExtResource("2_8rgik")
+texture_pressed = ExtResource("2_8rgik")
+texture_hover = ExtResource("2_8rgik")
+stretch_mode = 0
+
+[node name="NaOH" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 360.0
+offset_right = 976.0
+offset_bottom = 516.0
+tooltip_text = "SODA CAUSTICA DISSOLVIDA EM AGUA"
+texture_normal = ExtResource("3_h6eq1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="c6h12o6" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 368.0
+offset_right = 862.0
+offset_bottom = 520.0
+tooltip_text = "GLICOSE DISSOLVIDA EM ÁGUA"
+texture_normal = ExtResource("4_d13us")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BlueDust" type="TextureButton" parent="."]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 0
+offset_left = 568.0
+offset_top = 352.0
+offset_right = 732.0
+offset_bottom = 536.0
+tooltip_text = "Azul de Metileno"
+texture_normal = ExtResource("2_gmlaj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="GarrafaPet" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="kl" type="TextureButton" parent="."]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 0
+offset_left = 704.0
+offset_top = 184.0
+offset_right = 868.0
+offset_bottom = 368.0
+tooltip_text = "Iodeto de Potassio
+"
+texture_normal = ExtResource("6_445wo")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="emptyBottom" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 304.0
+offset_right = 446.0
+offset_bottom = 391.0
+
+[node name="emptyMiddle" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 216.0
+offset_right = 446.0
+offset_bottom = 303.0
+color = Color(0.454902, 0.662745, 0.698039, 1)
+
+[node name="fire" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 408.0
+offset_right = 408.0
+offset_bottom = 448.0
+
+[node name="Clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 24.0
+offset_right = 464.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 30
+text = "LIMPAR"
+
+[node name="Mix" type="Button" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 24.0
+offset_right = 671.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 35
+text = "MISTURAR"
+flat = true
+
+[node name="Result" type="Label" parent="."]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 8.0
+offset_right = 843.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "RESULT"
+
+[node name="fogoLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 640.0
+offset_top = 536.0
+offset_right = 958.0
+offset_bottom = 581.0
+theme_override_font_sizes/font_size = 30
+text = "O FOGO ESTÁ LIGADO"
+
+[node name="Fogão" type="Button" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 24.0
+offset_right = 304.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 35
+text = "FOGÃO"
+
+[connection signal="pressed" from="h2o2" to="." method="_on_h_2o_2_pressed"]
+[connection signal="pressed" from="NaOH" to="." method="_on_green_dust_pressed"]
+[connection signal="pressed" from="c6h12o6" to="." method="_on_purple_dust_pressed"]
+[connection signal="pressed" from="BlueDust" to="." method="_on_blue_dust_pressed"]
+[connection signal="pressed" from="kl" to="." method="_on_orange_dust_pressed"]
+[connection signal="pressed" from="Clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="Mix" to="." method="_on_mix_pressed"]
+[connection signal="pressed" from="Fogão" to="." method="_on_fogão_pressed"]
