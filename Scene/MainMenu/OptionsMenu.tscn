@@ -77,5 +77,6 @@ text = "Return
 "
 
 [connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Volume" to="." method="_on_volume_mouse_entered"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/Volume/VBoxContainer/VolumeBar" to="." method="_on_volume_bar_value_changed"]
 [connection signal="gui_input" from="CenterContainer/VBoxContainer/Return" to="." method="_on_return_gui_input"]
 [connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Return" to="." method="_on_return_mouse_entered"]

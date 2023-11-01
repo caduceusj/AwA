@@ -71,3 +71,11 @@ func _on_return_mouse_entered():
 func _on_return_gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT :
 		get_tree().change_scene_to_file(menuScene)
+
+
+func _on_volume_bar_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),value)
+	if value == -30 :
+		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"),true)
+	else : 
+		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"),false)
