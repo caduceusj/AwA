@@ -1,0 +1,117 @@
+[gd_scene load_steps=3 format=3 uid="uid://6ibytyr4rux7"]
+
+[ext_resource type="Script" path="res://Scene/MainMenu/MainMenu.gd" id="1_dh3sj"]
+[ext_resource type="FontFile" uid="uid://ysnlin44jdcx" path="res://assets/fonts/SourceSansPro-Black.ttf" id="2_xsvkh"]
+
+[node name="MainMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_dh3sj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0, 0, 0, 0.607843)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Title" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/Title"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xsvkh")
+theme_override_font_sizes/font_size = 128
+text = "AwA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Inputs" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/Inputs"]
+layout_mode = 2
+
+[node name="Start" type="CenterContainer" parent="CenterContainer/VBoxContainer/Inputs/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Start"]
+layout_mode = 2
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Start/HBoxContainer"]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xsvkh")
+theme_override_font_sizes/font_size = 64
+text = "
+"
+
+[node name="OptionName" type="Label" parent="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Start/HBoxContainer"]
+custom_minimum_size = Vector2(227, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xsvkh")
+theme_override_font_sizes/font_size = 64
+text = "Start"
+
+[node name="Options" type="CenterContainer" parent="CenterContainer/VBoxContainer/Inputs/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Options"]
+layout_mode = 2
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Options/HBoxContainer"]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xsvkh")
+theme_override_font_sizes/font_size = 64
+text = "
+"
+
+[node name="OptionName" type="Label" parent="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Options/HBoxContainer"]
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xsvkh")
+theme_override_font_sizes/font_size = 64
+text = "Options"
+
+[node name="Quit" type="CenterContainer" parent="CenterContainer/VBoxContainer/Inputs/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Quit"]
+layout_mode = 2
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Quit/HBoxContainer"]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xsvkh")
+theme_override_font_sizes/font_size = 64
+
+[node name="OptionName" type="Label" parent="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Quit/HBoxContainer"]
+custom_minimum_size = Vector2(227, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xsvkh")
+theme_override_font_sizes/font_size = 64
+text = "Quit
+"
+
+[connection signal="gui_input" from="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Start" to="." method="_on_start_gui_input"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Start" to="." method="_on_start_mouse_entered"]
+[connection signal="gui_input" from="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Options" to="." method="_on_options_gui_input"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Options" to="." method="_on_options_mouse_entered"]
+[connection signal="gui_input" from="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Quit" to="." method="_on_quit_gui_input"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]

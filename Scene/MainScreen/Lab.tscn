@@ -300,6 +300,7 @@ frame = 1
 [node name="ButtonPrefab" parent="azulDeMetileno" index="0"]
 anchors_preset = -1
 anchor_top = 0.3125
+anchor_bottom = 0.3125
 tooltip_text = "Azul de Metileno
 "
 metadata/_edit_use_anchors_ = true
@@ -311,6 +312,7 @@ frame = 2
 [node name="ButtonPrefab" parent="bicarbonatoDeSodio" index="0"]
 anchors_preset = -1
 anchor_top = 0.375
+anchor_bottom = 0.375
 tooltip_text = "Bicarbonato de Sódio
 "
 metadata/_edit_use_anchors_ = true
@@ -322,6 +324,7 @@ frame = 3
 [node name="ButtonPrefab" parent="aguaOxigenada" index="0"]
 anchors_preset = -1
 anchor_top = 0.25
+anchor_bottom = 0.25
 tooltip_text = "Água Oxigenada
 "
 metadata/_edit_use_anchors_ = true
@@ -333,6 +336,7 @@ frame = 5
 [node name="ButtonPrefab" parent="iodetoDePotassio" index="0"]
 anchors_preset = -1
 anchor_top = 0.5
+anchor_bottom = 0.5
 tooltip_text = "Iodeto De Potassio
 
 "
