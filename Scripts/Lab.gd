@@ -10,7 +10,7 @@ var number
 func _ready():
 	$fire.play("default")
 	pass # Replace with function body.
-
+	$DicaUi.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -26,13 +26,15 @@ func check():
 	$Resultado/Bexiga.hide()
 	if(chemString.find("azulDeMetileno") != -1 and chemString.find("iodetoDePotassio") != -1  and chemString.find("aguaOxigenada") != -1):
 		print("pasta de dente")
+		showDicaUi("Pasta de Dente de Elefante")
 		$Resultado.scale = Vector2(4,4)
 		$Resultado.position = Vector2(480,440)
 		$Resultado.play("elephantToothpaste")
 		await(get_tree().create_timer(3.0).timeout)
 		clear()
-	if(chemString.find("bexiga") != -1 and chemString.find("vinagre") != -1  and chemString.find("bicarbonatoDeSodio") != -1):
+	elif(chemString.find("bexiga") != -1 and chemString.find("vinagre") != -1  and chemString.find("bicarbonatoDeSodio") != -1):
 		#432, 488
+		showDicaUi("Bexiga cheia!")
 		$Resultado.scale = Vector2(4,4)
 		$Resultado.position = Vector2(432,488)
 		$Resultado/Bexiga.show()
@@ -40,9 +42,13 @@ func check():
 		$Resultado/Bexiga.play("default")
 		await(get_tree().create_timer(3.0).timeout)
 		clear()
-	if(chemString.find("sodaCaustica") != -1 and chemString.find("azulDeMetileno") != -1 and chemString.find("sodaCaustica")):
+	
+	elif(chemString.find("sodaCaustica") != -1 and chemString.find("azulDeMetileno") != -1 and chemString.find("sodaCaustica")):
 		get_tree().change_scene_to_file("res://Scene/fluidSimulation.tscn")
+#		showDicaUi("Água Furiosa")
 	else:
+		showDicaUi("Nenhum exprimento realizado.
+Tente Novamente.")
 		clear()
 
 func clear():
@@ -53,6 +59,7 @@ func clear():
 	get_node("itemContainer/slot0/sprite").texture = null
 	get_node("itemContainer/slot1/sprite").texture = null
 	get_node("itemContainer/slot2/sprite").texture = null
+
 func check_position(itemname):
 	if not slot0:
 		number = 0
@@ -70,4 +77,11 @@ func check_position(itemname):
 		chemString = chemString + " " + itemname
 		clickSlot(itemname, number)
 		check()
+
+func showDicaUi(text):
+		$DicaUi.visible = true
+		$DicaUi/Label.text = text
+		$DicaUITimer.start()
 		
+func _on_dica_ui_timer_timeout():
+	$DicaUi.visible = false
