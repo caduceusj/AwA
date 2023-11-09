@@ -43,6 +43,17 @@ func check():
 		await(get_tree().create_timer(3.0).timeout)
 		clear()
 	
+	elif(chemString.find("agua") != -1 and chemString.find("sodaCaustica") != -1  and chemString.find("vinagre") != -1):
+		#432, 488
+		showDicaUi("Gelo Quente!")
+#		$Resultado.scale = Vector2(4,4)
+#		$Resultado.position = Vector2(432,488)
+#		$Resultado/Bexiga.show()
+#		$Resultado.play("garrafaPet")
+#		$Resultado/Bexiga.play("default")
+		await(get_tree().create_timer(3.0).timeout)
+		clear()
+	
 	elif(chemString.find("sodaCaustica") != -1 and chemString.find("azulDeMetileno") != -1 and chemString.find("sodaCaustica")):
 		get_tree().change_scene_to_file("res://Scene/fluidSimulation.tscn")
 #		showDicaUi("Água Furiosa")

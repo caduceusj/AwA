@@ -1,10 +1,11 @@
-[gd_scene load_steps=53 format=3 uid="uid://dsavltsoufo77"]
+[gd_scene load_steps=54 format=3 uid="uid://dsavltsoufo77"]
 
 [ext_resource type="Script" path="res://Scripts/Lab.gd" id="1_2t6wo"]
 [ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://assets/sprites/Background.png" id="2_dwkyh"]
 [ext_resource type="PackedScene" uid="uid://c4jyprru63f33" path="res://Scene/Prefabs/button_prefab.tscn" id="3_6lr12"]
 [ext_resource type="Texture2D" uid="uid://d11total1yswu" path="res://assets/sprites/Mesa.png" id="3_hli6m"]
 [ext_resource type="Texture2D" uid="uid://d2rl2v0foistu" path="res://assets/sprites/componentes 48x32.png" id="5_reoch"]
+[ext_resource type="Texture2D" uid="uid://b6lpvqnvbsvnq" path="res://assets/sprites/individuais/agua.png" id="5_scjtr"]
 [ext_resource type="Texture2D" uid="uid://c8tk7w7hr2b6x" path="res://assets/sprites/individuais/bexiga.png" id="6_qtg5v"]
 [ext_resource type="Texture2D" uid="uid://dpokrkiyy635t" path="res://assets/sprites/Componentes48x48.png" id="7_oohu0"]
 [ext_resource type="Texture2D" uid="uid://ck08lpcd2vua1" path="res://assets/sprites/letreiro.png" id="8_wxygm"]
@@ -287,6 +288,12 @@ layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("3_hli6m")
+
+[node name="agua" parent="." instance=ExtResource("3_6lr12")]
+position = Vector2(1228, 319)
+scale = Vector2(2, 2)
+texture = ExtResource("5_scjtr")
+hframes = 1
 
 [node name="sodaCaustica" parent="." instance=ExtResource("3_6lr12")]
 position = Vector2(1080, 328)
