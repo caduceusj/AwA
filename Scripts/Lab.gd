@@ -58,7 +58,7 @@ func check():
 		get_tree().change_scene_to_file("res://Scene/fluidSimulation.tscn")
 #		showDicaUi("Água Furiosa")
 	else:
-		showDicaUi("Nenhum exprimento realizado.
+		showDicaUi("Nenhum experimento realizado.
 Tente Novamente.")
 		clear()
 
