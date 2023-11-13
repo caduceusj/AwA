@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2q3e74olbqwe"]
+[gd_scene load_steps=16 format=3 uid="uid://c2q3e74olbqwe"]
 
 [ext_resource type="Script" path="res://Scripts/Global/ExperimentsManager.gd" id="1_3fmxy"]
 [ext_resource type="PackedScene" uid="uid://bf7rm8adsan06" path="res://Scene/Prefabs/Products/agua.tscn" id="2_8hnme"]
@@ -14,8 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://bnv4go8664qx8" path="res://Scene/Prefabs/Products/soda_caustica.tscn" id="8_dssoj"]
 [ext_resource type="PackedScene" uid="uid://b223kthw8hmid" path="res://Scene/Prefabs/Products/vinagre.tscn" id="9_ctdoq"]
 [ext_resource type="PackedScene" uid="uid://chyromplio8ru" path="res://Scene/Prefabs/Products/glicose.tscn" id="14_482dh"]
+[ext_resource type="PackedScene" uid="uid://dbjjlvfmb27mf" path="res://Scene/Prefabs/Products/garrafa.tscn" id="15_oqu4w"]
 
 [node name="ExperimentsManager" type="Node2D"]
 script = ExtResource("1_3fmxy")
 experiments_scenes_list = Array[PackedScene]([ExtResource("2_erefn"), ExtResource("3_6cinp"), ExtResource("4_bqnk8"), ExtResource("5_2tmd0")])
-product_scenes_list = Array[PackedScene]([ExtResource("2_8hnme"), ExtResource("3_em6s0"), ExtResource("4_2y4d1"), ExtResource("5_jp568"), ExtResource("6_csxgk"), ExtResource("7_ld6xc"), ExtResource("8_dssoj"), ExtResource("9_ctdoq"), ExtResource("14_482dh")])
+product_scenes_list = Array[PackedScene]([ExtResource("2_8hnme"), ExtResource("3_em6s0"), ExtResource("4_2y4d1"), ExtResource("5_jp568"), ExtResource("6_csxgk"), ExtResource("7_ld6xc"), ExtResource("8_dssoj"), ExtResource("9_ctdoq"), ExtResource("14_482dh"), ExtResource("15_oqu4w")])

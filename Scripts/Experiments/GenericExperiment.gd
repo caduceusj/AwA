@@ -3,11 +3,13 @@ class_name GenericExperiment
 
 @export var experiment_id: int
 @export var experiment_name: String
-@export var is_interactive: bool
 
 @export var product_list: Array[PackedScene]
 var product_instances: Array[GenericProduct]
 var product_ids: Array[int]
+
+@export var is_interactive: bool
+@export var interaction: PackedScene
 
 func _ready():
 	instance_products()
@@ -28,5 +30,5 @@ func sort_product_ids() -> void:
 func run_animation() -> void:
 	if(!is_interactive):
 		play("run_experiment")
-		
-	pass
+	else:
+		get_tree().change_scene_to_packed(interaction)

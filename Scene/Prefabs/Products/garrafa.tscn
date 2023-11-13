@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbjjlvfmb27mf"]
+
+[ext_resource type="PackedScene" uid="uid://d3nsmsh3ykq3i" path="res://Scene/Prefabs/Products/Generic/GenericProduct.tscn" id="1_f0pqq"]
+[ext_resource type="Texture2D" uid="uid://dxceeoldkdc34" path="res://assets/sprites/individuais/GarrafaPet.png" id="2_56ten"]
+
+[node name="ProductSprite" instance=ExtResource("1_f0pqq")]
+texture = ExtResource("2_56ten")
+product_id = 9
+product_name = "Garrafa"

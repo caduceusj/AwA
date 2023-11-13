@@ -38,8 +38,8 @@ func _process(delta):
 		pass
 
 func update_slots() -> void:
-	for count in selected_products.size():
-		get_node("itemContainer/slot"+str(count)+"/sprite").texture = selected_products[count]
+	for slot_position in selected_products.size():
+		get_node("itemContainer/slot"+str(slot_position)+"/sprite").texture = selected_products[slot_position]
 
 func clickSlot(itemname: String, texture: Texture2D, slot: int):
 	get_node("itemContainer/slot"+str(slot)+"/sprite").texture = texture
