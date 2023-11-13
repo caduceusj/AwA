@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm3723muelv3u"
-path="res://.godot/imported/balaoenche.png-14d606e99f7e4f9ef9aaaa05255f47e2.ctex"
+uid="uid://bht8ksyxu4v2e"
+path="res://.godot/imported/garrafaenche.png-80072ed2a466a82bc1b5e46e05e302dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/balaoenche.png"
-dest_files=["res://.godot/imported/balaoenche.png-14d606e99f7e4f9ef9aaaa05255f47e2.ctex"]
+source_file="res://assets/sprites/animations/garrafaenche.png"
+dest_files=["res://.godot/imported/garrafaenche.png-80072ed2a466a82bc1b5e46e05e302dd.ctex"]
 
 [params]
 

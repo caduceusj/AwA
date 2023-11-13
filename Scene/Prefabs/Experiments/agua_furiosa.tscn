@@ -1,15 +1,24 @@
 [gd_scene load_steps=6 format=3 uid="uid://bwwcs2j03sdjg"]
 
 [ext_resource type="PackedScene" uid="uid://ec3ljpowchms" path="res://Scene/Prefabs/Experiments/Generic/GenericExperiment.tscn" id="1_dx3t2"]
-[ext_resource type="Texture2D" uid="uid://b074wq3gwlpb2" path="res://assets/sprites/provetaelefante.png" id="2_pk666"]
 [ext_resource type="PackedScene" uid="uid://b6dh1tjewwkmg" path="res://Scene/Prefabs/Products/azul_de_metileno.tscn" id="3_avna8"]
 [ext_resource type="PackedScene" uid="uid://chyromplio8ru" path="res://Scene/Prefabs/Products/glicose.tscn" id="4_jhja8"]
 [ext_resource type="PackedScene" uid="uid://bnv4go8664qx8" path="res://Scene/Prefabs/Products/soda_caustica.tscn" id="5_tjbt1"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_aqoag"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"run_experiment",
+"speed": 5.0
+}]
+
 [node name="GenericExperiment" instance=ExtResource("1_dx3t2")]
 visible = false
-texture = ExtResource("2_pk666")
-hframes = 22
+sprite_frames = SubResource("SpriteFrames_aqoag")
+animation = &"run_experiment"
+frame = 0
 experiment_id = 1
 experiment_name = "Água furiosa"
+is_interactive = true
 product_list = Array[PackedScene]([ExtResource("3_avna8"), ExtResource("4_jhja8"), ExtResource("5_tjbt1")])

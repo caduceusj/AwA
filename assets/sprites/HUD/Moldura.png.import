@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck08lpcd2vua1"
-path="res://.godot/imported/letreiro.png-062abd01574ebb764d2f3fc8b052e1ac.ctex"
+uid="uid://dgcluw3mi0xry"
+path="res://.godot/imported/Moldura.png-63fa3929f5231f63fb4c5190fb0ce58c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/letreiro.png"
-dest_files=["res://.godot/imported/letreiro.png-062abd01574ebb764d2f3fc8b052e1ac.ctex"]
+source_file="res://assets/sprites/HUD/Moldura.png"
+dest_files=["res://.godot/imported/Moldura.png-63fa3929f5231f63fb4c5190fb0ce58c.ctex"]
 
 [params]
 

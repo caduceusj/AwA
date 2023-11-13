@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbhciit3x8ws4"
-path="res://.godot/imported/toolTIP2.png-48c8894a39c9afe7e28bb2194c1d3c39.ctex"
+uid="uid://boqvc8heo780j"
+path="res://.godot/imported/LightEmit.png-64c818b23f048eb9efe12d52de6a0133.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/toolTIP2.png"
-dest_files=["res://.godot/imported/toolTIP2.png-48c8894a39c9afe7e28bb2194c1d3c39.ctex"]
+source_file="res://assets/sprites/effects/LightEmit.png"
+dest_files=["res://.godot/imported/LightEmit.png-64c818b23f048eb9efe12d52de6a0133.ctex"]
 
 [params]
 

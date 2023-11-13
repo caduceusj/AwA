@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://ec3ljpowchms"]
+[gd_scene load_steps=3 format=3 uid="uid://ec3ljpowchms"]
 
 [ext_resource type="Script" path="res://Scripts/Experiments/GenericExperiment.gd" id="1_1uriw"]
 
-[node name="GenericExperiment" type="Sprite2D"]
-script = ExtResource("1_1uriw")
+[sub_resource type="SpriteFrames" id="SpriteFrames_npcvr"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"run_experiment",
+"speed": 5.0
+}]
 
-[node name="ExperimentAnimation" type="AnimationPlayer" parent="."]
+[node name="GenericExperiment" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_npcvr")
+frame = 8
+script = ExtResource("1_1uriw")

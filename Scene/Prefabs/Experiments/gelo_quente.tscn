@@ -1,15 +1,23 @@
 [gd_scene load_steps=6 format=3 uid="uid://djg0v6lpxgqw4"]
 
 [ext_resource type="PackedScene" uid="uid://ec3ljpowchms" path="res://Scene/Prefabs/Experiments/Generic/GenericExperiment.tscn" id="1_egtbo"]
-[ext_resource type="Texture2D" uid="uid://b074wq3gwlpb2" path="res://assets/sprites/provetaelefante.png" id="2_o56s8"]
 [ext_resource type="PackedScene" uid="uid://bf7rm8adsan06" path="res://Scene/Prefabs/Products/agua.tscn" id="3_d37wv"]
 [ext_resource type="PackedScene" uid="uid://bnv4go8664qx8" path="res://Scene/Prefabs/Products/soda_caustica.tscn" id="4_mg3h2"]
 [ext_resource type="PackedScene" uid="uid://b223kthw8hmid" path="res://Scene/Prefabs/Products/vinagre.tscn" id="5_8hftw"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_etlx4"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"run_experiment",
+"speed": 5.0
+}]
+
 [node name="GenericExperiment" instance=ExtResource("1_egtbo")]
 visible = false
-texture = ExtResource("2_o56s8")
-hframes = 22
+sprite_frames = SubResource("SpriteFrames_etlx4")
+animation = &"run_experiment"
+frame = 0
 experiment_id = 4
 experiment_name = "Gelo Quente"
 product_list = Array[PackedScene]([ExtResource("3_d37wv"), ExtResource("4_mg3h2"), ExtResource("5_8hftw")])

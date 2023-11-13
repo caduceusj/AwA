@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2tug71fcnbql"
-path="res://.godot/imported/toolTip.png-0c67a21fe2dde8c8b3def605b8d2a6c9.ctex"
+uid="uid://cbhciit3x8ws4"
+path="res://.godot/imported/toolTIP2.png-1f3fc0b29d347b798aa5401e822c7f0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/toolTip.png"
-dest_files=["res://.godot/imported/toolTip.png-0c67a21fe2dde8c8b3def605b8d2a6c9.ctex"]
+source_file="res://assets/sprites/HUD/toolTIP2.png"
+dest_files=["res://.godot/imported/toolTIP2.png-1f3fc0b29d347b798aa5401e822c7f0d.ctex"]
 
 [params]
 

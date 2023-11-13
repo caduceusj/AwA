@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgcluw3mi0xry"
-path="res://.godot/imported/Moldura.png-d1196e00e10e0e222d7869a0bddb9f06.ctex"
+uid="uid://cy3o1arbr35nw"
+path="res://.godot/imported/fogao.png-87c4fba0c130808eab6fbdc583758cca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Moldura.png"
-dest_files=["res://.godot/imported/Moldura.png-d1196e00e10e0e222d7869a0bddb9f06.ctex"]
+source_file="res://assets/sprites/animations/fogao.png"
+dest_files=["res://.godot/imported/fogao.png-87c4fba0c130808eab6fbdc583758cca.ctex"]
 
 [params]
 

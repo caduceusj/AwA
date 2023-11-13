@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy3o1arbr35nw"
-path="res://.godot/imported/fogao.png-26e41c49f3950334626f027305cab620.ctex"
+uid="uid://bx2i0736ldi0q"
+path="res://.godot/imported/dicaUI.png-e910c80bd6e35360322eccc3aa9bd16f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fogao.png"
-dest_files=["res://.godot/imported/fogao.png-26e41c49f3950334626f027305cab620.ctex"]
+source_file="res://assets/sprites/HUD/dicaUI.png"
+dest_files=["res://.godot/imported/dicaUI.png-e910c80bd6e35360322eccc3aa9bd16f.ctex"]
 
 [params]
 

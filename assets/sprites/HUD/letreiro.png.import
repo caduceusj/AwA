@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx2i0736ldi0q"
-path="res://.godot/imported/dicaUI.png-a76e668519cd854b85cbd3829c31f239.ctex"
+uid="uid://ck08lpcd2vua1"
+path="res://.godot/imported/letreiro.png-4092db80c55007c97219fef61a847c55.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dicaUI.png"
-dest_files=["res://.godot/imported/dicaUI.png-a76e668519cd854b85cbd3829c31f239.ctex"]
+source_file="res://assets/sprites/HUD/letreiro.png"
+dest_files=["res://.godot/imported/letreiro.png-4092db80c55007c97219fef61a847c55.ctex"]
 
 [params]
 

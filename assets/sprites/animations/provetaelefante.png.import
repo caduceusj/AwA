@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bht8ksyxu4v2e"
-path="res://.godot/imported/garrafaenche.png-14984098e10aa3b9e7997ccfa914f8e0.ctex"
+uid="uid://b074wq3gwlpb2"
+path="res://.godot/imported/provetaelefante.png-521c8a77c7526272cac9c3f3d91801eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/garrafaenche.png"
-dest_files=["res://.godot/imported/garrafaenche.png-14984098e10aa3b9e7997ccfa914f8e0.ctex"]
+source_file="res://assets/sprites/animations/provetaelefante.png"
+dest_files=["res://.godot/imported/provetaelefante.png-521c8a77c7526272cac9c3f3d91801eb.ctex"]
 
 [params]
 

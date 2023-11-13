@@ -1,15 +1,54 @@
-[gd_scene load_steps=6 format=3 uid="uid://cn673j46jsufb"]
+[gd_scene load_steps=11 format=3 uid="uid://cn673j46jsufb"]
 
 [ext_resource type="PackedScene" uid="uid://ec3ljpowchms" path="res://Scene/Prefabs/Experiments/Generic/GenericExperiment.tscn" id="1_sy0rn"]
-[ext_resource type="Texture2D" uid="uid://b074wq3gwlpb2" path="res://assets/sprites/provetaelefante.png" id="2_657cb"]
+[ext_resource type="Texture2D" uid="uid://wombyoxn5rdq" path="res://assets/sprites/animations/balao_enche.png" id="2_awqrl"]
 [ext_resource type="PackedScene" uid="uid://b67k6qttseq43" path="res://Scene/Prefabs/Products/bexiga.tscn" id="3_5kw7r"]
 [ext_resource type="PackedScene" uid="uid://1476gkm0yoiq" path="res://Scene/Prefabs/Products/bicarbonato_de_sodio.tscn" id="4_pcwem"]
 [ext_resource type="PackedScene" uid="uid://b223kthw8hmid" path="res://Scene/Prefabs/Products/vinagre.tscn" id="5_uo5ey"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5cch"]
+atlas = ExtResource("2_awqrl")
+region = Rect2(0, 0, 67, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqexm"]
+atlas = ExtResource("2_awqrl")
+region = Rect2(67, 0, 67, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rx70d"]
+atlas = ExtResource("2_awqrl")
+region = Rect2(134, 0, 67, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5f66"]
+atlas = ExtResource("2_awqrl")
+region = Rect2(201, 0, 67, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yi25r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5cch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqexm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rx70d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5f66")
+}],
+"loop": false,
+"name": &"run_experiment",
+"speed": 5.0
+}]
+
 [node name="GenericExperiment" instance=ExtResource("1_sy0rn")]
 visible = false
-texture = ExtResource("2_657cb")
-hframes = 22
+position = Vector2(7.25, -8.65672)
+scale = Vector2(1.21642, 1.21642)
+sprite_frames = SubResource("SpriteFrames_yi25r")
+animation = &"run_experiment"
+frame = 0
 experiment_id = 2
 experiment_name = "Bexiga cheia"
 product_list = Array[PackedScene]([ExtResource("3_5kw7r"), ExtResource("4_pcwem"), ExtResource("5_uo5ey")])

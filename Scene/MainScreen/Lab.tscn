@@ -3,125 +3,125 @@
 [ext_resource type="Script" path="res://Scripts/Lab.gd" id="1_2t6wo"]
 [ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://assets/sprites/Background.png" id="2_dwkyh"]
 [ext_resource type="PackedScene" uid="uid://niyslslsclfg" path="res://Scene/Prefabs/Experiments/pasta_de_dente_de_elefante.tscn" id="2_t6gjm"]
-[ext_resource type="PackedScene" uid="uid://c4jyprru63f33" path="res://Scene/Prefabs/button_prefab.tscn" id="3_6lr12"]
-[ext_resource type="Texture2D" uid="uid://d11total1yswu" path="res://assets/sprites/Mesa.png" id="3_hli6m"]
+[ext_resource type="PackedScene" uid="uid://c4jyprru63f33" path="res://Scene/Prefabs/HUD/button_prefab.tscn" id="3_6lr12"]
+[ext_resource type="Texture2D" uid="uid://d11total1yswu" path="res://assets/sprites/individuais/Mesa.png" id="4_4mtt1"]
 [ext_resource type="Texture2D" uid="uid://d2rl2v0foistu" path="res://assets/sprites/componentes 48x32.png" id="5_reoch"]
 [ext_resource type="Texture2D" uid="uid://b6lpvqnvbsvnq" path="res://assets/sprites/individuais/agua.png" id="5_scjtr"]
 [ext_resource type="Texture2D" uid="uid://c8tk7w7hr2b6x" path="res://assets/sprites/individuais/bexiga.png" id="6_qtg5v"]
 [ext_resource type="Texture2D" uid="uid://dpokrkiyy635t" path="res://assets/sprites/Componentes48x48.png" id="7_oohu0"]
-[ext_resource type="Texture2D" uid="uid://ck08lpcd2vua1" path="res://assets/sprites/letreiro.png" id="8_wxygm"]
-[ext_resource type="Texture2D" uid="uid://dgcluw3mi0xry" path="res://assets/sprites/Moldura.png" id="9_8f1h7"]
 [ext_resource type="Texture2D" uid="uid://dkkf14r4l2td2" path="res://assets/sprites/tubinhosDecorativos.png" id="10_6yvhe"]
-[ext_resource type="Texture2D" uid="uid://b074wq3gwlpb2" path="res://assets/sprites/provetaelefante.png" id="11_omj7d"]
-[ext_resource type="Texture2D" uid="uid://bht8ksyxu4v2e" path="res://assets/sprites/garrafaenche.png" id="12_imgdu"]
-[ext_resource type="Texture2D" uid="uid://bm3723muelv3u" path="res://assets/sprites/balaoenche.png" id="13_h7xdm"]
-[ext_resource type="Texture2D" uid="uid://cy3o1arbr35nw" path="res://assets/sprites/fogao.png" id="14_5vjdf"]
-[ext_resource type="Texture2D" uid="uid://boqvc8heo780j" path="res://assets/sprites/LightEmit.png" id="15_n3p3i"]
-[ext_resource type="Texture2D" uid="uid://bx2i0736ldi0q" path="res://assets/sprites/dicaUI.png" id="16_qmnvo"]
+[ext_resource type="Texture2D" uid="uid://ck08lpcd2vua1" path="res://assets/sprites/HUD/letreiro.png" id="10_xep2s"]
+[ext_resource type="Texture2D" uid="uid://dgcluw3mi0xry" path="res://assets/sprites/HUD/Moldura.png" id="11_r7xg7"]
+[ext_resource type="Texture2D" uid="uid://b074wq3gwlpb2" path="res://assets/sprites/animations/provetaelefante.png" id="13_thhyn"]
+[ext_resource type="Texture2D" uid="uid://bht8ksyxu4v2e" path="res://assets/sprites/animations/garrafaenche.png" id="14_73n6c"]
+[ext_resource type="Texture2D" uid="uid://bm3723muelv3u" path="res://assets/sprites/animations/balaoenche.png" id="15_j122n"]
+[ext_resource type="Texture2D" uid="uid://cy3o1arbr35nw" path="res://assets/sprites/animations/fogao.png" id="16_ba6rb"]
 [ext_resource type="FontFile" uid="uid://ysnlin44jdcx" path="res://assets/fonts/SourceSansPro-Black.ttf" id="17_dtcsy"]
+[ext_resource type="Texture2D" uid="uid://boqvc8heo780j" path="res://assets/sprites/effects/LightEmit.png" id="17_n0oqe"]
+[ext_resource type="Texture2D" uid="uid://bx2i0736ldi0q" path="res://assets/sprites/HUD/dicaUI.png" id="18_hqxlq"]
 [ext_resource type="Script" path="res://Scripts/HUD/CombineButton.gd" id="19_jb3mc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mdqtg"]
-texture = ExtResource("9_8f1h7")
+texture = ExtResource("11_r7xg7")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i0xuq"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(0, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tgf8a"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(67, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1brpf"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(134, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4oq6f"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(201, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l2ut5"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(268, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_keimv"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(335, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ll2g2"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(402, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhecw"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(469, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_conx5"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(536, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c2rto"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(603, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q2q62"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(670, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q3846"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(737, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_owief"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(804, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1kfry"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(871, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6juxr"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(938, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hpqcw"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(1005, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7yux7"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(1072, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqwes"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(1139, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lutbq"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(1206, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ew7b"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(1273, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3ef4"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(1340, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5u3j2"]
-atlas = ExtResource("11_omj7d")
+atlas = ExtResource("13_thhyn")
 region = Rect2(1407, 0, 67, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gfhjs"]
-atlas = ExtResource("12_imgdu")
+atlas = ExtResource("14_73n6c")
 region = Rect2(0, 0, 19, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j2ggl"]
-atlas = ExtResource("12_imgdu")
+atlas = ExtResource("14_73n6c")
 region = Rect2(19, 0, 19, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13la5"]
-atlas = ExtResource("12_imgdu")
+atlas = ExtResource("14_73n6c")
 region = Rect2(38, 0, 19, 29)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a0ooy"]
@@ -213,19 +213,19 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhi0g"]
-atlas = ExtResource("13_h7xdm")
+atlas = ExtResource("15_j122n")
 region = Rect2(0, 0, 48, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fsawo"]
-atlas = ExtResource("13_h7xdm")
+atlas = ExtResource("15_j122n")
 region = Rect2(48, 0, 48, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qj3u"]
-atlas = ExtResource("13_h7xdm")
+atlas = ExtResource("15_j122n")
 region = Rect2(96, 0, 48, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uu23m"]
-atlas = ExtResource("13_h7xdm")
+atlas = ExtResource("15_j122n")
 region = Rect2(144, 0, 48, 62)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_674ah"]
@@ -249,11 +249,11 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_se711"]
-atlas = ExtResource("14_5vjdf")
+atlas = ExtResource("16_ba6rb")
 region = Rect2(46, 0, 23, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ju5mw"]
-atlas = ExtResource("14_5vjdf")
+atlas = ExtResource("16_ba6rb")
 region = Rect2(69, 0, 23, 35)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_snj0f"]
@@ -271,18 +271,18 @@ animations = [{
 }]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ll56s"]
-texture = ExtResource("8_wxygm")
+texture = ExtResource("10_xep2s")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_38nfk"]
-texture = ExtResource("8_wxygm")
+texture = ExtResource("10_xep2s")
 modulate_color = Color(0.658824, 0.658824, 0.658824, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_85su2"]
-texture = ExtResource("8_wxygm")
+texture = ExtResource("10_xep2s")
 modulate_color = Color(0.364706, 0.364706, 0.364706, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_es58r"]
-texture = ExtResource("8_wxygm")
+texture = ExtResource("10_xep2s")
 modulate_color = Color(0.537255, 0.537255, 0.537255, 1)
 
 [node name="Lab" type="Control"]
@@ -305,7 +305,7 @@ texture = ExtResource("2_dwkyh")
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
-texture = ExtResource("3_hli6m")
+texture = ExtResource("4_4mtt1")
 
 [node name="products" type="Node2D" parent="."]
 
@@ -509,7 +509,7 @@ offset_right = 72.0
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("8_wxygm")
+texture = ExtResource("10_xep2s")
 
 [node name="itemContainer" type="GridContainer" parent="."]
 clip_contents = true
@@ -588,7 +588,7 @@ visible = false
 position = Vector2(480, 440)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_a0ooy")
-animation = &"elephantToothpaste"
+animation = &"garrafaPet"
 
 [node name="Bexiga" type="AnimatedSprite2D" parent="Resultado"]
 visible = false
@@ -608,7 +608,7 @@ position = Vector2(0, 8)
 scale = Vector2(0.0182292, 0.0182292)
 color = Color(1, 1, 0, 1)
 energy = 0.5
-texture = ExtResource("15_n3p3i")
+texture = ExtResource("17_n0oqe")
 
 [node name="DicaUi" type="TextureButton" parent="."]
 layout_mode = 0
@@ -616,7 +616,7 @@ offset_left = 31.0
 offset_top = 31.0
 offset_right = 531.0
 offset_bottom = 191.0
-texture_normal = ExtResource("16_qmnvo")
+texture_normal = ExtResource("18_hqxlq")
 
 [node name="Label" type="Label" parent="DicaUi"]
 layout_mode = 0

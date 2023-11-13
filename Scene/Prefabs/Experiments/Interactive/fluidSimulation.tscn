@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://btcv435du6k3g"]
 
-[ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://assets/sprites/Background.png" id="1_6m33x"]
-[ext_resource type="Texture2D" uid="uid://bx24xvu3ri83y" path="res://assets/sprites/Placeholders/fluidSimulationBecauseIDK.png" id="1_vlcbn"]
-[ext_resource type="Shader" path="res://tutorialDeFluidos/shadert/waterShader.gdshader" id="2_hs7ee"]
-[ext_resource type="PackedScene" uid="uid://cfpxve3ufoxfq" path="res://tutorialDeFluidos/scenes/water_body.tscn" id="2_w3a8l"]
+[ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://assets/sprites/Background.png" id="1_ynoqv"]
+[ext_resource type="PackedScene" uid="uid://cfpxve3ufoxfq" path="res://tutorialDeFluidos/scenes/water_body.tscn" id="2_uu377"]
+[ext_resource type="Shader" path="res://tutorialDeFluidos/shadert/waterShader.gdshader" id="3_334vt"]
+[ext_resource type="Texture2D" uid="uid://bx24xvu3ri83y" path="res://assets/sprites/Placeholders/fluidSimulationBecauseIDK.png" id="4_7tq37"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h75vk"]
 
@@ -11,7 +11,7 @@
 noise = SubResource("FastNoiseLite_h75vk")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1e4ms"]
-shader = ExtResource("2_hs7ee")
+shader = ExtResource("3_334vt")
 shader_parameter/refraction_stretch = Vector2(1, 1)
 shader_parameter/refraction_strength = 0.01
 shader_parameter/water_tint = Color(0.2, 0.6, 1, 0.0823529)
@@ -36,9 +36,9 @@ scale_max = 8.0
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(742, 281)
 scale = Vector2(10, 10)
-texture = ExtResource("1_6m33x")
+texture = ExtResource("1_ynoqv")
 
-[node name="Water_Body" parent="." instance=ExtResource("2_w3a8l")]
+[node name="Water_Body" parent="." instance=ExtResource("2_uu377")]
 position = Vector2(527, 119)
 scale = Vector2(0.5, 0.5)
 distance_between_springs = 16
@@ -53,7 +53,7 @@ color = Color(1, 1, 1, 1)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(623, 343)
 scale = Vector2(10, 10)
-texture = ExtResource("1_vlcbn")
+texture = ExtResource("4_7tq37")
 
 [node name="Label" type="Label" parent="."]
 visible = false

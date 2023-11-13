@@ -1,8 +1,9 @@
-extends Sprite2D
+extends AnimatedSprite2D
 class_name GenericExperiment
 
 @export var experiment_id: int
 @export var experiment_name: String
+@export var is_interactive: bool
 
 @export var product_list: Array[PackedScene]
 var product_instances: Array[GenericProduct]
@@ -11,7 +12,6 @@ var product_ids: Array[int]
 func _ready():
 	instance_products()
 	sort_product_ids()
-	print(product_instances)
 
 func instance_products() -> void:
 	var instance: GenericProduct
@@ -23,3 +23,10 @@ func instance_products() -> void:
 func sort_product_ids() -> void:
 	if(product_ids.size() > 0):
 		product_ids.sort()
+
+
+func run_animation() -> void:
+	if(!is_interactive):
+		play("run_experiment")
+		
+	pass

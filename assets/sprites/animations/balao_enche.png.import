@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b074wq3gwlpb2"
-path="res://.godot/imported/provetaelefante.png-94be093f57b40b45e3f6232d7364818d.ctex"
+uid="uid://wombyoxn5rdq"
+path="res://.godot/imported/balao_enche.png-c3f8606a2132146301fe676523108753.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/provetaelefante.png"
-dest_files=["res://.godot/imported/provetaelefante.png-94be093f57b40b45e3f6232d7364818d.ctex"]
+source_file="res://assets/sprites/animations/balao_enche.png"
+dest_files=["res://.godot/imported/balao_enche.png-c3f8606a2132146301fe676523108753.ctex"]
 
 [params]
 

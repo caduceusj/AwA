@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boqvc8heo780j"
-path="res://.godot/imported/LightEmit.png-788da4f5350c09f85204a392d6ac2dc9.ctex"
+uid="uid://d11total1yswu"
+path="res://.godot/imported/Mesa.png-48e93ba9fe5a90801ff0e35e87aca174.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/LightEmit.png"
-dest_files=["res://.godot/imported/LightEmit.png-788da4f5350c09f85204a392d6ac2dc9.ctex"]
+source_file="res://assets/sprites/individuais/Mesa.png"
+dest_files=["res://.godot/imported/Mesa.png-48e93ba9fe5a90801ff0e35e87aca174.ctex"]
 
 [params]
 
