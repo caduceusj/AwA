@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6dh1tjewwkmg"]
+
+[ext_resource type="PackedScene" uid="uid://d3nsmsh3ykq3i" path="res://Scene/Prefabs/Products/Generic/GenericProduct.tscn" id="1_tl45k"]
+[ext_resource type="Texture2D" uid="uid://dxfwoabf6b4di" path="res://assets/sprites/individuais/azulDeMetileno.png" id="2_ct8rc"]
+
+[node name="ProductSprite" instance=ExtResource("1_tl45k")]
+texture = ExtResource("2_ct8rc")
+product_id = 2
+product_name = "Azul de metileno"

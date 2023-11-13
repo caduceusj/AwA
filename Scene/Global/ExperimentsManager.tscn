@@ -1,0 +1,21 @@
+[gd_scene load_steps=15 format=3 uid="uid://c2q3e74olbqwe"]
+
+[ext_resource type="Script" path="res://Scripts/Global/ExperimentsManager.gd" id="1_3fmxy"]
+[ext_resource type="PackedScene" uid="uid://bf7rm8adsan06" path="res://Scene/Prefabs/Products/agua.tscn" id="2_8hnme"]
+[ext_resource type="PackedScene" uid="uid://niyslslsclfg" path="res://Scene/Prefabs/Experiments/pasta_de_dente_de_elefante.tscn" id="2_erefn"]
+[ext_resource type="PackedScene" uid="uid://bwwcs2j03sdjg" path="res://Scene/Prefabs/Experiments/agua_furiosa.tscn" id="3_6cinp"]
+[ext_resource type="PackedScene" uid="uid://6x68farjwhqi" path="res://Scene/Prefabs/Products/agua_oxigenada.tscn" id="3_em6s0"]
+[ext_resource type="PackedScene" uid="uid://b6dh1tjewwkmg" path="res://Scene/Prefabs/Products/azul_de_metileno.tscn" id="4_2y4d1"]
+[ext_resource type="PackedScene" uid="uid://cn673j46jsufb" path="res://Scene/Prefabs/Experiments/bexiga_cheia.tscn" id="4_bqnk8"]
+[ext_resource type="PackedScene" uid="uid://djg0v6lpxgqw4" path="res://Scene/Prefabs/Experiments/gelo_quente.tscn" id="5_2tmd0"]
+[ext_resource type="PackedScene" uid="uid://b67k6qttseq43" path="res://Scene/Prefabs/Products/bexiga.tscn" id="5_jp568"]
+[ext_resource type="PackedScene" uid="uid://1476gkm0yoiq" path="res://Scene/Prefabs/Products/bicarbonato_de_sodio.tscn" id="6_csxgk"]
+[ext_resource type="PackedScene" uid="uid://coxa41fb32qgq" path="res://Scene/Prefabs/Products/iodeto_de_potassio.tscn" id="7_ld6xc"]
+[ext_resource type="PackedScene" uid="uid://bnv4go8664qx8" path="res://Scene/Prefabs/Products/soda_caustica.tscn" id="8_dssoj"]
+[ext_resource type="PackedScene" uid="uid://b223kthw8hmid" path="res://Scene/Prefabs/Products/vinagre.tscn" id="9_ctdoq"]
+[ext_resource type="PackedScene" uid="uid://chyromplio8ru" path="res://Scene/Prefabs/Products/glicose.tscn" id="14_482dh"]
+
+[node name="ExperimentsManager" type="Node2D"]
+script = ExtResource("1_3fmxy")
+experiments_scenes_list = Array[PackedScene]([ExtResource("2_erefn"), ExtResource("3_6cinp"), ExtResource("4_bqnk8"), ExtResource("5_2tmd0")])
+product_scenes_list = Array[PackedScene]([ExtResource("2_8hnme"), ExtResource("3_em6s0"), ExtResource("4_2y4d1"), ExtResource("5_jp568"), ExtResource("6_csxgk"), ExtResource("7_ld6xc"), ExtResource("8_dssoj"), ExtResource("9_ctdoq"), ExtResource("14_482dh")])

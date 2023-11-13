@@ -396,7 +396,6 @@ position = Vector2(1128, 304)
 texture = ExtResource("5_reoch")
 hframes = 3
 frame = 2
-id = 8
 
 [node name="ButtonPrefab" parent="products/glicose" index="0"]
 anchors_preset = -1
@@ -423,7 +422,7 @@ offset_left = -1.23681
 offset_top = -3.14407
 offset_right = 3.76319
 offset_bottom = 5.85593
-tooltip_text = "Bexiga"
+tooltip_text = "Glicose"
 metadata/_edit_use_anchors_ = true
 
 [node name="GarrafaPet" parent="products" instance=ExtResource("3_6lr12")]
@@ -505,7 +504,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -336.0
 offset_top = -120.0
-offset_right = 72.0
+offset_right = -88.0
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -519,14 +518,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -312.0
+offset_left = -320.0
 offset_top = -104.0
-offset_right = 48.0
+offset_right = -104.0
 offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/h_separation = 10
-columns = 5
+columns = 3
 
 [node name="slot0" type="Panel" parent="itemContainer"]
 layout_mode = 2
@@ -558,33 +557,12 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_mdqtg")
 position = Vector2(32, 32)
 scale = Vector2(3, 3)
 
-[node name="slot3" type="Panel" parent="itemContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxTexture_mdqtg")
-
-[node name="sprite" type="Sprite2D" parent="itemContainer/slot3"]
-position = Vector2(32, 32)
-scale = Vector2(3, 3)
-
-[node name="slot4" type="Panel" parent="itemContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxTexture_mdqtg")
-
-[node name="sprite" type="Sprite2D" parent="itemContainer/slot4"]
-position = Vector2(32, 32)
-scale = Vector2(3, 3)
-
 [node name="Tubo de ensaio decorativo" type="Sprite2D" parent="."]
 position = Vector2(128, 472)
 scale = Vector2(5.05263, 6.38334)
 texture = ExtResource("10_6yvhe")
 
 [node name="Resultado" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(480, 440)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_a0ooy")
@@ -649,7 +627,7 @@ script = ExtResource("19_jb3mc")
 
 [node name="Experiment" type="Node2D" parent="."]
 position = Vector2(480, 440)
-scale = Vector2(3, 3)
+scale = Vector2(4, 4)
 
 [connection signal="timeout" from="DicaUITimer" to="." method="_on_dica_ui_timer_timeout"]
 [connection signal="mouse_entered" from="CombineButton" to="CombineButton" method="_on_mouse_entered"]

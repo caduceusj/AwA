@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://1476gkm0yoiq"]
+
+[ext_resource type="PackedScene" uid="uid://d3nsmsh3ykq3i" path="res://Scene/Prefabs/Products/Generic/GenericProduct.tscn" id="1_tce4r"]
+[ext_resource type="Texture2D" uid="uid://chjacn4as5eip" path="res://assets/sprites/individuais/bicarbonatoDeSodio.png" id="2_xad48"]
+
+[node name="ProductSprite" instance=ExtResource("1_tce4r")]
+texture = ExtResource("2_xad48")
+product_id = 4
+product_name = "Bicarbonato de sódio"

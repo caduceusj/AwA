@@ -1,0 +1,14 @@
+[gd_scene load_steps=6 format=3 uid="uid://niyslslsclfg"]
+
+[ext_resource type="PackedScene" uid="uid://ec3ljpowchms" path="res://Scene/Prefabs/Experiments/Generic/GenericExperiment.tscn" id="1_bk2au"]
+[ext_resource type="Texture2D" uid="uid://b074wq3gwlpb2" path="res://assets/sprites/provetaelefante.png" id="2_xs3e5"]
+[ext_resource type="PackedScene" uid="uid://b6dh1tjewwkmg" path="res://Scene/Prefabs/Products/azul_de_metileno.tscn" id="3_77jyj"]
+[ext_resource type="PackedScene" uid="uid://coxa41fb32qgq" path="res://Scene/Prefabs/Products/iodeto_de_potassio.tscn" id="4_rytng"]
+[ext_resource type="PackedScene" uid="uid://6x68farjwhqi" path="res://Scene/Prefabs/Products/agua_oxigenada.tscn" id="5_f8232"]
+
+[node name="GenericExperiment" instance=ExtResource("1_bk2au")]
+visible = false
+texture = ExtResource("2_xs3e5")
+hframes = 22
+experiment_name = "Pasta de dente de elefante"
+product_list = Array[PackedScene]([ExtResource("3_77jyj"), ExtResource("4_rytng"), ExtResource("5_f8232")])

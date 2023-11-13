@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b223kthw8hmid"]
+
+[ext_resource type="PackedScene" uid="uid://d3nsmsh3ykq3i" path="res://Scene/Prefabs/Products/Generic/GenericProduct.tscn" id="1_5m875"]
+[ext_resource type="Texture2D" uid="uid://by4lwoawvtikw" path="res://assets/sprites/individuais/vinagre.png" id="2_cqmtw"]
+
+[node name="ProductSprite" instance=ExtResource("1_5m875")]
+texture = ExtResource("2_cqmtw")
+product_id = 7
+product_name = "Vinagre"

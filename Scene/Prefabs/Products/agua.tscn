@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf7rm8adsan06"]
+
+[ext_resource type="PackedScene" uid="uid://d3nsmsh3ykq3i" path="res://Scene/Prefabs/Products/Generic/GenericProduct.tscn" id="1_fh6ms"]
+[ext_resource type="Texture2D" uid="uid://b6lpvqnvbsvnq" path="res://assets/sprites/individuais/agua.png" id="2_h7r3l"]
+
+[node name="ProductSprite" instance=ExtResource("1_fh6ms")]
+texture = ExtResource("2_h7r3l")
+product_name = "Água"

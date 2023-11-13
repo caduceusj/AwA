@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b67k6qttseq43"]
+
+[ext_resource type="PackedScene" uid="uid://d3nsmsh3ykq3i" path="res://Scene/Prefabs/Products/Generic/GenericProduct.tscn" id="1_s0eg7"]
+[ext_resource type="Texture2D" uid="uid://c8tk7w7hr2b6x" path="res://assets/sprites/individuais/bexiga.png" id="2_vn7nd"]
+
+[node name="ProductSprite" instance=ExtResource("1_s0eg7")]
+texture = ExtResource("2_vn7nd")
+product_id = 3
+product_name = "Bexiga"

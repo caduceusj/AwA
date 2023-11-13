@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://chyromplio8ru"]
+
+[ext_resource type="PackedScene" uid="uid://d3nsmsh3ykq3i" path="res://Scene/Prefabs/Products/Generic/GenericProduct.tscn" id="1_dckfi"]
+[ext_resource type="Texture2D" uid="uid://bkocvanuhjdoq" path="res://assets/sprites/individuais/glicose.png" id="2_t0xas"]
+
+[node name="ProductSprite" instance=ExtResource("1_dckfi")]
+texture = ExtResource("2_t0xas")
+product_id = 8
+product_name = "Glicose"
