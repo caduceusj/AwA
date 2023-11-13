@@ -12,5 +12,5 @@ animations = [{
 
 [node name="GenericExperiment" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_npcvr")
-frame = 8
+animation = &"run_experiment"
 script = ExtResource("1_1uriw")
