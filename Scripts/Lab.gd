@@ -75,17 +75,19 @@ func select_product(product_id: int) -> void:
 func is_reaction_valid() -> bool:
 	var is_valid: bool = false
 	for experiment in ExperimentsManagerGlobal.experiment_list:
-		print(experiment.experiment_name)
-		for experiment_product in experiment.product_instances:
-			print(experiment_product.product_name)
-			for selected_product in selected_products:
+		var has_wrong_product: bool = false
+		for selected_product in selected_products:
+			var is_product_in_list: bool = false
+			for experiment_product in experiment.product_instances:
 				if(selected_product.product_id == experiment_product.product_id):
+					is_product_in_list = true
 					correct_products.append(selected_product)
 					all_correct_products.append(selected_product)
 					break
+			if(!is_product_in_list):
+				has_wrong_product = true
 # 		Mark receipt_book the corrects products
-		print(experiment.product_instances.size())
-		if(experiment.product_instances.size() == correct_products.size()):
+		if(!has_wrong_product && experiment.product_instances.size() == selected_products.size()):
 #			Mark receipt_book the correct experiment
 			correct_experiment = experiment
 			is_valid = true
