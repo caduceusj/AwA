@@ -1,23 +1,21 @@
 extends MarginContainer
 
-const menuScene = "res://Scene/MainMenu/MainMenu.tscn"
-
 @onready var textOne = $CenterContainer/VBoxContainer/Volume/VBoxContainer/Label
 @onready var textTwo = $CenterContainer/VBoxContainer/Return/HBoxContainer/OptionName
 @onready var selectorTwo = $CenterContainer/VBoxContainer/Return/HBoxContainer/Selector
 @onready var volumeBar = $CenterContainer/VBoxContainer/Volume/VBoxContainer/VolumeBar
 
-const originalFontColor = Color(0.757, 0.737, 0.329)
-const originalShadowColor = Color(0.627, 0.506, 0.169)
-const selectedFontColor = Color(0.29, 0.435, 0.459)
-const selectedShadowColor = Color(0.2, 0.271, 0.373)
+const originalFontColor = Color("#083040")
+const originalShadowColor = Color("#142e4001")
+const selectedFontColor = Color("#411808")
+const selectedShadowColor = Color("#400814")
 
 var currentSelection = 0
 
 
 func handleSelection(currentSelection) :
 	if(currentSelection == 1) :
-		get_tree().change_scene_to_file(menuScene)			
+		get_tree().change_scene_to_file(GameManager.returOptionsScene)			
 			
 
 func changeColor(component,fontColor, shadowColor) :
@@ -36,8 +34,7 @@ func setCurrentSelection(currentSelection) :
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	changeColor(selectorTwo,selectedFontColor,selectedShadowColor)	
-	setCurrentSelection(0)	
+	pass
 
 func _process(delta):	
 	if(Input.is_action_just_pressed("ui_down")) :
@@ -56,6 +53,7 @@ func _process(delta):
 			setCurrentSelection(currentSelection)
 	if(Input.is_action_just_pressed("ui_accept")) :
 		handleSelection(currentSelection)
+	
 
 
 func _on_volume_mouse_entered():
@@ -70,7 +68,7 @@ func _on_return_mouse_entered():
 
 func _on_return_gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT :
-		get_tree().change_scene_to_file(menuScene)
+		get_tree().change_scene_to_file(GameManager.returOptionsScene)
 
 
 func _on_volume_bar_value_changed(value):

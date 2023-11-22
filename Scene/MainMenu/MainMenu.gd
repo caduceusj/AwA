@@ -12,10 +12,11 @@ const optionsScene = "res://Scene/MainMenu/OptionsMenu.tscn"
 @onready var textTwo = $CenterContainer/VBoxContainer/Inputs/VBoxContainer/Options/HBoxContainer/OptionName
 @onready var textThree = $CenterContainer/VBoxContainer/Inputs/VBoxContainer/Quit/HBoxContainer/OptionName
 
-const originalFontColor = Color(0.757, 0.737, 0.329)
-const originalShadowColor = Color(0.627, 0.506, 0.169)
-const selectedFontColor = Color(0.29, 0.435, 0.459)
-const selectedShadowColor = Color(0.2, 0.271, 0.373)
+const originalFontColor = Color("#083040")
+const originalShadowColor = Color("#142e4001")
+const selectedFontColor = Color("#411808")
+const selectedShadowColor = Color("#400814")
+
 
 var currentSelection = 0
 
@@ -45,6 +46,7 @@ func handleSelection(currentSelection) :
 	if(currentSelection == 0) :
 		get_tree().change_scene_to_file(startScene)			
 	elif(currentSelection == 1) :
+		GameManager.returOptionsScene = menuScene
 		get_tree().change_scene_to_file(optionsScene)
 	else :
 		get_tree().quit()			

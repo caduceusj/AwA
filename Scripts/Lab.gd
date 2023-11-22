@@ -1,6 +1,8 @@
 extends Control
 class_name GameController
 
+@onready var pause = $MarginContainer
+
 @export var experiments_list: Array[PackedScene]
 var experiments_instances: Array[GenericExperiment]
 
@@ -14,6 +16,7 @@ var correct_experiment: GenericExperiment
 func _ready():
 	$fire.play("default")
 	$DicaUi.visible = false
+	pause.visible = false
 	instance_experiments()
 	
 	if(GameManager.current_state == GameManager.state.INTRO):
@@ -52,7 +55,7 @@ func clear():
 func showDicaUi(text):
 	$DicaUi.visible = true
 	$DicaUi/Label.text = text
-	$DicaUITimer.start()
+	$DicaUITimer.start()	
 
 func select_product(product_id: int) -> void:
 	if(selected_products.size() < GameManager.PRODUCTS_SELECT_LIMIT):
@@ -97,6 +100,7 @@ func run_experiment() -> void:
 
 func _on_dica_ui_timer_timeout():
 	$DicaUi.visible = false
+	
 
 func _on_combine_button_pressed():
 	if(GameManager.current_state == GameManager.state.SELECTION):
@@ -105,3 +109,8 @@ func _on_combine_button_pressed():
 		else:
 			showDicaUi("Nenhum experimento realizado. \n Tente Novamente.")
 			clear()
+
+
+func _on_combine_button_2_gui_input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT :
+		pause.visible = true

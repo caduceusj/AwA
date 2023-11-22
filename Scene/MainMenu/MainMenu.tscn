@@ -49,6 +49,7 @@ layout_mode = 2
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Start/HBoxContainer"]
 custom_minimum_size = Vector2(35, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.0784314, 0.180392, 0.25098, 0.00392157)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_xsvkh")
 theme_override_font_sizes/font_size = 64
@@ -62,7 +63,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_xsvkh")
 theme_override_font_sizes/font_size = 64
-text = "Start"
+text = "Início"
 
 [node name="Options" type="CenterContainer" parent="CenterContainer/VBoxContainer/Inputs/VBoxContainer"]
 layout_mode = 2
@@ -80,12 +81,12 @@ text = "
 "
 
 [node name="OptionName" type="Label" parent="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Options/HBoxContainer"]
-custom_minimum_size = Vector2(84, 0)
+custom_minimum_size = Vector2(227, 0)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_xsvkh")
 theme_override_font_sizes/font_size = 64
-text = "Options"
+text = "Opções"
 
 [node name="Quit" type="CenterContainer" parent="CenterContainer/VBoxContainer/Inputs/VBoxContainer"]
 layout_mode = 2
@@ -106,7 +107,7 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_xsvkh")
 theme_override_font_sizes/font_size = 64
-text = "Quit
+text = "Sair
 "
 
 [connection signal="gui_input" from="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Start" to="." method="_on_start_gui_input"]

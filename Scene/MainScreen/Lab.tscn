@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dsavltsoufo77"]
+[gd_scene load_steps=27 format=3 uid="uid://dsavltsoufo77"]
 
 [ext_resource type="Script" path="res://Scripts/Lab.gd" id="1_2t6wo"]
 [ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://assets/sprites/Background.png" id="2_dwkyh"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cy3o1arbr35nw" path="res://assets/sprites/animations/fogao.png" id="16_ba6rb"]
 [ext_resource type="FontFile" uid="uid://ysnlin44jdcx" path="res://assets/fonts/SourceSansPro-Black.ttf" id="17_dtcsy"]
 [ext_resource type="Texture2D" uid="uid://boqvc8heo780j" path="res://assets/sprites/effects/LightEmit.png" id="17_n0oqe"]
+[ext_resource type="PackedScene" uid="uid://cssk822pxofe7" path="res://Scene/MainScreen/inGameMenu.tscn" id="18_8vlsh"]
 [ext_resource type="Texture2D" uid="uid://bx2i0736ldi0q" path="res://assets/sprites/HUD/dicaUI.png" id="18_hqxlq"]
 [ext_resource type="Script" path="res://Scripts/HUD/CombineButton.gd" id="19_jb3mc"]
 
@@ -411,10 +412,34 @@ script = ExtResource("19_jb3mc")
 position = Vector2(480, 440)
 scale = Vector2(3, 3)
 
+[node name="CombineButton2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1109.0
+offset_top = 36.0
+offset_right = 1233.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ll56s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_38nfk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_85su2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_es58r")
+text = "Pausar"
+script = ExtResource("19_jb3mc")
+
+[node name="MarginContainer" parent="." instance=ExtResource("18_8vlsh")]
+layout_mode = 1
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1.0
+offset_bottom = 2.0
+
 [connection signal="timeout" from="DicaUITimer" to="." method="_on_dica_ui_timer_timeout"]
 [connection signal="mouse_entered" from="CombineButton" to="CombineButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CombineButton" to="CombineButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="CombineButton" to="." method="_on_combine_button_pressed"]
+[connection signal="gui_input" from="CombineButton2" to="." method="_on_combine_button_2_gui_input"]
+[connection signal="mouse_entered" from="CombineButton2" to="CombineButton2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CombineButton2" to="CombineButton2" method="_on_mouse_exited"]
 
 [editable path="products/sodaCaustica"]
 [editable path="products/azulDeMetileno"]
