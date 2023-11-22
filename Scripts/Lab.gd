@@ -10,6 +10,13 @@ var all_correct_products: Array[GenericProduct]
 
 var correct_experiment: GenericExperiment
 
+@onready var scientist_animation_player: AnimationPlayer = $Cientista/AnimationPlayer
+@onready var combine_button: Button = $CombineButton
+@onready var text_field: TextureButton = $DicaUi
+@onready var text_field_label: Label = $DicaUi/Label
+
+var is_last_message: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$fire.play("default")
@@ -17,8 +24,9 @@ func _ready():
 	instance_experiments()
 	
 	if(GameManager.current_state == GameManager.state.INTRO):
-		# Rodar introdução
-		pass
+		scientist_animation_player.play("Walking_in")
+		combine_button.set_disabled(true)
+
 
 func instance_experiments() -> void:
 	var instance: GenericExperiment
@@ -99,9 +107,27 @@ func _on_dica_ui_timer_timeout():
 	$DicaUi.visible = false
 
 func _on_combine_button_pressed():
-	if(GameManager.current_state == GameManager.state.SELECTION):
+	if(GameManager.current_state == GameManager.state.INTRO):
+		if(!is_last_message):
+			text_field_label.set_text("Clique neles e depois clique em combinar para descobrir se você acertou. Boa sorte!")
+			is_last_message = true
+		else:
+			text_field_label.set_text("Até mais, meu aprendiz")
+			scientist_animation_player.play("Walking_out")
+			combine_button.set_disabled(true)
+	elif(GameManager.current_state == GameManager.state.SELECTION):
 		if(is_reaction_valid()):
 			run_experiment()
 		else:
 			showDicaUi("Nenhum experimento realizado. \n Tente Novamente.")
 			clear()
+
+func _on_animation_player_animation_finished(anim_name):
+	if(anim_name == "Walking_in"):
+		combine_button.set_disabled(false)
+		text_field.set_visible(true)
+		text_field_label.set_text("Olá jovem cientista, o desafio de hoje será descobrir todos os experimentos possíveis com o produtos ao lado")
+	if(anim_name == "Walking_out"):
+		text_field.set_visible(false)
+		combine_button.set_disabled(false)
+		GameManager.current_state = GameManager.state.SELECTION

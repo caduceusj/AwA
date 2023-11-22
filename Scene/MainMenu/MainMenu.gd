@@ -43,7 +43,8 @@ func setCurrentSelection(currentSelection) :
 
 func handleSelection(currentSelection) :
 	if(currentSelection == 0) :
-		get_tree().change_scene_to_file(startScene)			
+		GameManager.current_state = GameManager.state.INTRO
+		get_tree().change_scene_to_file(startScene)	
 	elif(currentSelection == 1) :
 		get_tree().change_scene_to_file(optionsScene)
 	else :

@@ -1,10 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://dsavltsoufo77"]
+[gd_scene load_steps=31 format=3 uid="uid://dsavltsoufo77"]
 
 [ext_resource type="Script" path="res://Scripts/Lab.gd" id="1_2t6wo"]
 [ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://assets/sprites/Background.png" id="2_dwkyh"]
 [ext_resource type="PackedScene" uid="uid://niyslslsclfg" path="res://Scene/Prefabs/Experiments/pasta_de_dente_de_elefante.tscn" id="2_t6gjm"]
 [ext_resource type="PackedScene" uid="uid://c4jyprru63f33" path="res://Scene/Prefabs/HUD/button_prefab.tscn" id="3_6lr12"]
 [ext_resource type="Texture2D" uid="uid://d11total1yswu" path="res://assets/sprites/individuais/Mesa.png" id="4_4mtt1"]
+[ext_resource type="Texture2D" uid="uid://buooigd0irfmg" path="res://assets/sprites/Scientist/cientister.png" id="4_sbmky"]
 [ext_resource type="Texture2D" uid="uid://d2rl2v0foistu" path="res://assets/sprites/componentes 48x32.png" id="5_reoch"]
 [ext_resource type="Texture2D" uid="uid://b6lpvqnvbsvnq" path="res://assets/sprites/individuais/agua.png" id="5_scjtr"]
 [ext_resource type="Texture2D" uid="uid://c8tk7w7hr2b6x" path="res://assets/sprites/individuais/bexiga.png" id="6_qtg5v"]
@@ -17,6 +18,60 @@
 [ext_resource type="Texture2D" uid="uid://boqvc8heo780j" path="res://assets/sprites/effects/LightEmit.png" id="17_n0oqe"]
 [ext_resource type="Texture2D" uid="uid://bx2i0736ldi0q" path="res://assets/sprites/HUD/dicaUI.png" id="18_hqxlq"]
 [ext_resource type="Script" path="res://Scripts/HUD/CombineButton.gd" id="19_jb3mc"]
+
+[sub_resource type="Animation" id="Animation_31uxr"]
+resource_name = "Walking_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-72, 424), Vector2(72, 408), Vector2(192, 376), Vector2(264, 400), Vector2(384, 384)]
+}
+
+[sub_resource type="Animation" id="Animation_kmgln"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-144, 400)]
+}
+
+[sub_resource type="Animation" id="Animation_tfj1d"]
+resource_name = "Walking_out"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(384, 384), Vector2(264, 400), Vector2(192, 376), Vector2(72, 408), Vector2(-72, 392), Vector2(-136, 424)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w4a22"]
+_data = {
+"RESET": SubResource("Animation_kmgln"),
+"Walking_in": SubResource("Animation_31uxr"),
+"Walking_out": SubResource("Animation_tfj1d")
+}
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mdqtg"]
 texture = ExtResource("11_r7xg7")
@@ -73,6 +128,16 @@ layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("2_dwkyh")
+
+[node name="Cientista" type="Sprite2D" parent="."]
+position = Vector2(-144, 400)
+scale = Vector2(4.42207, 4.42207)
+texture = ExtResource("4_sbmky")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cientista"]
+libraries = {
+"": SubResource("AnimationLibrary_w4a22")
+}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -411,6 +476,7 @@ script = ExtResource("19_jb3mc")
 position = Vector2(480, 440)
 scale = Vector2(3, 3)
 
+[connection signal="animation_finished" from="Cientista/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="DicaUITimer" to="." method="_on_dica_ui_timer_timeout"]
 [connection signal="mouse_entered" from="CombineButton" to="CombineButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CombineButton" to="CombineButton" method="_on_mouse_exited"]
