@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dsavltsoufo77"]
+[gd_scene load_steps=37 format=3 uid="uid://dsavltsoufo77"]
 
 [ext_resource type="Script" path="res://Scripts/Lab.gd" id="1_2t6wo"]
 [ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://assets/sprites/Background.png" id="2_dwkyh"]
@@ -11,9 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://c8tk7w7hr2b6x" path="res://assets/sprites/individuais/bexiga.png" id="6_qtg5v"]
 [ext_resource type="Texture2D" uid="uid://dpokrkiyy635t" path="res://assets/sprites/Componentes48x48.png" id="7_oohu0"]
 [ext_resource type="Texture2D" uid="uid://dkkf14r4l2td2" path="res://assets/sprites/tubinhosDecorativos.png" id="10_6yvhe"]
+[ext_resource type="Texture2D" uid="uid://clud3201y5p3k" path="res://assets/sprites/individuais/vinho.png" id="10_rqdwu"]
 [ext_resource type="Texture2D" uid="uid://ck08lpcd2vua1" path="res://assets/sprites/HUD/letreiro.png" id="10_xep2s"]
+[ext_resource type="Texture2D" uid="uid://dhmkpp4y7q03l" path="res://assets/sprites/animations/fogao_acesso.png" id="11_5enf0"]
+[ext_resource type="Texture2D" uid="uid://b5qfalkpc58pq" path="res://assets/sprites/individuais/zipo.png" id="11_oa8xk"]
 [ext_resource type="Texture2D" uid="uid://dgcluw3mi0xry" path="res://assets/sprites/HUD/Moldura.png" id="11_r7xg7"]
-[ext_resource type="Texture2D" uid="uid://cy3o1arbr35nw" path="res://assets/sprites/animations/fogao.png" id="16_ba6rb"]
+[ext_resource type="Texture2D" uid="uid://crsya2av2ahq7" path="res://assets/sprites/individuais/carta.png" id="12_i63v7"]
+[ext_resource type="Texture2D" uid="uid://26xleo3x3hmt" path="res://assets/sprites/individuais/areia.png" id="12_on5bd"]
 [ext_resource type="FontFile" uid="uid://ysnlin44jdcx" path="res://assets/fonts/SourceSansPro-Black.ttf" id="17_dtcsy"]
 [ext_resource type="Texture2D" uid="uid://boqvc8heo780j" path="res://assets/sprites/effects/LightEmit.png" id="17_n0oqe"]
 [ext_resource type="Texture2D" uid="uid://bx2i0736ldi0q" path="res://assets/sprites/HUD/dicaUI.png" id="18_hqxlq"]
@@ -111,30 +115,45 @@ _data = {
 "Walking_out": SubResource("Animation_tfj1d")
 }
 
+[sub_resource type="Animation" id="Animation_ic5b2"]
+resource_name = "light_on"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_c8ih3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nui1q"]
+_data = {
+"RESET": SubResource("Animation_c8ih3"),
+"light_on": SubResource("Animation_ic5b2")
+}
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mdqtg"]
 texture = ExtResource("11_r7xg7")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_se711"]
-atlas = ExtResource("16_ba6rb")
-region = Rect2(46, 0, 23, 35)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ju5mw"]
-atlas = ExtResource("16_ba6rb")
-region = Rect2(69, 0, 23, 35)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_snj0f"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_se711")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ju5mw")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ll56s"]
 texture = ExtResource("10_xep2s")
@@ -186,12 +205,22 @@ texture = ExtResource("4_4mtt1")
 
 [node name="products" type="Node2D" parent="."]
 
-[node name="agua" parent="products" instance=ExtResource("3_6lr12")]
-position = Vector2(1228, 319)
+[node name="Agua" parent="products" instance=ExtResource("3_6lr12")]
+position = Vector2(1232, 320)
 scale = Vector2(2, 2)
 texture = ExtResource("5_scjtr")
 hframes = 1
 id = 0
+
+[node name="ButtonPrefab" parent="products/Agua" index="0"]
+anchors_preset = -1
+anchor_left = -0.09375
+anchor_top = -0.25
+anchor_right = 0.09375
+anchor_bottom = 0.25
+tooltip_text = "Água
+"
+metadata/_edit_use_anchors_ = true
 
 [node name="sodaCaustica" parent="products" instance=ExtResource("3_6lr12")]
 position = Vector2(1080, 328)
@@ -319,6 +348,71 @@ tooltip_text = "Garrafa de Pet
 "
 metadata/_edit_use_anchors_ = true
 
+[node name="Vinho" parent="products" instance=ExtResource("3_6lr12")]
+position = Vector2(1048, 512)
+texture = ExtResource("10_rqdwu")
+hframes = 1
+id = 10
+
+[node name="ButtonPrefab" parent="products/Vinho" index="0"]
+anchors_preset = -1
+anchor_top = 0.1875
+anchor_bottom = 0.1875
+tooltip_text = "Vinho
+
+
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Zippo" parent="products" instance=ExtResource("3_6lr12")]
+position = Vector2(1096, 512)
+texture = ExtResource("11_oa8xk")
+hframes = 1
+id = 11
+
+[node name="ButtonPrefab" parent="products/Zippo" index="0"]
+anchors_preset = -1
+anchor_left = 0.0208321
+anchor_right = 0.0833321
+offset_left = -5.33331
+offset_right = 4.66669
+tooltip_text = "Fluido de zippo
+
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Areia" parent="products" instance=ExtResource("3_6lr12")]
+position = Vector2(1152, 512)
+texture = ExtResource("12_on5bd")
+hframes = 1
+id = 12
+
+[node name="ButtonPrefab" parent="products/Areia" index="0"]
+anchors_preset = -1
+anchor_left = 0.0208321
+anchor_right = 0.0833321
+offset_left = -5.33331
+offset_right = 4.66669
+tooltip_text = "Areia
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Carta" parent="products" instance=ExtResource("3_6lr12")]
+position = Vector2(1216, 512)
+texture = ExtResource("12_i63v7")
+hframes = 1
+id = 13
+
+[node name="ButtonPrefab" parent="products/Carta" index="0"]
+anchors_preset = -1
+anchor_left = -0.541668
+anchor_right = -0.166668
+offset_left = 0.666687
+offset_right = 10.6667
+tooltip_text = "Carta
+"
+metadata/_edit_use_anchors_ = true
+
 [node name="TuboDeEnsaio" parent="products" instance=ExtResource("3_6lr12")]
 position = Vector2(856, 456)
 texture = ExtResource("7_oohu0")
@@ -373,6 +467,31 @@ tooltip_text = "Erlenmeyer
 
 "
 metadata/_edit_use_anchors_ = true
+
+[node name="Fire" parent="products" instance=ExtResource("3_6lr12")]
+position = Vector2(296, 504)
+texture = ExtResource("11_5enf0")
+hframes = 2
+id = 14
+
+[node name="ButtonPrefab" parent="products/Fire" index="0"]
+anchors_preset = -1
+anchor_top = -0.15625
+anchor_bottom = 0.25
+tooltip_text = "Fogo
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="products/Fire"]
+libraries = {
+"": SubResource("AnimationLibrary_nui1q")
+}
+
+[node name="PointLight2D" type="PointLight2D" parent="products/Fire"]
+scale = Vector2(0.0182292, 0.0182292)
+color = Color(1, 1, 0, 1)
+energy = 0.5
+texture = ExtResource("17_n0oqe")
 
 [node name="letreiro" type="TextureRect" parent="."]
 layout_mode = 1
@@ -461,19 +580,6 @@ position = Vector2(128, 472)
 scale = Vector2(5.05263, 6.38334)
 texture = ExtResource("10_6yvhe")
 
-[node name="fire" type="AnimatedSprite2D" parent="."]
-position = Vector2(296, 480)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_snj0f")
-frame_progress = 0.604922
-
-[node name="PointLight2D" type="PointLight2D" parent="fire"]
-position = Vector2(0, 8)
-scale = Vector2(0.0182292, 0.0182292)
-color = Color(1, 1, 0, 1)
-energy = 0.5
-texture = ExtResource("17_n0oqe")
-
 [node name="DicaUi" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 31.0
@@ -545,6 +651,7 @@ scale = Vector2(3, 3)
 [connection signal="mouse_exited" from="UndoButton" to="UndoButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="UndoButton" to="." method="_on_undo_button_pressed"]
 
+[editable path="products/Agua"]
 [editable path="products/sodaCaustica"]
 [editable path="products/azulDeMetileno"]
 [editable path="products/bicarbonatoDeSodio"]
@@ -554,7 +661,12 @@ scale = Vector2(3, 3)
 [editable path="products/glicose"]
 [editable path="products/bexiga"]
 [editable path="products/GarrafaPet"]
+[editable path="products/Vinho"]
+[editable path="products/Zippo"]
+[editable path="products/Areia"]
+[editable path="products/Carta"]
 [editable path="products/TuboDeEnsaio"]
 [editable path="products/tubinho"]
 [editable path="products/tubinho2"]
 [editable path="products/Erlenmeyer"]
+[editable path="products/Fire"]

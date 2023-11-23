@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://byyyxftwtwi1k"]
+
+[ext_resource type="PackedScene" uid="uid://d3nsmsh3ykq3i" path="res://Scene/Prefabs/Products/Generic/GenericProduct.tscn" id="1_7yiwa"]
+[ext_resource type="Texture2D" uid="uid://26xleo3x3hmt" path="res://assets/sprites/individuais/areia.png" id="2_5p6co"]
+
+[node name="ProductSprite" instance=ExtResource("1_7yiwa")]
+texture = ExtResource("2_5p6co")
+product_id = 12
+product_name = "Areia"

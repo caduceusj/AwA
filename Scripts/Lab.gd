@@ -22,7 +22,7 @@ var is_last_message: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$fire.play("default")
+	$products/Fire/AnimationPlayer.play("light_on")
 	$DicaUi.visible = false
 	instance_experiments()
 	
@@ -111,7 +111,7 @@ func run_experiment() -> void:
 	showDicaUi(correct_experiment.experiment_name)
 	correct_experiment.visible = true
 	correct_experiment.run_animation()
-	await(get_tree().create_timer(3.0).timeout)
+	await(get_tree().create_timer(4.0).timeout)
 	GameManager.current_state = GameManager.state.SELECTION
 	correct_experiment.visible = false
 	clear()

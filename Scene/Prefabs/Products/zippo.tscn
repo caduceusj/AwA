@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://mqdgmnxfsvjt"]
+
+[ext_resource type="PackedScene" uid="uid://d3nsmsh3ykq3i" path="res://Scene/Prefabs/Products/Generic/GenericProduct.tscn" id="1_cypoi"]
+[ext_resource type="Texture2D" uid="uid://b5qfalkpc58pq" path="res://assets/sprites/individuais/zipo.png" id="2_4fryf"]
+
+[node name="ProductSprite" instance=ExtResource("1_cypoi")]
+texture = ExtResource("2_4fryf")
+product_id = 11
+product_name = "Fluido de zippo"
