@@ -33,6 +33,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-144, 400)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_31uxr"]
 resource_name = "Walking_in"
@@ -49,6 +61,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-72, 424), Vector2(72, 408), Vector2(192, 376), Vector2(264, 400), Vector2(384, 384)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_tfj1d"]
 resource_name = "Walking_out"
@@ -64,6 +88,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(384, 384), Vector2(264, 400), Vector2(192, 376), Vector2(72, 408), Vector2(-72, 392), Vector2(-136, 424)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w4a22"]
@@ -133,6 +169,7 @@ texture = ExtResource("2_dwkyh")
 position = Vector2(-144, 400)
 scale = Vector2(4.42207, 4.42207)
 texture = ExtResource("4_sbmky")
+flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cientista"]
 libraries = {

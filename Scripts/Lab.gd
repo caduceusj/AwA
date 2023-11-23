@@ -15,6 +15,9 @@ var correct_experiment: GenericExperiment
 @onready var text_field: TextureButton = $DicaUi
 @onready var text_field_label: Label = $DicaUi/Label
 
+var dialogue: PackedScene = preload("res://Scene/Miscellaneous/DialogueBox.tscn")
+var dialogue_instance: DialogueBox = null
+
 var is_last_message: bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -37,13 +40,21 @@ func instance_experiments() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(GameManager.current_state == GameManager.state.INTRO):
-		pass
+		if(Input.is_action_just_pressed("ui_accept") && dialogue_instance != null):
+			var dialogue_ended: bool = !(await dialogue_instance.handle_next_button())
+			if(dialogue_ended):
+				handle_dialogue_end()
 	elif(GameManager.current_state == GameManager.state.SELECTION):
 		pass
 	elif(GameManager.current_state == GameManager.state.RESULT):
 		pass
 	elif(GameManager.current_state == GameManager.state.POST_RESULT):
 		pass
+
+func handle_dialogue_end() -> void:
+	dialogue_instance.queue_free()
+	scientist_animation_player.play("Walking_out")
+	combine_button.set_disabled(true)
 
 func update_slots() -> void:
 	for slot_position in selected_products.size():
@@ -110,13 +121,9 @@ func _on_dica_ui_timer_timeout():
 
 func _on_combine_button_pressed():
 	if(GameManager.current_state == GameManager.state.INTRO):
-		if(!is_last_message):
-			text_field_label.set_text("Clique neles e depois clique em combinar para descobrir se você acertou. Boa sorte!")
-			is_last_message = true
-		else:
-			text_field_label.set_text("Até mais, meu aprendiz")
-			scientist_animation_player.play("Walking_out")
-			combine_button.set_disabled(true)
+		var dialogue_ended: bool = !(await dialogue_instance.handle_next_button())
+		if(dialogue_ended):
+			handle_dialogue_end()
 	elif(GameManager.current_state == GameManager.state.SELECTION):
 		if(is_reaction_valid()):
 			run_experiment()
@@ -127,9 +134,11 @@ func _on_combine_button_pressed():
 func _on_animation_player_animation_finished(anim_name):
 	if(anim_name == "Walking_in"):
 		combine_button.set_disabled(false)
-		text_field.set_visible(true)
-		text_field_label.set_text("Olá jovem cientista, o desafio de hoje será descobrir todos os experimentos possíveis com o produtos ao lado")
+		
+		dialogue_instance = dialogue.instantiate()
+		dialogue_instance.dialogue_path = "res://assets/Dialogues/Scientist_Intro.json"
+		dialogue_instance.text_speed = 0.03
+		add_child(dialogue_instance)
 	if(anim_name == "Walking_out"):
-		text_field.set_visible(false)
 		combine_button.set_disabled(false)
 		GameManager.current_state = GameManager.state.SELECTION
