@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dkkf14r4l2td2" path="res://assets/sprites/tubinhosDecorativos.png" id="10_6yvhe"]
 [ext_resource type="Texture2D" uid="uid://djxkc3iwwrrqk" path="res://assets/sprites/individuais/vinho.png" id="10_rqdwu"]
 [ext_resource type="Texture2D" uid="uid://ck08lpcd2vua1" path="res://assets/sprites/HUD/letreiro.png" id="10_xep2s"]
-[ext_resource type="Texture2D" path="res://assets/sprites/animations/fogao_acesso.png" id="11_5enf0"]
+[ext_resource type="Texture2D" uid="uid://dhmkpp4y7q03l" path="res://assets/sprites/animations/fogao_acesso.png" id="11_5enf0"]
 [ext_resource type="Texture2D" uid="uid://bns70ncowd013" path="res://assets/sprites/individuais/zipo.png" id="11_oa8xk"]
 [ext_resource type="Texture2D" uid="uid://dgcluw3mi0xry" path="res://assets/sprites/HUD/Moldura.png" id="11_r7xg7"]
 [ext_resource type="Texture2D" uid="uid://d21ollvsrxu1o" path="res://assets/sprites/individuais/carta.png" id="12_i63v7"]
@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bx2i0736ldi0q" path="res://assets/sprites/HUD/dicaUI.png" id="18_hqxlq"]
 [ext_resource type="Script" path="res://Scripts/HUD/UndoButton.gd" id="19_ib1j0"]
 [ext_resource type="Script" path="res://Scripts/HUD/CombineButton.gd" id="19_jb3mc"]
-[ext_resource type="Texture2D" path="res://assets/sprites/HUD/undo.png" id="19_tf2an"]
+[ext_resource type="Texture2D" uid="uid://b444lhyb21xae" path="res://assets/sprites/HUD/undo.png" id="19_tf2an"]
 
 [sub_resource type="Animation" id="Animation_kmgln"]
 length = 0.001
@@ -659,6 +659,7 @@ position = Vector2(480, 440)
 scale = Vector2(3, 3)
 
 [node name="CombineButton2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1109.0
 offset_top = 36.0
 offset_right = 1233.0

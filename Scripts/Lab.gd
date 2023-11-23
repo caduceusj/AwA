@@ -31,8 +31,7 @@ func _ready():
 	if(GameManager.current_state == GameManager.state.INTRO):
 		scientist_animation_player.play("Walking_in")
 		combine_button.set_disabled(true)
-
-		if(experiments_instances.is_empty()) : 
+		if(!experiments_instances.is_empty()) : 
 			instance_experiments()
 		
 
