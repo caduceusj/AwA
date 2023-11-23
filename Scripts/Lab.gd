@@ -101,6 +101,8 @@ func is_reaction_valid() -> bool:
 		if(!has_wrong_product && experiment.product_instances.size() == selected_products.size()):
 #			Mark receipt_book the correct experiment
 			correct_experiment = experiment
+			if(GameManager.correct_experiments.find(experiment) == -1):
+				GameManager.correct_experiments.append(correct_experiment)
 			is_valid = true
 		correct_products.clear() # Melhorar clear
 

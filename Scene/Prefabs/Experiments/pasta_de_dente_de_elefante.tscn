@@ -169,6 +169,7 @@ animations = [{
 }]
 
 [node name="GenericExperiment" instance=ExtResource("1_bk2au")]
+visible = false
 sprite_frames = SubResource("SpriteFrames_i1nwa")
 frame_progress = 0.762782
 experiment_name = "Pasta de dente de elefante"
