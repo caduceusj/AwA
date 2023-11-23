@@ -142,3 +142,8 @@ func _on_animation_player_animation_finished(anim_name):
 	if(anim_name == "Walking_out"):
 		combine_button.set_disabled(false)
 		GameManager.current_state = GameManager.state.SELECTION
+
+
+func _on_undo_button_pressed():
+	if(GameManager.current_state == GameManager.state.SELECTION):
+		clear()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dsavltsoufo77"]
+[gd_scene load_steps=33 format=3 uid="uid://dsavltsoufo77"]
 
 [ext_resource type="Script" path="res://Scripts/Lab.gd" id="1_2t6wo"]
 [ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://assets/sprites/Background.png" id="2_dwkyh"]
@@ -17,7 +17,9 @@
 [ext_resource type="FontFile" uid="uid://ysnlin44jdcx" path="res://assets/fonts/SourceSansPro-Black.ttf" id="17_dtcsy"]
 [ext_resource type="Texture2D" uid="uid://boqvc8heo780j" path="res://assets/sprites/effects/LightEmit.png" id="17_n0oqe"]
 [ext_resource type="Texture2D" uid="uid://bx2i0736ldi0q" path="res://assets/sprites/HUD/dicaUI.png" id="18_hqxlq"]
+[ext_resource type="Script" path="res://Scripts/HUD/UndoButton.gd" id="19_ib1j0"]
 [ext_resource type="Script" path="res://Scripts/HUD/CombineButton.gd" id="19_jb3mc"]
+[ext_resource type="Texture2D" uid="uid://b444lhyb21xae" path="res://assets/sprites/HUD/undo.png" id="19_tf2an"]
 
 [sub_resource type="Animation" id="Animation_kmgln"]
 length = 0.001
@@ -509,6 +511,27 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_es58r")
 text = "Combinar"
 script = ExtResource("19_jb3mc")
 
+[node name="UndoButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 624.0
+offset_right = 264.0
+offset_bottom = 672.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ll56s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_38nfk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_85su2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_es58r")
+script = ExtResource("19_ib1j0")
+
+[node name="TextureRect" type="TextureRect" parent="UndoButton"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("19_tf2an")
+
 [node name="Experiment" type="Node2D" parent="."]
 position = Vector2(480, 440)
 scale = Vector2(3, 3)
@@ -518,6 +541,9 @@ scale = Vector2(3, 3)
 [connection signal="mouse_entered" from="CombineButton" to="CombineButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CombineButton" to="CombineButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="CombineButton" to="." method="_on_combine_button_pressed"]
+[connection signal="mouse_entered" from="UndoButton" to="UndoButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UndoButton" to="UndoButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="UndoButton" to="." method="_on_undo_button_pressed"]
 
 [editable path="products/sodaCaustica"]
 [editable path="products/azulDeMetileno"]

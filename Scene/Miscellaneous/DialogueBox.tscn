@@ -79,7 +79,7 @@ layout_mode = 0
 offset_left = 440.0
 offset_top = 112.0
 offset_right = 472.0
-offset_bottom = 144.001
+offset_bottom = 144.0
 scale = Vector2(0.623282, 0.623282)
 texture = ExtResource("3_r86i8")
 
