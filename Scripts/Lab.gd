@@ -28,15 +28,12 @@ func _ready():
 	$DicaUi.visible = false
 	pause.visible = false
 	
-	
-	
-	
 	if(GameManager.current_state == GameManager.state.INTRO):
 		scientist_animation_player.play("Walking_in")
 		combine_button.set_disabled(true)
 
 		if(experiments_instances.is_empty()) : 
-			instance_experiments()# Rodar introdução
+			instance_experiments()
 		
 
 func instance_experiments() -> void:
@@ -158,9 +155,8 @@ func _on_animation_player_animation_finished(anim_name):
 func _on_undo_button_pressed():
 	if(GameManager.current_state == GameManager.state.SELECTION):
 		clear()
-			clear()
-
 
 func _on_combine_button_2_gui_input(event):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT :
-		pause.visible = true
+	if(GameManager.current_state == GameManager.state.SELECTION):
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT :
+			pause.visible = true

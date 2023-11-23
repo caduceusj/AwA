@@ -1,0 +1,456 @@
+[gd_scene load_steps=27 format=3 uid="uid://d00umsxbggwpp"]
+
+[ext_resource type="Script" path="res://Scripts/Lab.gd" id="1_5i2cu"]
+[ext_resource type="PackedScene" uid="uid://niyslslsclfg" path="res://Scene/Prefabs/Experiments/pasta_de_dente_de_elefante.tscn" id="2_chqmp"]
+[ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://assets/sprites/Background.png" id="3_6ar6h"]
+[ext_resource type="Texture2D" uid="uid://d11total1yswu" path="res://assets/sprites/individuais/Mesa.png" id="4_c6b1o"]
+[ext_resource type="PackedScene" uid="uid://c4jyprru63f33" path="res://Scene/Prefabs/HUD/button_prefab.tscn" id="5_q7fk4"]
+[ext_resource type="Texture2D" uid="uid://b6lpvqnvbsvnq" path="res://assets/sprites/individuais/agua.png" id="6_lmv6y"]
+[ext_resource type="Texture2D" uid="uid://d2rl2v0foistu" path="res://assets/sprites/componentes 48x32.png" id="7_5qbrg"]
+[ext_resource type="Texture2D" uid="uid://c8tk7w7hr2b6x" path="res://assets/sprites/individuais/bexiga.png" id="8_55bt5"]
+[ext_resource type="Texture2D" uid="uid://dpokrkiyy635t" path="res://assets/sprites/Componentes48x48.png" id="9_u7ih2"]
+[ext_resource type="Texture2D" uid="uid://ck08lpcd2vua1" path="res://assets/sprites/HUD/letreiro.png" id="10_c48wr"]
+[ext_resource type="Texture2D" uid="uid://dgcluw3mi0xry" path="res://assets/sprites/HUD/Moldura.png" id="11_s3jx7"]
+[ext_resource type="Texture2D" uid="uid://dkkf14r4l2td2" path="res://assets/sprites/tubinhosDecorativos.png" id="12_oxomj"]
+[ext_resource type="Texture2D" uid="uid://cy3o1arbr35nw" path="res://assets/sprites/animations/fogao.png" id="13_1hd7s"]
+[ext_resource type="Texture2D" uid="uid://boqvc8heo780j" path="res://assets/sprites/effects/LightEmit.png" id="14_2mwlv"]
+[ext_resource type="Texture2D" uid="uid://bx2i0736ldi0q" path="res://assets/sprites/HUD/dicaUI.png" id="15_wbrma"]
+[ext_resource type="FontFile" uid="uid://ysnlin44jdcx" path="res://assets/fonts/SourceSansPro-Black.ttf" id="16_cqx3x"]
+[ext_resource type="Script" path="res://Scripts/HUD/CombineButton.gd" id="17_lbh5w"]
+[ext_resource type="PackedScene" uid="uid://cssk822pxofe7" path="res://Scene/MainScreen/inGameMenu.tscn" id="18_byke1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mdqtg"]
+texture = ExtResource("11_s3jx7")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se711"]
+atlas = ExtResource("13_1hd7s")
+region = Rect2(46, 0, 23, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju5mw"]
+atlas = ExtResource("13_1hd7s")
+region = Rect2(69, 0, 23, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_snj0f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se711")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju5mw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ll56s"]
+texture = ExtResource("10_c48wr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_38nfk"]
+texture = ExtResource("10_c48wr")
+modulate_color = Color(0.658824, 0.658824, 0.658824, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_85su2"]
+texture = ExtResource("10_c48wr")
+modulate_color = Color(0.364706, 0.364706, 0.364706, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_es58r"]
+texture = ExtResource("10_c48wr")
+modulate_color = Color(0.537255, 0.537255, 0.537255, 1)
+
+[node name="Lab" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5i2cu")
+experiments_list = Array[PackedScene]([ExtResource("2_chqmp")])
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("3_6ar6h")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("4_c6b1o")
+
+[node name="products" type="Node2D" parent="."]
+
+[node name="agua" parent="products" instance=ExtResource("5_q7fk4")]
+position = Vector2(1228, 319)
+scale = Vector2(2, 2)
+texture = ExtResource("6_lmv6y")
+hframes = 1
+id = 0
+
+[node name="sodaCaustica" parent="products" instance=ExtResource("5_q7fk4")]
+position = Vector2(1080, 328)
+id = 6
+
+[node name="ButtonPrefab" parent="products/sodaCaustica" index="0"]
+tooltip_text = "Soda Caústica"
+metadata/_edit_use_anchors_ = true
+
+[node name="azulDeMetileno" parent="products" instance=ExtResource("5_q7fk4")]
+position = Vector2(1072, 448)
+frame = 1
+id = 2
+
+[node name="ButtonPrefab" parent="products/azulDeMetileno" index="0"]
+anchors_preset = -1
+anchor_top = 0.3125
+anchor_bottom = 0.3125
+tooltip_text = "Azul de Metileno
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="bicarbonatoDeSodio" parent="products" instance=ExtResource("5_q7fk4")]
+position = Vector2(1120, 448)
+frame = 2
+id = 4
+
+[node name="ButtonPrefab" parent="products/bicarbonatoDeSodio" index="0"]
+anchors_preset = -1
+anchor_top = 0.375
+anchor_bottom = 0.375
+tooltip_text = "Bicarbonato de Sódio
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="aguaOxigenada" parent="products" instance=ExtResource("5_q7fk4")]
+position = Vector2(1160, 448)
+frame = 3
+id = 1
+
+[node name="ButtonPrefab" parent="products/aguaOxigenada" index="0"]
+anchors_preset = -1
+anchor_top = 0.25
+anchor_bottom = 0.25
+tooltip_text = "Água Oxigenada
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="iodetoDePotassio" parent="products" instance=ExtResource("5_q7fk4")]
+position = Vector2(1200, 448)
+frame = 5
+id = 5
+
+[node name="ButtonPrefab" parent="products/iodetoDePotassio" index="0"]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+tooltip_text = "Iodeto De Potassio
+
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="vinagre" parent="products" instance=ExtResource("5_q7fk4")]
+position = Vector2(1032, 304)
+texture = ExtResource("7_5qbrg")
+hframes = 3
+id = 7
+
+[node name="ButtonPrefab" parent="products/vinagre" index="0"]
+anchors_preset = -1
+anchor_bottom = 0.25
+tooltip_text = "Vinagre
+
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="glicose" parent="products" instance=ExtResource("5_q7fk4")]
+position = Vector2(1128, 304)
+texture = ExtResource("7_5qbrg")
+hframes = 3
+frame = 2
+id = 8
+
+[node name="ButtonPrefab" parent="products/glicose" index="0"]
+anchors_preset = -1
+anchor_top = 0.21875
+anchor_right = 0.125
+anchor_bottom = 0.25
+tooltip_text = "Glicose"
+metadata/_edit_use_anchors_ = true
+
+[node name="bexiga" parent="products" instance=ExtResource("5_q7fk4")]
+position = Vector2(1184, 320)
+scale = Vector2(6.39998, 6.22222)
+texture = ExtResource("8_55bt5")
+hframes = 1
+id = 3
+
+[node name="ButtonPrefab" parent="products/bexiga" index="0"]
+anchors_preset = -1
+anchor_left = -0.152638
+anchor_top = -0.0951033
+anchor_right = -0.152638
+anchor_bottom = -0.0951033
+offset_left = -1.23681
+offset_top = -3.14407
+offset_right = 3.76319
+offset_bottom = 5.85593
+tooltip_text = "Bexiga"
+metadata/_edit_use_anchors_ = true
+
+[node name="GarrafaPet" parent="products" instance=ExtResource("5_q7fk4")]
+position = Vector2(912, 480)
+texture = ExtResource("7_5qbrg")
+hframes = 3
+frame = 1
+id = 9
+
+[node name="ButtonPrefab" parent="products/GarrafaPet" index="0"]
+anchors_preset = -1
+anchor_top = -0.03125
+anchor_bottom = 0.25
+tooltip_text = "Garrafa de Pet
+
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="TuboDeEnsaio" parent="products" instance=ExtResource("5_q7fk4")]
+position = Vector2(856, 456)
+texture = ExtResource("9_u7ih2")
+hframes = 4
+
+[node name="ButtonPrefab" parent="products/TuboDeEnsaio" index="0"]
+anchors_preset = -1
+anchor_top = -0.15625
+anchor_bottom = 0.25
+tooltip_text = "Tubo de Ensaio"
+metadata/_edit_use_anchors_ = true
+
+[node name="tubinho" parent="products" instance=ExtResource("5_q7fk4")]
+position = Vector2(808, 456)
+texture = ExtResource("9_u7ih2")
+hframes = 4
+frame = 1
+
+[node name="ButtonPrefab" parent="products/tubinho" index="0"]
+anchors_preset = -1
+anchor_top = -0.15625
+anchor_bottom = 0.25
+tooltip_text = "Tubinho
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="tubinho2" parent="products" instance=ExtResource("5_q7fk4")]
+position = Vector2(760, 456)
+texture = ExtResource("9_u7ih2")
+hframes = 4
+frame = 2
+
+[node name="ButtonPrefab" parent="products/tubinho2" index="0"]
+anchors_preset = -1
+anchor_top = -0.15625
+anchor_bottom = 0.25
+tooltip_text = "Tubinho
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Erlenmeyer" parent="products" instance=ExtResource("5_q7fk4")]
+position = Vector2(712, 456)
+texture = ExtResource("9_u7ih2")
+hframes = 4
+frame = 3
+
+[node name="ButtonPrefab" parent="products/Erlenmeyer" index="0"]
+anchors_preset = -1
+anchor_top = -0.15625
+anchor_bottom = 0.25
+tooltip_text = "Erlenmeyer
+
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="letreiro" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -336.0
+offset_top = -120.0
+offset_right = 72.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("10_c48wr")
+
+[node name="itemContainer" type="GridContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -312.0
+offset_top = -104.0
+offset_right = 48.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/h_separation = 10
+columns = 5
+
+[node name="slot0" type="Panel" parent="itemContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_mdqtg")
+
+[node name="sprite" type="Sprite2D" parent="itemContainer/slot0"]
+position = Vector2(32, 32)
+scale = Vector2(3, 3)
+
+[node name="slot1" type="Panel" parent="itemContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_mdqtg")
+
+[node name="sprite" type="Sprite2D" parent="itemContainer/slot1"]
+position = Vector2(32, 32)
+scale = Vector2(3, 3)
+
+[node name="slot2" type="Panel" parent="itemContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_mdqtg")
+
+[node name="sprite" type="Sprite2D" parent="itemContainer/slot2"]
+position = Vector2(32, 32)
+scale = Vector2(3, 3)
+
+[node name="slot3" type="Panel" parent="itemContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_mdqtg")
+
+[node name="sprite" type="Sprite2D" parent="itemContainer/slot3"]
+position = Vector2(32, 32)
+scale = Vector2(3, 3)
+
+[node name="slot4" type="Panel" parent="itemContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_mdqtg")
+
+[node name="sprite" type="Sprite2D" parent="itemContainer/slot4"]
+position = Vector2(32, 32)
+scale = Vector2(3, 3)
+
+[node name="Tubo de ensaio decorativo" type="Sprite2D" parent="."]
+position = Vector2(128, 472)
+scale = Vector2(5.05263, 6.38334)
+texture = ExtResource("12_oxomj")
+
+[node name="fire" type="AnimatedSprite2D" parent="."]
+position = Vector2(296, 480)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_snj0f")
+frame_progress = 0.604922
+
+[node name="PointLight2D" type="PointLight2D" parent="fire"]
+position = Vector2(0, 8)
+scale = Vector2(0.0182292, 0.0182292)
+color = Color(1, 1, 0, 1)
+energy = 0.5
+texture = ExtResource("14_2mwlv")
+
+[node name="DicaUi" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 31.0
+offset_right = 531.0
+offset_bottom = 191.0
+texture_normal = ExtResource("15_wbrma")
+
+[node name="Label" type="Label" parent="DicaUi"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 38.0
+offset_right = 472.0
+offset_bottom = 122.0
+theme_override_fonts/font = ExtResource("16_cqx3x")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DicaUITimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="CombineButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 616.0
+offset_right = 1088.0
+offset_bottom = 680.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ll56s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_38nfk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_85su2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_es58r")
+text = "Combinar"
+script = ExtResource("17_lbh5w")
+
+[node name="Experiment" type="Node2D" parent="."]
+position = Vector2(480, 440)
+scale = Vector2(3, 3)
+
+[node name="CombineButton2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1109.0
+offset_top = 36.0
+offset_right = 1233.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ll56s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_38nfk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_85su2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_es58r")
+text = "Pausar"
+script = ExtResource("17_lbh5w")
+
+[node name="MarginContainer" parent="." instance=ExtResource("18_byke1")]
+layout_mode = 1
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1.0
+offset_bottom = 2.0
+
+[connection signal="timeout" from="DicaUITimer" to="." method="_on_dica_ui_timer_timeout"]
+[connection signal="mouse_entered" from="CombineButton" to="CombineButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CombineButton" to="CombineButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="CombineButton" to="." method="_on_combine_button_pressed"]
+[connection signal="gui_input" from="CombineButton2" to="." method="_on_combine_button_2_gui_input"]
+[connection signal="mouse_entered" from="CombineButton2" to="CombineButton2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CombineButton2" to="CombineButton2" method="_on_mouse_exited"]
+
+[editable path="products/sodaCaustica"]
+[editable path="products/azulDeMetileno"]
+[editable path="products/bicarbonatoDeSodio"]
+[editable path="products/aguaOxigenada"]
+[editable path="products/iodetoDePotassio"]
+[editable path="products/vinagre"]
+[editable path="products/glicose"]
+[editable path="products/bexiga"]
+[editable path="products/GarrafaPet"]
+[editable path="products/TuboDeEnsaio"]
+[editable path="products/tubinho"]
+[editable path="products/tubinho2"]
+[editable path="products/Erlenmeyer"]

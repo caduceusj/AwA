@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dsavltsoufo77"]
+[gd_scene load_steps=42 format=3 uid="uid://dsavltsoufo77"]
 
 [ext_resource type="Script" path="res://Scripts/Lab.gd" id="1_2t6wo"]
 [ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://assets/sprites/Background.png" id="2_dwkyh"]
@@ -11,20 +11,20 @@
 [ext_resource type="Texture2D" uid="uid://c8tk7w7hr2b6x" path="res://assets/sprites/individuais/bexiga.png" id="6_qtg5v"]
 [ext_resource type="Texture2D" uid="uid://dpokrkiyy635t" path="res://assets/sprites/Componentes48x48.png" id="7_oohu0"]
 [ext_resource type="Texture2D" uid="uid://dkkf14r4l2td2" path="res://assets/sprites/tubinhosDecorativos.png" id="10_6yvhe"]
-[ext_resource type="Texture2D" uid="uid://clud3201y5p3k" path="res://assets/sprites/individuais/vinho.png" id="10_rqdwu"]
+[ext_resource type="Texture2D" uid="uid://djxkc3iwwrrqk" path="res://assets/sprites/individuais/vinho.png" id="10_rqdwu"]
 [ext_resource type="Texture2D" uid="uid://ck08lpcd2vua1" path="res://assets/sprites/HUD/letreiro.png" id="10_xep2s"]
-[ext_resource type="Texture2D" uid="uid://dhmkpp4y7q03l" path="res://assets/sprites/animations/fogao_acesso.png" id="11_5enf0"]
-[ext_resource type="Texture2D" uid="uid://b5qfalkpc58pq" path="res://assets/sprites/individuais/zipo.png" id="11_oa8xk"]
+[ext_resource type="Texture2D" path="res://assets/sprites/animations/fogao_acesso.png" id="11_5enf0"]
+[ext_resource type="Texture2D" uid="uid://bns70ncowd013" path="res://assets/sprites/individuais/zipo.png" id="11_oa8xk"]
 [ext_resource type="Texture2D" uid="uid://dgcluw3mi0xry" path="res://assets/sprites/HUD/Moldura.png" id="11_r7xg7"]
-[ext_resource type="Texture2D" uid="uid://crsya2av2ahq7" path="res://assets/sprites/individuais/carta.png" id="12_i63v7"]
-[ext_resource type="Texture2D" uid="uid://26xleo3x3hmt" path="res://assets/sprites/individuais/areia.png" id="12_on5bd"]
+[ext_resource type="Texture2D" uid="uid://d21ollvsrxu1o" path="res://assets/sprites/individuais/carta.png" id="12_i63v7"]
+[ext_resource type="Texture2D" uid="uid://bbp6cm0rh2yit" path="res://assets/sprites/individuais/areia.png" id="12_on5bd"]
 [ext_resource type="FontFile" uid="uid://ysnlin44jdcx" path="res://assets/fonts/SourceSansPro-Black.ttf" id="17_dtcsy"]
 [ext_resource type="Texture2D" uid="uid://boqvc8heo780j" path="res://assets/sprites/effects/LightEmit.png" id="17_n0oqe"]
 [ext_resource type="PackedScene" uid="uid://cssk822pxofe7" path="res://Scene/MainScreen/inGameMenu.tscn" id="18_8vlsh"]
 [ext_resource type="Texture2D" uid="uid://bx2i0736ldi0q" path="res://assets/sprites/HUD/dicaUI.png" id="18_hqxlq"]
 [ext_resource type="Script" path="res://Scripts/HUD/UndoButton.gd" id="19_ib1j0"]
 [ext_resource type="Script" path="res://Scripts/HUD/CombineButton.gd" id="19_jb3mc"]
-[ext_resource type="Texture2D" uid="uid://b444lhyb21xae" path="res://assets/sprites/HUD/undo.png" id="19_tf2an"]
+[ext_resource type="Texture2D" path="res://assets/sprites/HUD/undo.png" id="19_tf2an"]
 
 [sub_resource type="Animation" id="Animation_kmgln"]
 length = 0.001
@@ -116,6 +116,21 @@ _data = {
 "Walking_out": SubResource("Animation_tfj1d")
 }
 
+[sub_resource type="Animation" id="Animation_c8ih3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_ic5b2"]
 resource_name = "light_on"
 loop_mode = 1
@@ -130,21 +145,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
-}
-
-[sub_resource type="Animation" id="Animation_c8ih3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nui1q"]
@@ -168,6 +168,21 @@ texture = ExtResource("10_xep2s")
 modulate_color = Color(0.364706, 0.364706, 0.364706, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_es58r"]
+texture = ExtResource("10_xep2s")
+modulate_color = Color(0.537255, 0.537255, 0.537255, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_si7dq"]
+texture = ExtResource("10_xep2s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_le723"]
+texture = ExtResource("10_xep2s")
+modulate_color = Color(0.658824, 0.658824, 0.658824, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g6b10"]
+texture = ExtResource("10_xep2s")
+modulate_color = Color(0.364706, 0.364706, 0.364706, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_boyk4"]
 texture = ExtResource("10_xep2s")
 modulate_color = Color(0.537255, 0.537255, 0.537255, 1)
 
@@ -643,6 +658,26 @@ texture = ExtResource("19_tf2an")
 position = Vector2(480, 440)
 scale = Vector2(3, 3)
 
+[node name="CombineButton2" type="Button" parent="."]
+offset_left = 1109.0
+offset_top = 36.0
+offset_right = 1233.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_si7dq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_le723")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_g6b10")
+theme_override_styles/focus = SubResource("StyleBoxTexture_boyk4")
+text = "Pausar"
+script = ExtResource("19_ib1j0")
+
+[node name="MarginContainer" parent="." instance=ExtResource("18_8vlsh")]
+layout_mode = 1
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1.0
+offset_bottom = 2.0
+
 [connection signal="animation_finished" from="Cientista/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="DicaUITimer" to="." method="_on_dica_ui_timer_timeout"]
 [connection signal="mouse_entered" from="CombineButton" to="CombineButton" method="_on_mouse_entered"]
@@ -651,6 +686,9 @@ scale = Vector2(3, 3)
 [connection signal="mouse_entered" from="UndoButton" to="UndoButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="UndoButton" to="UndoButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="UndoButton" to="." method="_on_undo_button_pressed"]
+[connection signal="gui_input" from="CombineButton2" to="." method="_on_combine_button_2_gui_input"]
+[connection signal="mouse_entered" from="CombineButton2" to="CombineButton2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CombineButton2" to="CombineButton2" method="_on_mouse_exited"]
 
 [editable path="products/Agua"]
 [editable path="products/sodaCaustica"]
