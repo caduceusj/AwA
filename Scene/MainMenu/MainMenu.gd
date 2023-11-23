@@ -12,10 +12,10 @@ const optionsScene = "res://Scene/MainMenu/OptionsMenu.tscn"
 @onready var textTwo = $CenterContainer/VBoxContainer/Inputs/VBoxContainer/Options/HBoxContainer/OptionName
 @onready var textThree = $CenterContainer/VBoxContainer/Inputs/VBoxContainer/Quit/HBoxContainer/OptionName
 
-const originalFontColor = Color("#083040")
-const originalShadowColor = Color("#142e4001")
-const selectedFontColor = Color("#411808")
-const selectedShadowColor = Color("#400814")
+const originalFontColor = Color("#ffffff")
+const originalShadowColor = Color("#e1eefd")
+const selectedFontColor = Color("#65a7f4")
+const selectedShadowColor = Color("#2775c8")
 
 
 var currentSelection = 0

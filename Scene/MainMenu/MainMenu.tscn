@@ -28,6 +28,8 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/Title"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.427451, 0.682353, 0.8, 1)
+theme_override_colors/font_shadow_color = Color(0.152941, 0.458824, 0.784314, 1)
 theme_override_fonts/font = ExtResource("2_xsvkh")
 theme_override_font_sizes/font_size = 128
 text = "AwA"

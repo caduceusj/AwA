@@ -17,11 +17,14 @@ func _ready():
 	$fire.play("default")
 	$DicaUi.visible = false
 	pause.visible = false
-	instance_experiments()
+	
+	
+	
 	
 	if(GameManager.current_state == GameManager.state.INTRO):
-		# Rodar introdução
-		pass
+		if(experiments_instances.is_empty()) : 
+			instance_experiments()# Rodar introdução
+		
 
 func instance_experiments() -> void:
 	var instance: GenericExperiment

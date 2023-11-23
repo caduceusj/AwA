@@ -19,8 +19,6 @@ config/icon="res://icon.svg"
 
 GameManager="*res://Scripts/Global/GameManager.gd"
 ExperimentsManagerGlobal="*res://Scene/Global/ExperimentsManager.tscn"
-OptionsMenu="*res://Scene/MainMenu/OptionsMenu.gd"
-InGameMenu="*res://Scene/MainScreen/inGameMenu.gd"
 
 [display]
 
