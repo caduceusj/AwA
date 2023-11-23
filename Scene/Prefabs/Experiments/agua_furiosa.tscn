@@ -17,8 +17,6 @@ animations = [{
 [node name="GenericExperiment" instance=ExtResource("1_dx3t2")]
 visible = false
 sprite_frames = SubResource("SpriteFrames_aqoag")
-animation = &"run_experiment"
-frame = 0
 experiment_id = 1
 experiment_name = "Água furiosa"
 product_list = Array[PackedScene]([ExtResource("3_avna8"), ExtResource("4_jhja8"), ExtResource("5_tjbt1")])

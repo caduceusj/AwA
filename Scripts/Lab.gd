@@ -12,9 +12,19 @@ var all_correct_products: Array[GenericProduct]
 
 var correct_experiment: GenericExperiment
 
+@onready var scientist_animation_player: AnimationPlayer = $Cientista/AnimationPlayer
+@onready var combine_button: Button = $CombineButton
+@onready var text_field: TextureButton = $DicaUi
+@onready var text_field_label: Label = $DicaUi/Label
+
+var dialogue: PackedScene = preload("res://Scene/Miscellaneous/DialogueBox.tscn")
+var dialogue_instance: DialogueBox = null
+
+var is_last_message: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$fire.play("default")
+	$products/Fire/AnimationPlayer.play("light_on")
 	$DicaUi.visible = false
 	pause.visible = false
 	
@@ -22,6 +32,9 @@ func _ready():
 	
 	
 	if(GameManager.current_state == GameManager.state.INTRO):
+		scientist_animation_player.play("Walking_in")
+		combine_button.set_disabled(true)
+
 		if(experiments_instances.is_empty()) : 
 			instance_experiments()# Rodar introdução
 		
@@ -35,13 +48,21 @@ func instance_experiments() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(GameManager.current_state == GameManager.state.INTRO):
-		pass
+		if(Input.is_action_just_pressed("ui_accept") && dialogue_instance != null):
+			var dialogue_ended: bool = !(await dialogue_instance.handle_next_button())
+			if(dialogue_ended):
+				handle_dialogue_end()
 	elif(GameManager.current_state == GameManager.state.SELECTION):
 		pass
 	elif(GameManager.current_state == GameManager.state.RESULT):
 		pass
 	elif(GameManager.current_state == GameManager.state.POST_RESULT):
 		pass
+
+func handle_dialogue_end() -> void:
+	dialogue_instance.queue_free()
+	scientist_animation_player.play("Walking_out")
+	combine_button.set_disabled(true)
 
 func update_slots() -> void:
 	for slot_position in selected_products.size():
@@ -73,19 +94,23 @@ func select_product(product_id: int) -> void:
 func is_reaction_valid() -> bool:
 	var is_valid: bool = false
 	for experiment in ExperimentsManagerGlobal.experiment_list:
-		print(experiment.experiment_name)
-		for experiment_product in experiment.product_instances:
-			print(experiment_product.product_name)
-			for selected_product in selected_products:
+		var has_wrong_product: bool = false
+		for selected_product in selected_products:
+			var is_product_in_list: bool = false
+			for experiment_product in experiment.product_instances:
 				if(selected_product.product_id == experiment_product.product_id):
+					is_product_in_list = true
 					correct_products.append(selected_product)
 					all_correct_products.append(selected_product)
 					break
+			if(!is_product_in_list):
+				has_wrong_product = true
 # 		Mark receipt_book the corrects products
-		print(experiment.product_instances.size())
-		if(experiment.product_instances.size() == correct_products.size()):
+		if(!has_wrong_product && experiment.product_instances.size() == selected_products.size()):
 #			Mark receipt_book the correct experiment
 			correct_experiment = experiment
+			if(GameManager.correct_experiments.find(experiment) == -1):
+				GameManager.correct_experiments.append(correct_experiment)
 			is_valid = true
 		correct_products.clear() # Melhorar clear
 
@@ -96,7 +121,7 @@ func run_experiment() -> void:
 	showDicaUi(correct_experiment.experiment_name)
 	correct_experiment.visible = true
 	correct_experiment.run_animation()
-	await(get_tree().create_timer(3.0).timeout)
+	await(get_tree().create_timer(4.0).timeout)
 	GameManager.current_state = GameManager.state.SELECTION
 	correct_experiment.visible = false
 	clear()
@@ -106,11 +131,33 @@ func _on_dica_ui_timer_timeout():
 	
 
 func _on_combine_button_pressed():
-	if(GameManager.current_state == GameManager.state.SELECTION):
+	if(GameManager.current_state == GameManager.state.INTRO):
+		var dialogue_ended: bool = !(await dialogue_instance.handle_next_button())
+		if(dialogue_ended):
+			handle_dialogue_end()
+	elif(GameManager.current_state == GameManager.state.SELECTION):
 		if(is_reaction_valid()):
 			run_experiment()
 		else:
 			showDicaUi("Nenhum experimento realizado. \n Tente Novamente.")
+			clear()
+
+func _on_animation_player_animation_finished(anim_name):
+	if(anim_name == "Walking_in"):
+		combine_button.set_disabled(false)
+		
+		dialogue_instance = dialogue.instantiate()
+		dialogue_instance.dialogue_path = "res://assets/Dialogues/Scientist_Intro.json"
+		dialogue_instance.text_speed = 0.03
+		add_child(dialogue_instance)
+	if(anim_name == "Walking_out"):
+		combine_button.set_disabled(false)
+		GameManager.current_state = GameManager.state.SELECTION
+
+
+func _on_undo_button_pressed():
+	if(GameManager.current_state == GameManager.state.SELECTION):
+		clear()
 			clear()
 
 

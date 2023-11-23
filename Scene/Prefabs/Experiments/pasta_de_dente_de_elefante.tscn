@@ -171,8 +171,6 @@ animations = [{
 [node name="GenericExperiment" instance=ExtResource("1_bk2au")]
 visible = false
 sprite_frames = SubResource("SpriteFrames_i1nwa")
-animation = &"run_experiment"
-frame = 0
 frame_progress = 0.762782
 experiment_name = "Pasta de dente de elefante"
 product_list = Array[PackedScene]([ExtResource("3_77jyj"), ExtResource("4_rytng"), ExtResource("5_f8232")])

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfir8aukr0r52"]
+
+[ext_resource type="PackedScene" uid="uid://d3nsmsh3ykq3i" path="res://Scene/Prefabs/Products/Generic/GenericProduct.tscn" id="1_40kc0"]
+[ext_resource type="Texture2D" uid="uid://crsya2av2ahq7" path="res://assets/sprites/individuais/carta.png" id="2_x5je5"]
+
+[node name="ProductSprite" instance=ExtResource("1_40kc0")]
+texture = ExtResource("2_x5je5")
+product_id = 13
+product_name = "Carta"

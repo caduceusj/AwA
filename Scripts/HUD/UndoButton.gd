@@ -1,14 +1,10 @@
 extends Button
-class_name LabButton
+class_name UndoButton
 
 var is_intro_or_selection_state: bool
 
 func _process(delta):
 	is_intro_or_selection_state = GameManager.current_state == GameManager.state.SELECTION || GameManager.current_state == GameManager.state.INTRO
-	if(GameManager.current_state == GameManager.state.INTRO):
-		set_text("Continuar")
-	else:
-		set_text("Combinar")
 
 func _on_mouse_entered():
 	if(is_intro_or_selection_state):

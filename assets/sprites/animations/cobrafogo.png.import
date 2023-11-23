@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5qfalkpc58pq"
-path="res://.godot/imported/zipo.png-9274edad2c7c2c22f67b84c17990692b.ctex"
+uid="uid://bebwr2ipag6th"
+path="res://.godot/imported/cobrafogo.png-6d7609cd8c9b6c097a1f2e5e035ca723.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/individuais/zipo.png"
-dest_files=["res://.godot/imported/zipo.png-9274edad2c7c2c22f67b84c17990692b.ctex"]
+source_file="res://assets/sprites/animations/cobrafogo.png"
+dest_files=["res://.godot/imported/cobrafogo.png-6d7609cd8c9b6c097a1f2e5e035ca723.ctex"]
 
 [params]
 

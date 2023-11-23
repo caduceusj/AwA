@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca223qnoic5mt"]
+
+[ext_resource type="PackedScene" uid="uid://d3nsmsh3ykq3i" path="res://Scene/Prefabs/Products/Generic/GenericProduct.tscn" id="1_fxbhx"]
+[ext_resource type="Texture2D" uid="uid://clud3201y5p3k" path="res://assets/sprites/individuais/vinho.png" id="2_44mdn"]
+
+[node name="ProductSprite" instance=ExtResource("1_fxbhx")]
+texture = ExtResource("2_44mdn")
+product_id = 10
+product_name = "Vinho"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5qfalkpc58pq"
-path="res://.godot/imported/zipo.png-9274edad2c7c2c22f67b84c17990692b.ctex"
+uid="uid://df4jweb217pff"
+path="res://.godot/imported/agua-vinho.png-af2ed73361020d4f172ffdb6da1a459b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/individuais/zipo.png"
-dest_files=["res://.godot/imported/zipo.png-9274edad2c7c2c22f67b84c17990692b.ctex"]
+source_file="res://assets/sprites/animations/agua-vinho.png"
+dest_files=["res://.godot/imported/agua-vinho.png-af2ed73361020d4f172ffdb6da1a459b.ctex"]
 
 [params]
 
