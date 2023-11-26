@@ -24,6 +24,9 @@ var is_last_message: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	ExperimentsManagerGlobal.instance_experiments()
+	ExperimentsManagerGlobal.instance_products()
+	
 	$products/Fire/AnimationPlayer.play("light_on")
 	$DicaUi.visible = false
 	pause.visible = false
@@ -31,9 +34,8 @@ func _ready():
 	if(GameManager.current_state == GameManager.state.INTRO):
 		scientist_animation_player.play("Walking_in")
 		combine_button.set_disabled(true)
-		if(!experiments_instances.is_empty()) : 
+		if(experiments_instances.is_empty()) : 
 			instance_experiments()
-		
 
 func instance_experiments() -> void:
 	var instance: GenericExperiment
