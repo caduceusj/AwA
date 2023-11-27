@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cssk822pxofe7"]
+[gd_scene load_steps=8 format=3 uid="uid://r4tdy5pltse1"]
 
 [ext_resource type="FontFile" uid="uid://ysnlin44jdcx" path="res://assets/fonts/SourceSansPro-Black.ttf" id="1_grnc8"]
 [ext_resource type="Script" path="res://Scene/MainScreen/inGameMenu.gd" id="1_hoisi"]

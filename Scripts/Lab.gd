@@ -34,8 +34,6 @@ func _ready():
 	if(GameManager.current_state == GameManager.state.INTRO):
 		scientist_animation_player.play("Walking_in")
 		combine_button.set_disabled(true)
-		if(experiments_instances.is_empty()) : 
-			instance_experiments()
 
 func instance_experiments() -> void:
 	var instance: GenericExperiment
@@ -50,6 +48,10 @@ func _process(delta):
 			var dialogue_ended: bool = !(await dialogue_instance.handle_next_button())
 			if(dialogue_ended):
 				handle_dialogue_end()
+	elif(GameManager.current_state == GameManager.state.LOAD):
+		if(experiments_instances.is_empty()) : 
+			instance_experiments()
+			GameManager.current_state = GameManager.state.SELECTION
 	elif(GameManager.current_state == GameManager.state.SELECTION):
 		pass
 	elif(GameManager.current_state == GameManager.state.RESULT):
@@ -150,7 +152,7 @@ func _on_animation_player_animation_finished(anim_name):
 		add_child(dialogue_instance)
 	if(anim_name == "Walking_out"):
 		combine_button.set_disabled(false)
-		GameManager.current_state = GameManager.state.SELECTION
+		GameManager.current_state = GameManager.state.LOAD
 
 
 func _on_undo_button_pressed():

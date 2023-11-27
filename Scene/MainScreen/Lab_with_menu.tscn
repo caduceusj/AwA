@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bx2i0736ldi0q" path="res://assets/sprites/HUD/dicaUI.png" id="15_wbrma"]
 [ext_resource type="FontFile" uid="uid://ysnlin44jdcx" path="res://assets/fonts/SourceSansPro-Black.ttf" id="16_cqx3x"]
 [ext_resource type="Script" path="res://Scripts/HUD/CombineButton.gd" id="17_lbh5w"]
-[ext_resource type="PackedScene" uid="uid://cssk822pxofe7" path="res://Scene/MainScreen/inGameMenu.tscn" id="18_byke1"]
+[ext_resource type="PackedScene" uid="uid://r4tdy5pltse1" path="res://Scene/MainScreen/inGameMenu.tscn" id="18_byke1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mdqtg"]
 texture = ExtResource("11_s3jx7")
