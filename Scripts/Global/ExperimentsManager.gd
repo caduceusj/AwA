@@ -10,12 +10,14 @@ var experiment_list: Array[GenericExperiment]
 var product_list: Array[GenericProduct]
 
 func instance_experiments() -> void:
+	experiment_list.clear()
 	var experiment_instance: GenericExperiment
 	for experiment in experiments_scenes_list:
 		experiment_instance = experiment.instantiate()
 		experiment_list.append(experiment_instance)
 
 func instance_products() -> void:
+	product_list.clear()
 	var product_instance: GenericProduct
 	for product in product_scenes_list:
 		product_instance = product.instantiate()
