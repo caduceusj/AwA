@@ -11,6 +11,8 @@ var product_ids: Array[int]
 @export var is_interactive: bool
 @export var interaction: PackedScene
 
+@onready var audio = $AudioStreamPlayer2D
+
 func _ready():
 	instance_products()
 	sort_product_ids()
@@ -30,5 +32,6 @@ func sort_product_ids() -> void:
 func run_animation() -> void:
 	if(!is_interactive):
 		play("run_experiment")
+		#audio.play()
 	else:
 		get_tree().change_scene_to_packed(interaction)

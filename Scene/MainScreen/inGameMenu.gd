@@ -15,7 +15,7 @@ func handleSelection(currentSelection) :
 	elif(currentSelection == 1) :
 		GameManager.returOptionsScene = labScene
 		get_tree().change_scene_to_file(optionsMenu)
-	elif(currentSelection == 2) :
+	elif(currentSelection == 2) :		
 		get_tree().change_scene_to_file(menuScene)			
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.

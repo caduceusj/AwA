@@ -54,6 +54,7 @@ func handleSelection(currentSelection) :
 		
 # Called when the node enters the scene tree for the first time.
 func _ready():	
+	
 	changeColor(selectorOne,selectedFontColor,selectedShadowColor)
 	changeColor(selectorTwo,selectedFontColor,selectedShadowColor)
 	changeColor(selectorThree,selectedFontColor,selectedShadowColor)
