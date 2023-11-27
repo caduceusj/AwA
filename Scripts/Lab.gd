@@ -100,7 +100,8 @@ func is_reaction_valid() -> bool:
 			for experiment_product in experiment.product_instances:
 				if(selected_product.product_id == experiment_product.product_id):
 					is_product_in_list = true
-					correct_products.append(selected_product)
+					if(correct_products.find(selected_product) == -1):
+						correct_products.append(selected_product)
 					all_correct_products.append(selected_product)
 					break
 			if(!is_product_in_list):
@@ -109,10 +110,10 @@ func is_reaction_valid() -> bool:
 		if(!has_wrong_product && experiment.product_instances.size() == selected_products.size()):
 #			Mark receipt_book the correct experiment
 			correct_experiment = experiment
-			if(GameManager.correct_experiments.find(experiment) == -1):
-				GameManager.correct_experiments.append(correct_experiment)
+			if(GameManager.correct_experiments.find(correct_experiment.experiment_id) == -1):
+				GameManager.correct_experiments.append(correct_experiment.experiment_id)
 			is_valid = true
-		correct_products.clear() # Melhorar clear
+		correct_products.clear()
 
 	return is_valid
 	
@@ -128,7 +129,6 @@ func run_experiment() -> void:
 
 func _on_dica_ui_timer_timeout():
 	$DicaUi.visible = false
-	
 
 func _on_combine_button_pressed():
 	if(GameManager.current_state == GameManager.state.INTRO):
@@ -139,7 +139,19 @@ func _on_combine_button_pressed():
 		if(is_reaction_valid()):
 			run_experiment()
 		else:
-			showDicaUi("Nenhum experimento realizado. \n Tente Novamente.")
+			print(correct_products)
+			if(correct_products.size() > 1):
+				var names: String = ""
+				
+				var count: int = 0
+				for product in correct_products:
+					count += 1
+					names += product.product_name
+					if (count != correct_products.size()):
+						names += ", "
+				showDicaUi("Os " + names + " parecem ter combinado. \n Continue combinando.")
+			else:
+				showDicaUi("Nenhum experimento realizado. \n Tente Novamente.")
 			clear()
 
 func _on_animation_player_animation_finished(anim_name):
