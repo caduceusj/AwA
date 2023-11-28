@@ -14,6 +14,7 @@ var correct_experiment: GenericExperiment
 
 @onready var scientist_animation_player: AnimationPlayer = $Cientista/AnimationPlayer
 @onready var combine_button: Button = $CombineButton
+@onready var board_button: Button = $QuadroBotao
 @onready var text_field: TextureButton = $DicaUi
 @onready var text_field_label: Label = $DicaUi/Label
 
@@ -35,6 +36,8 @@ func _ready():
 	if(GameManager.current_state == GameManager.state.INTRO):
 		scientist_animation_player.play("Walking_in")
 		combine_button.set_disabled(true)
+		board_button.set_disabled(true)
+		
 
 func instance_experiments() -> void:
 	var instance: GenericExperiment
@@ -158,13 +161,14 @@ func _on_combine_button_pressed():
 func _on_animation_player_animation_finished(anim_name):
 	if(anim_name == "Walking_in"):
 		combine_button.set_disabled(false)
-		
+		board_button.set_disabled(false)
 		dialogue_instance = dialogue.instantiate()
 		dialogue_instance.dialogue_path = "res://assets/Dialogues/Scientist_Intro.json"
 		dialogue_instance.text_speed = 0.03
 		add_child(dialogue_instance)
 	if(anim_name == "Walking_out"):
 		combine_button.set_disabled(false)
+		board_button.set_disabled(false)
 		GameManager.current_state = GameManager.state.LOAD
 
 
@@ -178,9 +182,9 @@ func _on_combine_button_2_gui_input(event):
 			pause.visible = true
 
 func _on_livro_botao_pressed():
-	$Book.visible = true
-	pause.visible = true
-
+	if(GameManager.current_state == GameManager.state.SELECTION):	
+		$Book.visible = true
+		pause.visible = true
 
 func _on_button_pressed():
 	$Book.visible = false

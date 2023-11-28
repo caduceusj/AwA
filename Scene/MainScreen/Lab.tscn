@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dsavltsoufo77"]
+[gd_scene load_steps=51 format=3 uid="uid://dsavltsoufo77"]
 
 [ext_resource type="Script" path="res://Scripts/Lab.gd" id="1_2t6wo"]
 [ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://assets/sprites/Background.png" id="2_dwkyh"]
@@ -175,6 +175,18 @@ modulate_color = Color(0.537255, 0.537255, 0.537255, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nbnpw"]
 texture = ExtResource("10_xep2s")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p3fky"]
+texture = ExtResource("10_xep2s")
+modulate_color = Color(0.658824, 0.658824, 0.658824, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v2uxj"]
+texture = ExtResource("10_xep2s")
+modulate_color = Color(0.364706, 0.364706, 0.364706, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sn3kb"]
+texture = ExtResource("10_xep2s")
+modulate_color = Color(0.537255, 0.537255, 0.537255, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_si7dq"]
 texture = ExtResource("10_xep2s")
 
@@ -192,6 +204,18 @@ modulate_color = Color(0.537255, 0.537255, 0.537255, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ixf82"]
 texture = ExtResource("10_xep2s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_so0en"]
+texture = ExtResource("10_xep2s")
+modulate_color = Color(0.658824, 0.658824, 0.658824, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2011t"]
+texture = ExtResource("10_xep2s")
+modulate_color = Color(0.364706, 0.364706, 0.364706, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f7uwd"]
+texture = ExtResource("10_xep2s")
+modulate_color = Color(0.537255, 0.537255, 0.537255, 1)
 
 [node name="Lab" type="Control"]
 layout_mode = 3
@@ -648,6 +672,9 @@ offset_right = 1272.0
 offset_bottom = 680.0
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_nbnpw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_p3fky")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_v2uxj")
+theme_override_styles/focus = SubResource("StyleBoxTexture_sn3kb")
 text = "Quadro de Receitas
 "
 
@@ -705,12 +732,15 @@ offset_bottom = 46.0
 
 [node name="Button" type="Button" parent="Book"]
 layout_mode = 0
-offset_left = 411.0
-offset_top = -243.0
+offset_left = 391.0
+offset_top = -249.0
 offset_right = 461.0
-offset_bottom = -208.0
+offset_bottom = -199.0
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_ixf82")
+theme_override_styles/hover = SubResource("StyleBoxTexture_so0en")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2011t")
+theme_override_styles/focus = SubResource("StyleBoxTexture_f7uwd")
 text = "X"
 
 [connection signal="animation_finished" from="Cientista/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
