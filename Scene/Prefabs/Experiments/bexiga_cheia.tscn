@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1476gkm0yoiq" path="res://Scene/Prefabs/Products/bicarbonato_de_sodio.tscn" id="4_pcwem"]
 [ext_resource type="PackedScene" uid="uid://b223kthw8hmid" path="res://Scene/Prefabs/Products/vinagre.tscn" id="5_uo5ey"]
 [ext_resource type="PackedScene" uid="uid://dbjjlvfmb27mf" path="res://Scene/Prefabs/Products/garrafa.tscn" id="6_7j2aj"]
-[ext_resource type="AudioStream" uid="uid://dg4oicucprgm6" path="res://Scene/Prefabs/Experiments/Audios/bexiga_cheia.mp3" id="7_bqsb6"]
+[ext_resource type="AudioStream" uid="uid://dg4oicucprgm6" path="res://assets/Audios/Experiments/bexiga_cheia.mp3" id="7_xsx6e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y5cch"]
 atlas = ExtResource("2_awqrl")
@@ -53,7 +53,7 @@ experiment_id = 2
 experiment_name = "Bexiga cheia"
 product_list = Array[PackedScene]([ExtResource("3_5kw7r"), ExtResource("4_pcwem"), ExtResource("5_uo5ey"), ExtResource("6_7j2aj")])
 
-[node name="AudioStreamPlayer2D" parent="." index="0"]
-stream = ExtResource("7_bqsb6")
-volume_db = -20.0
-pitch_scale = 1.2
+[node name="AudioStreamPlayer" parent="." index="0"]
+stream = ExtResource("7_xsx6e")
+volume_db = -17.5
+pitch_scale = 4.0

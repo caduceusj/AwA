@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b6dh1tjewwkmg" path="res://Scene/Prefabs/Products/azul_de_metileno.tscn" id="3_77jyj"]
 [ext_resource type="PackedScene" uid="uid://coxa41fb32qgq" path="res://Scene/Prefabs/Products/iodeto_de_potassio.tscn" id="4_rytng"]
 [ext_resource type="PackedScene" uid="uid://6x68farjwhqi" path="res://Scene/Prefabs/Products/agua_oxigenada.tscn" id="5_f8232"]
-[ext_resource type="AudioStream" uid="uid://dt6d8ts71fknc" path="res://Scene/Prefabs/Experiments/Audios/pasta_de_dente_de_elefante.wav" id="6_jj6xx"]
+[ext_resource type="AudioStream" uid="uid://blrbq542xofwd" path="res://assets/Audios/Experiments/pasta_de_dente_de_elefante.mp3" id="6_7dojl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ud3y"]
 atlas = ExtResource("2_pip06")
@@ -176,5 +176,5 @@ frame_progress = 0.762782
 experiment_name = "Pasta de dente de elefante"
 product_list = Array[PackedScene]([ExtResource("3_77jyj"), ExtResource("4_rytng"), ExtResource("5_f8232")])
 
-[node name="AudioStreamPlayer2D" parent="." index="0"]
-stream = ExtResource("6_jj6xx")
+[node name="AudioStreamPlayer" parent="." index="0"]
+stream = ExtResource("6_7dojl")

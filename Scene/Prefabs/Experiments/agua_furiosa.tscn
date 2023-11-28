@@ -22,3 +22,5 @@ experiment_name = "Água furiosa"
 product_list = Array[PackedScene]([ExtResource("3_avna8"), ExtResource("4_jhja8"), ExtResource("5_tjbt1")])
 is_interactive = true
 interaction = ExtResource("5_ttpoq")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="0"]
