@@ -464,6 +464,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(856, 456)
 texture = ExtResource("7_oohu0")
 hframes = 4
+script = null
 
 [node name="ButtonPrefab" parent="products/TuboDeEnsaio" index="0"]
 anchors_preset = -1
@@ -477,6 +478,7 @@ position = Vector2(808, 456)
 texture = ExtResource("7_oohu0")
 hframes = 4
 frame = 1
+script = null
 
 [node name="ButtonPrefab" parent="products/tubinho" index="0"]
 anchors_preset = -1
@@ -491,6 +493,7 @@ position = Vector2(760, 456)
 texture = ExtResource("7_oohu0")
 hframes = 4
 frame = 2
+script = null
 
 [node name="ButtonPrefab" parent="products/tubinho2" index="0"]
 anchors_preset = -1
@@ -505,6 +508,7 @@ position = Vector2(712, 456)
 texture = ExtResource("7_oohu0")
 hframes = 4
 frame = 3
+script = null
 
 [node name="ButtonPrefab" parent="products/Erlenmeyer" index="0"]
 anchors_preset = -1
