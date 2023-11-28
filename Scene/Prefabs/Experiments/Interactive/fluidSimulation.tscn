@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://btcv435du6k3g"]
+[gd_scene load_steps=19 format=3 uid="uid://btcv435du6k3g"]
 
 [ext_resource type="Script" path="res://Scripts/Experiments/InteractiveExperiment.gd" id="1_qjbp7"]
 [ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://assets/sprites/Background.png" id="1_ynoqv"]
 [ext_resource type="PackedScene" uid="uid://cfpxve3ufoxfq" path="res://tutorialDeFluidos/scenes/water_body.tscn" id="2_uu377"]
 [ext_resource type="Shader" path="res://tutorialDeFluidos/shadert/waterShader.gdshader" id="3_334vt"]
+[ext_resource type="AudioStream" uid="uid://dxpaj5co15yra" path="res://assets/Audios/Experiments/agua_furiosa/AwA - Splash.wav" id="4_5b8e3"]
 [ext_resource type="Texture2D" uid="uid://bx24xvu3ri83y" path="res://assets/sprites/Placeholders/fluidSimulationBecauseIDK.png" id="4_7tq37"]
+[ext_resource type="AudioStream" uid="uid://c4n8ucpdjsw0m" path="res://assets/Audios/Experiments/agua_furiosa/AwA - Bubbles.wav" id="5_dgcrk"]
 [ext_resource type="Texture2D" uid="uid://bx2i0736ldi0q" path="res://assets/sprites/HUD/dicaUI.png" id="6_aq0ub"]
 [ext_resource type="Texture2D" uid="uid://ck08lpcd2vua1" path="res://assets/sprites/HUD/letreiro.png" id="7_2f8qm"]
 [ext_resource type="Script" path="res://Scripts/HUD/InteractiveContinueButton.gd" id="8_t140u"]
@@ -69,6 +71,12 @@ depth = 200
 material = SubResource("ShaderMaterial_1e4ms")
 position = Vector2(0, 2)
 color = Color(1, 1, 1, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Water_Body"]
+stream = ExtResource("4_5b8e3")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Water_Body"]
+stream = ExtResource("5_dgcrk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(623, 343)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwwcs2j03sdjg"]
+[gd_scene load_steps=8 format=3 uid="uid://bwwcs2j03sdjg"]
 
 [ext_resource type="PackedScene" uid="uid://ec3ljpowchms" path="res://Scene/Prefabs/Experiments/Generic/GenericExperiment.tscn" id="1_dx3t2"]
 [ext_resource type="PackedScene" uid="uid://b6dh1tjewwkmg" path="res://Scene/Prefabs/Products/azul_de_metileno.tscn" id="3_avna8"]
 [ext_resource type="PackedScene" uid="uid://chyromplio8ru" path="res://Scene/Prefabs/Products/glicose.tscn" id="4_jhja8"]
 [ext_resource type="PackedScene" uid="uid://bnv4go8664qx8" path="res://Scene/Prefabs/Products/soda_caustica.tscn" id="5_tjbt1"]
 [ext_resource type="PackedScene" uid="uid://btcv435du6k3g" path="res://Scene/Prefabs/Experiments/Interactive/fluidSimulation.tscn" id="5_ttpoq"]
+[ext_resource type="AudioStream" uid="uid://c4n8ucpdjsw0m" path="res://assets/Audios/Experiments/agua_furiosa/AwA - Bubbles.wav" id="7_dc0pg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aqoag"]
 animations = [{
@@ -22,3 +23,6 @@ experiment_name = "Água furiosa"
 product_list = Array[PackedScene]([ExtResource("3_avna8"), ExtResource("4_jhja8"), ExtResource("5_tjbt1")])
 is_interactive = true
 interaction = ExtResource("5_ttpoq")
+
+[node name="AudioStreamPlayer" parent="." index="0"]
+stream = ExtResource("7_dc0pg")
