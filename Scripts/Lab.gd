@@ -196,9 +196,11 @@ func _on_livro_botao_pressed():
 	if(GameManager.current_state == GameManager.state.SELECTION):	
 		$Book.visible = true
 		pause.visible = true
+		pause.get_child(1).visible = false
 		$products/Fire.visible = false
 
 func _on_button_pressed():
+	pause.get_child(1).visible = true
 	$Book.visible = false
 	pause.visible = false
 	$products/Fire.visible = true
