@@ -26,7 +26,7 @@
 [ext_resource type="Script" path="res://Scripts/HUD/CombineButton.gd" id="19_jb3mc"]
 [ext_resource type="Texture2D" uid="uid://b444lhyb21xae" path="res://assets/sprites/HUD/undo.png" id="19_tf2an"]
 [ext_resource type="AudioStream" uid="uid://0buwrjgmq3uc" path="res://assets/Audios/InGame/AWA1.wav" id="26_302bs"]
-[ext_resource type="PackedScene" path="res://Scene/Miscellaneous/CompletedExperiments.tscn" id="26_u88dn"]
+[ext_resource type="PackedScene" uid="uid://cicu8ncowthye" path="res://Scene/Miscellaneous/CompletedExperiments.tscn" id="26_u88dn"]
 
 [sub_resource type="Animation" id="Animation_kmgln"]
 length = 0.001
