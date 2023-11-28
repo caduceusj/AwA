@@ -27,6 +27,15 @@ window/size/viewport_height=720
 window/stretch/mode="viewport"
 window/canvas_textures/default_texture_filter=1
 
+[importer_defaults]
+
+mp3={
+"loop": true
+}
+wav={
+"edit/loop_mode": 2
+}
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

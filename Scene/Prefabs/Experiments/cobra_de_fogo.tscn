@@ -1,12 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://dgj0ph87vilsq"]
+[gd_scene load_steps=22 format=3 uid="uid://fy8sgyrji1jy"]
 
 [ext_resource type="PackedScene" uid="uid://ec3ljpowchms" path="res://Scene/Prefabs/Experiments/Generic/GenericExperiment.tscn" id="1_mb51f"]
 [ext_resource type="Texture2D" uid="uid://bebwr2ipag6th" path="res://assets/sprites/animations/cobrafogo.png" id="2_skoh6"]
-[ext_resource type="PackedScene" uid="uid://mqdgmnxfsvjt" path="res://Scene/Prefabs/Products/zippo.tscn" id="3_1ftxc"]
+[ext_resource type="PackedScene" path="res://Scene/Prefabs/Products/zippo.tscn" id="3_1ftxc"]
 [ext_resource type="PackedScene" uid="uid://chyromplio8ru" path="res://Scene/Prefabs/Products/glicose.tscn" id="4_bts2k"]
 [ext_resource type="PackedScene" uid="uid://bnv4go8664qx8" path="res://Scene/Prefabs/Products/soda_caustica.tscn" id="5_xsktr"]
-[ext_resource type="PackedScene" uid="uid://byyyxftwtwi1k" path="res://Scene/Prefabs/Products/areia.tscn" id="6_nlkur"]
-[ext_resource type="PackedScene" uid="uid://cwuoeekh70lrj" path="res://Scene/Prefabs/Products/fogo.tscn" id="7_v2emh"]
+[ext_resource type="PackedScene" path="res://Scene/Prefabs/Products/areia.tscn" id="6_nlkur"]
+[ext_resource type="PackedScene" path="res://Scene/Prefabs/Products/fogo.tscn" id="7_v2emh"]
+[ext_resource type="AudioStream" uid="uid://ch67ufpcb62vj" path="res://assets/Audios/Experiments/cobra_de_fogo.mp3" id="8_hhoss"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8nb2v"]
 atlas = ExtResource("2_skoh6")
@@ -110,3 +111,6 @@ frame_progress = 1.0
 experiment_id = 6
 experiment_name = "Cobra de fogo"
 product_list = Array[PackedScene]([ExtResource("3_1ftxc"), ExtResource("4_bts2k"), ExtResource("5_xsktr"), ExtResource("6_nlkur"), ExtResource("7_v2emh")])
+
+[node name="AudioStreamPlayer" parent="." index="0"]
+stream = ExtResource("8_hhoss")

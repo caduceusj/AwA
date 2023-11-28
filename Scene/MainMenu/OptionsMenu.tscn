@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://eji6otfwihjh"]
+[gd_scene load_steps=4 format=3 uid="uid://eji6otfwihjh"]
 
 [ext_resource type="FontFile" uid="uid://ysnlin44jdcx" path="res://assets/fonts/SourceSansPro-Black.ttf" id="1_2cqdv"]
-[ext_resource type="Script" path="res://Scene/MainMenu/OptionsMenu.gd" id="1_g4wxa"]
+[ext_resource type="Script" path="res://Scripts/OptionsMenu.gd" id="1_8j1eb"]
+[ext_resource type="AudioStream" uid="uid://0buwrjgmq3uc" path="res://assets/Audios/InGame/AWA1.wav" id="3_qxeuq"]
 
 [node name="OptionsMenu" type="MarginContainer"]
 anchors_preset = 15
@@ -9,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_g4wxa")
+script = ExtResource("1_8j1eb")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
@@ -54,6 +55,8 @@ custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.0
+min_value = -30.0
+max_value = 10.0
 
 [node name="Return" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 256)
@@ -78,6 +81,10 @@ theme_override_fonts/font = ExtResource("1_2cqdv")
 theme_override_font_sizes/font_size = 64
 text = "Return
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qxeuq")
+autoplay = true
 
 [connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Volume" to="." method="_on_volume_mouse_entered"]
 [connection signal="value_changed" from="CenterContainer/VBoxContainer/Volume/VBoxContainer/VolumeBar" to="." method="_on_volume_bar_value_changed"]
