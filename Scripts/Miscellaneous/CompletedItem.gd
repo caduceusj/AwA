@@ -9,8 +9,6 @@ extends Control
 @export var iconeExperimento = ""
 @export var idExperimento = 7
 
-@onready var nomeExperimento = $NomeExperimento
-
 var hasBeenCalled = false	
 	
 func _process(delta):
@@ -23,6 +21,8 @@ func reloadIcons():
 		$Meteriais/Sprite2D.texture = load(material1)
 		$Meteriais/Sprite2D2.texture = load(material2)
 		$Meteriais/Sprite2D3.texture = load(material3)
+		$Meteriais/Sprite2D4.texture = null
+		$Meteriais/Sprite2D5.texture = null
 		if experimento == "Bexiga Cheia" or experimento == "Cobra de Fogo":
 			$Meteriais/Sprite2D4.texture = load(material4)
 		if experimento == "Cobra de Fogo":
