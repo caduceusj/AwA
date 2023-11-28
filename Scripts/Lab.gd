@@ -17,6 +17,12 @@ var correct_experiment: GenericExperiment
 @onready var board_button: Button = $QuadroBotao
 @onready var text_field: TextureButton = $DicaUi
 @onready var text_field_label: Label = $DicaUi/Label
+@onready var backgroundMusic =  $AudioStreamPlayer
+
+var audio1 = preload("res://assets/Audios/InGame/AWA1.wav")
+var audio2 = preload("res://assets/Audios/InGame/AWA2.wav")
+var audio3 = preload("res://assets/Audios/InGame/AWA3.wav")
+var audio4 = preload("res://assets/Audios/InGame/AWA4.wav")
 
 var dialogue: PackedScene = preload("res://Scene/Miscellaneous/DialogueBox.tscn")
 var dialogue_instance: DialogueBox = null
@@ -142,6 +148,11 @@ func _on_combine_button_pressed():
 	elif(GameManager.current_state == GameManager.state.SELECTION):
 		if(is_reaction_valid()):
 			run_experiment()
+			var count = GameManager.correct_experiments.size()
+			if(count > 5) : backgroundMusic.stream = audio4
+			elif(count > 3) : backgroundMusic.stream = audio3
+			elif(count > 1) : backgroundMusic.stream = audio2
+			backgroundMusic.play()
 		else:
 			print(correct_products)
 			if(correct_products.size() > 1):

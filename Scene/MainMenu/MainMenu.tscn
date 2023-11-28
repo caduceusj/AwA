@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://6ibytyr4rux7"]
+[gd_scene load_steps=5 format=3 uid="uid://6ibytyr4rux7"]
 
-[ext_resource type="Script" path="res://Scene/MainMenu/MainMenu.gd" id="1_dh3sj"]
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_u7ymx"]
 [ext_resource type="FontFile" uid="uid://ysnlin44jdcx" path="res://assets/fonts/SourceSansPro-Black.ttf" id="2_xsvkh"]
+[ext_resource type="AudioStream" uid="uid://c6gps6ubyj65w" path="res://assets/Audios/awaMenu.wav" id="3_s6dts"]
 [ext_resource type="Texture2D" uid="uid://b36kpcswis7r7" path="res://assets/sprites/HUD/logo.png" id="3_ynqlt"]
 
 [node name="MainMenu" type="MarginContainer"]
@@ -14,7 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-script = ExtResource("1_dh3sj")
+script = ExtResource("1_u7ymx")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
@@ -119,6 +120,10 @@ theme_override_fonts/font = ExtResource("2_xsvkh")
 theme_override_font_sizes/font_size = 64
 text = "Sair
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_s6dts")
+autoplay = true
 
 [connection signal="gui_input" from="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Start" to="." method="_on_start_gui_input"]
 [connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Inputs/VBoxContainer/Start" to="." method="_on_start_mouse_entered"]

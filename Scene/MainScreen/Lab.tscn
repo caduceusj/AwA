@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dsavltsoufo77"]
+[gd_scene load_steps=52 format=3 uid="uid://dsavltsoufo77"]
 
 [ext_resource type="Script" path="res://Scripts/Lab.gd" id="1_2t6wo"]
 [ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://assets/sprites/Background.png" id="2_dwkyh"]
@@ -25,7 +25,8 @@
 [ext_resource type="Script" path="res://Scripts/HUD/UndoButton.gd" id="19_ib1j0"]
 [ext_resource type="Script" path="res://Scripts/HUD/CombineButton.gd" id="19_jb3mc"]
 [ext_resource type="Texture2D" uid="uid://b444lhyb21xae" path="res://assets/sprites/HUD/undo.png" id="19_tf2an"]
-[ext_resource type="PackedScene" uid="uid://cicu8ncowthye" path="res://Scene/Miscellaneous/CompletedExperiments.tscn" id="26_u88dn"]
+[ext_resource type="AudioStream" uid="uid://0buwrjgmq3uc" path="res://assets/Audios/InGame/AWA1.wav" id="26_302bs"]
+[ext_resource type="PackedScene" path="res://Scene/Miscellaneous/CompletedExperiments.tscn" id="26_u88dn"]
 
 [sub_resource type="Animation" id="Animation_kmgln"]
 length = 0.001
@@ -746,6 +747,10 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_so0en")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_2011t")
 theme_override_styles/focus = SubResource("StyleBoxTexture_f7uwd")
 text = "X"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_302bs")
+autoplay = true
 
 [connection signal="animation_finished" from="Cientista/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="DicaUITimer" to="." method="_on_dica_ui_timer_timeout"]

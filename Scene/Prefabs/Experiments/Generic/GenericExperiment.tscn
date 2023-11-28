@@ -14,3 +14,5 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_npcvr")
 animation = &"run_experiment"
 script = ExtResource("1_1uriw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
