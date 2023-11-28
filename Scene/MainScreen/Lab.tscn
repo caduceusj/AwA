@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dsavltsoufo77"]
+[gd_scene load_steps=45 format=3 uid="uid://dsavltsoufo77"]
 
 [ext_resource type="Script" path="res://Scripts/Lab.gd" id="1_2t6wo"]
 [ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://assets/sprites/Background.png" id="2_dwkyh"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" path="res://Scripts/HUD/UndoButton.gd" id="19_ib1j0"]
 [ext_resource type="Script" path="res://Scripts/HUD/CombineButton.gd" id="19_jb3mc"]
 [ext_resource type="Texture2D" uid="uid://b444lhyb21xae" path="res://assets/sprites/HUD/undo.png" id="19_tf2an"]
+[ext_resource type="PackedScene" uid="uid://cicu8ncowthye" path="res://Scene/Miscellaneous/CompletedExperiments.tscn" id="26_u88dn"]
 
 [sub_resource type="Animation" id="Animation_kmgln"]
 length = 0.001
@@ -171,6 +172,9 @@ modulate_color = Color(0.364706, 0.364706, 0.364706, 1)
 texture = ExtResource("10_xep2s")
 modulate_color = Color(0.537255, 0.537255, 0.537255, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nbnpw"]
+texture = ExtResource("10_xep2s")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_si7dq"]
 texture = ExtResource("10_xep2s")
 
@@ -185,6 +189,9 @@ modulate_color = Color(0.364706, 0.364706, 0.364706, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_boyk4"]
 texture = ExtResource("10_xep2s")
 modulate_color = Color(0.537255, 0.537255, 0.537255, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ixf82"]
+texture = ExtResource("10_xep2s")
 
 [node name="Lab" type="Control"]
 layout_mode = 3
@@ -621,9 +628,9 @@ one_shot = true
 
 [node name="CombineButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 832.0
+offset_left = 738.0
 offset_top = 616.0
-offset_right = 1088.0
+offset_right = 998.0
 offset_bottom = 680.0
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_ll56s")
@@ -633,6 +640,17 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_es58r")
 text = "Combinar"
 script = ExtResource("19_jb3mc")
 
+[node name="QuadroBotao" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1012.0
+offset_top = 616.0
+offset_right = 1272.0
+offset_bottom = 680.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_nbnpw")
+text = "Quadro de Receitas
+"
+
 [node name="UndoButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 216.0
@@ -640,7 +658,6 @@ offset_top = 624.0
 offset_right = 264.0
 offset_bottom = 672.0
 theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxTexture_ll56s")
 theme_override_styles/hover = SubResource("StyleBoxTexture_38nfk")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_85su2")
 theme_override_styles/focus = SubResource("StyleBoxTexture_es58r")
@@ -679,17 +696,36 @@ offset_top = 2.0
 offset_right = 1.0
 offset_bottom = 2.0
 
+[node name="Book" parent="." instance=ExtResource("26_u88dn")]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 6.0
+offset_right = 60.0
+offset_bottom = 46.0
+
+[node name="Button" type="Button" parent="Book"]
+layout_mode = 0
+offset_left = 411.0
+offset_top = -243.0
+offset_right = 461.0
+offset_bottom = -208.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ixf82")
+text = "X"
+
 [connection signal="animation_finished" from="Cientista/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="DicaUITimer" to="." method="_on_dica_ui_timer_timeout"]
 [connection signal="mouse_entered" from="CombineButton" to="CombineButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CombineButton" to="CombineButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="CombineButton" to="." method="_on_combine_button_pressed"]
+[connection signal="pressed" from="QuadroBotao" to="." method="_on_livro_botao_pressed"]
 [connection signal="mouse_entered" from="UndoButton" to="UndoButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="UndoButton" to="UndoButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="UndoButton" to="." method="_on_undo_button_pressed"]
 [connection signal="gui_input" from="CombineButton2" to="." method="_on_combine_button_2_gui_input"]
 [connection signal="mouse_entered" from="CombineButton2" to="CombineButton2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CombineButton2" to="CombineButton2" method="_on_mouse_exited"]
+[connection signal="pressed" from="Book/Button" to="." method="_on_button_pressed"]
 
 [editable path="products/Agua"]
 [editable path="products/sodaCaustica"]

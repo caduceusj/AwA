@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://brvjg3nhgaim1"]
+
+[ext_resource type="Script" path="res://Scripts/Miscellaneous/CompletedItem.gd" id="1_intoy"]
+[ext_resource type="Texture2D" uid="uid://dgcluw3mi0xry" path="res://assets/sprites/HUD/Moldura.png" id="2_bd7rf"]
+[ext_resource type="FontFile" uid="uid://ysnlin44jdcx" path="res://assets/fonts/SourceSansPro-Black.ttf" id="2_jixm3"]
+[ext_resource type="Texture2D" uid="uid://cfhvatttexmar" path="res://assets/sprites/HUD/interrogacao.png" id="4_1du2x"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_intoy")
+
+[node name="NomeExperimento" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -3.0
+offset_right = 100.0
+offset_bottom = 21.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_jixm3")
+text = "?????????????????"
+
+[node name="Moldura" type="Sprite2D" parent="."]
+position = Vector2(-19, 16)
+texture = ExtResource("2_bd7rf")
+
+[node name="IconeExperimento" type="Sprite2D" parent="Moldura"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_1du2x")
+
+[node name="Meteriais" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 36.0
+offset_right = 57.0
+offset_bottom = 76.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Meteriais"]
+texture = ExtResource("4_1du2x")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Meteriais"]
+position = Vector2(20, 0)
+texture = ExtResource("4_1du2x")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Meteriais"]
+position = Vector2(40, 0)
+texture = ExtResource("4_1du2x")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Meteriais"]
+position = Vector2(60, 0)
+texture = ExtResource("4_1du2x")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Meteriais"]
+position = Vector2(80, 1)
+texture = ExtResource("4_1du2x")

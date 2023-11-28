@@ -1,0 +1,100 @@
+[gd_scene load_steps=3 format=3 uid="uid://cicu8ncowthye"]
+
+[ext_resource type="Texture2D" uid="uid://blmb6b40mivso" path="res://assets/sprites/HUD/book.png" id="1_fqr5w"]
+[ext_resource type="PackedScene" uid="uid://brvjg3nhgaim1" path="res://Scene/Miscellaneous/CompletedItem.tscn" id="2_xn7i7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Book" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_fqr5w")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = -375.0
+offset_top = -211.0
+offset_right = -175.0
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.1, 2.1)
+theme_override_constants/separation = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Control" parent="HBoxContainer/VBoxContainer" instance=ExtResource("2_xn7i7")]
+layout_mode = 2
+material1 = "res://assets/sprites/individuais/agua.png"
+material2 = "res://assets/sprites/individuais/vinho.png"
+material3 = "res://assets/sprites/individuais/carta.png"
+experimento = "Água e Vinho"
+iconeExperimento = "res://assets/sprites/expirements/aguaVinho.png"
+idExperimento = 5
+
+[node name="Control2" parent="HBoxContainer/VBoxContainer" instance=ExtResource("2_xn7i7")]
+layout_mode = 2
+material1 = "res://assets/sprites/individuais/fogo.png"
+material2 = "res://assets/sprites/individuais/areia.png"
+material3 = "res://assets/sprites/individuais/zipo.png"
+material4 = "res://assets/sprites/individuais/glicose.png"
+material5 = "res://assets/sprites/individuais/sodaCaustica.png"
+experimento = "Cobra de Fogo"
+iconeExperimento = "res://assets/sprites/expirements/cobraFogo.png"
+idExperimento = 6
+
+[node name="Control3" parent="HBoxContainer/VBoxContainer" instance=ExtResource("2_xn7i7")]
+layout_mode = 2
+material1 = "res://assets/sprites/individuais/azulDeMetileno.png"
+material2 = "res://assets/sprites/individuais/sodaCaustica.png"
+material3 = "res://assets/sprites/individuais/glicose.png"
+experimento = "Água Furiosa"
+iconeExperimento = "res://assets/sprites/expirements/aguaFuriosa.png"
+idExperimento = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Control4" parent="HBoxContainer/VBoxContainer2" instance=ExtResource("2_xn7i7")]
+layout_mode = 2
+material1 = "res://assets/sprites/individuais/vinagre.png"
+material2 = "res://assets/sprites/individuais/sodaCaustica.png"
+material3 = "res://assets/sprites/individuais/agua.png"
+experimento = "Gelo Quente"
+iconeExperimento = "res://assets/sprites/expirements/geloQuente.png"
+idExperimento = 4
+
+[node name="Control5" parent="HBoxContainer/VBoxContainer2" instance=ExtResource("2_xn7i7")]
+layout_mode = 2
+material1 = "res://assets/sprites/individuais/GarrafaPet.png"
+material2 = "res://assets/sprites/individuais/bexiga.png"
+material3 = "res://assets/sprites/individuais/vinagre.png"
+material4 = "res://assets/sprites/individuais/bicarbonatoDeSodio.png"
+experimento = "Bexiga Cheia"
+iconeExperimento = "res://assets/sprites/expirements/balaoEnche.png"
+idExperimento = 2
+
+[node name="Control6" parent="HBoxContainer/VBoxContainer2" instance=ExtResource("2_xn7i7")]
+layout_mode = 2
+material1 = "res://assets/sprites/individuais/azulDeMetileno.png"
+material2 = "res://assets/sprites/individuais/aguaOxigenada.png"
+material3 = "res://assets/sprites/individuais/iodetoDePotassio.png"
+experimento = "Pasta de Dente de Elefante"
+iconeExperimento = "res://assets/sprites/expirements/pastaElefante.png"
+idExperimento = 0

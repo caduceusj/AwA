@@ -29,6 +29,7 @@ func _ready():
 	
 	$products/Fire/AnimationPlayer.play("light_on")
 	$DicaUi.visible = false
+	$Book.visible = false
 	pause.visible = false
 	
 	if(GameManager.current_state == GameManager.state.INTRO):
@@ -175,3 +176,12 @@ func _on_combine_button_2_gui_input(event):
 	if(GameManager.current_state == GameManager.state.SELECTION):
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT :
 			pause.visible = true
+
+func _on_livro_botao_pressed():
+	$Book.visible = true
+	pause.visible = true
+
+
+func _on_button_pressed():
+	$Book.visible = false
+	pause.visible = false
