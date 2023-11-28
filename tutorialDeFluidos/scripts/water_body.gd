@@ -15,6 +15,8 @@ var target_height = global_position.y
 var bottom = target_height + depth
 
 @onready var water_polygon = $Water_Polygon
+@onready var audio = $AudioStreamPlayer
+@onready var audioBackground = $AudioStreamPlayer2
 @onready var water_spring = preload("res://tutorialDeFluidos/scenes/water_spring.tscn")
 
 @onready var waterMaterial = water_polygon.material
@@ -29,6 +31,7 @@ var duration = 5.0 # Duração da interpolação em segundos
 var elapsed = 0.0 # Tempo decorrido
 
 func _ready():
+	audioBackground.play()
 	for i in springNumber:
 		var x_position = distance_between_springs * i 
 		var w = water_spring.instantiate()
@@ -81,6 +84,8 @@ func splash(index, speed):
 func _input(event):
 	if(event.is_action_pressed("ui_accept")):
 		splash(randi_range(1,23),10)
+		audio.play()
+		
 
 func draw_water_body():
 	var surface_points = []
