@@ -79,7 +79,7 @@ func splash(index, speed):
 		elapsed = 0.0
 		
 func _input(event):
-	if(event.is_action_pressed("ui_accept")):
+	if(event.is_action_pressed("ui_accept") or event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT):
 		splash(randi_range(1,23),10)
 
 func draw_water_body():
