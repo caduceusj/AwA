@@ -39,7 +39,6 @@ func _ready():
 	$Book.visible = false
 	$Informacao.visible = false
 	pause.visible = false
-	
 	if(GameManager.current_state == GameManager.state.INTRO):
 		scientist_animation_player.play("Walking_in")
 		combine_button.set_disabled(true)
@@ -54,6 +53,7 @@ func instance_experiments() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print(GameManager.current_state)
 	if(GameManager.current_state == GameManager.state.INTRO):
 		if(Input.is_action_just_pressed("ui_accept") && dialogue_instance != null):
 			var dialogue_ended: bool = !(await dialogue_instance.handle_next_button())

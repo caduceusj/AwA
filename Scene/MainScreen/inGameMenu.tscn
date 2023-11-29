@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://r4tdy5pltse1"]
+[gd_scene load_steps=9 format=3 uid="uid://r4tdy5pltse1"]
 
 [ext_resource type="FontFile" uid="uid://ysnlin44jdcx" path="res://assets/fonts/SourceSansPro-Black.ttf" id="1_grnc8"]
 [ext_resource type="Script" path="res://Scripts/inGameMenu.gd" id="1_gy2xu"]
 [ext_resource type="Texture2D" uid="uid://ck08lpcd2vua1" path="res://assets/sprites/HUD/letreiro.png" id="1_ja87f"]
+[ext_resource type="PackedScene" uid="uid://eji6otfwihjh" path="res://Scene/MainMenu/OptionsMenu.tscn" id="4_j2q1t"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a3esg"]
 texture = ExtResource("1_ja87f")
@@ -110,6 +111,10 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_wja3v")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jaxdu")
 theme_override_styles/focus = SubResource("StyleBoxTexture_mk2ao")
 text = "Menu Principal"
+
+[node name="OptionsMenu" parent="." instance=ExtResource("4_j2q1t")]
+visible = false
+layout_mode = 2
 
 [connection signal="gui_input" from="CenterContainer/ColorRect/VBoxContainer/CenterContainer/Resume" to="." method="_on_button_gui_input"]
 [connection signal="mouse_entered" from="CenterContainer/ColorRect/VBoxContainer/CenterContainer/Resume" to="." method="_on_combine_button_mouse_entered" binds= [0]]

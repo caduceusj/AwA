@@ -14,7 +14,8 @@ func handleSelection(currentSelection) :
 		this.visible = false
 	elif(currentSelection == 1) :
 		GameManager.returOptionsScene = labScene
-		get_tree().change_scene_to_file(optionsMenu)
+		
+		$OptionsMenu.show()
 	elif(currentSelection == 2) :		
 		GameManager.correct_experiments.clear()
 		get_tree().change_scene_to_file(menuScene)			
