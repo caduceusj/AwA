@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnl4ujwlla7h1"]
+
+[ext_resource type="Script" path="res://Scripts/GameOver.gd" id="1_g7uy3"]
+[ext_resource type="AudioStream" uid="uid://0xi43n53qhrm" path="res://assets/Audios/InGame/AWA5.wav" id="1_quv0w"]
+[ext_resource type="Texture2D" uid="uid://2y7jrxwotm2n" path="res://assets/sprites/HUD/certificado.jpg" id="2_mjpvp"]
+[ext_resource type="Texture2D" uid="uid://b5ebo6vqheoy" path="res://assets/sprites/Scientist/Cientista_Sorrindo.png" id="2_o3udx"]
+[ext_resource type="Texture2D" uid="uid://ck08lpcd2vua1" path="res://assets/sprites/HUD/letreiro.png" id="4_l8v5j"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_res3t"]
+texture = ExtResource("4_l8v5j")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sq6kk"]
+texture = ExtResource("4_l8v5j")
+modulate_color = Color(0.658824, 0.658824, 0.658824, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m1sto"]
+texture = ExtResource("4_l8v5j")
+modulate_color = Color(0.364706, 0.364706, 0.364706, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u5w8l"]
+texture = ExtResource("4_l8v5j")
+modulate_color = Color(0.537255, 0.537255, 0.537255, 1)
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g7uy3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_quv0w")
+autoplay = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/CenterContainer"]
+custom_minimum_size = Vector2(1280, 720)
+layout_direction = 1
+layout_mode = 2
+color = Color(0.396078, 0.333333, 0.376471, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/CenterContainer"]
+position = Vector2(640, 360)
+texture = ExtResource("2_mjpvp")
+
+[node name="CientistaSorrindo" type="Sprite2D" parent="."]
+position = Vector2(143, 578)
+scale = Vector2(4.422, 4.422)
+texture = ExtResource("2_o3udx")
+
+[node name="MainMenu" type="Button" parent="."]
+custom_minimum_size = Vector2(220, 60)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.875
+anchor_right = 0.5
+anchor_bottom = 0.875
+offset_left = -110.0
+offset_top = -30.0001
+offset_right = 110.0
+offset_bottom = 29.9999
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_res3t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_sq6kk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_m1sto")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u5w8l")
+text = "Menu Principal"
+
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

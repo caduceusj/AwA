@@ -1,10 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://c1eabapdfp415"]
+[gd_scene load_steps=31 format=3 uid="uid://drc3yfq3ikl2v"]
 
 [ext_resource type="PackedScene" uid="uid://ec3ljpowchms" path="res://Scene/Prefabs/Experiments/Generic/GenericExperiment.tscn" id="1_vmxlg"]
 [ext_resource type="Texture2D" uid="uid://df4jweb217pff" path="res://assets/sprites/animations/agua-vinho.png" id="2_7lg7j"]
 [ext_resource type="PackedScene" uid="uid://bf7rm8adsan06" path="res://Scene/Prefabs/Products/agua.tscn" id="3_o1mag"]
-[ext_resource type="PackedScene" uid="uid://cfir8aukr0r52" path="res://Scene/Prefabs/Products/carta.tscn" id="4_miyjx"]
-[ext_resource type="PackedScene" uid="uid://ca223qnoic5mt" path="res://Scene/Prefabs/Products/vinho.tscn" id="5_htgpt"]
+[ext_resource type="PackedScene" path="res://Scene/Prefabs/Products/carta.tscn" id="4_miyjx"]
+[ext_resource type="PackedScene" path="res://Scene/Prefabs/Products/vinho.tscn" id="5_htgpt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jhis0"]
 atlas = ExtResource("2_7lg7j")

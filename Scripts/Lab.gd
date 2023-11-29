@@ -3,6 +3,8 @@ class_name GameController
 
 @onready var pause = $MarginContainer
 
+const gameOver = "res://Scene/MainScreen/GameOver.tscn"
+
 @export var experiments_list: Array[PackedScene]
 var experiments_instances: Array[GenericExperiment]
 
@@ -63,11 +65,17 @@ func _process(delta):
 			instance_experiments()
 			GameManager.current_state = GameManager.state.SELECTION
 	elif(GameManager.current_state == GameManager.state.SELECTION):
-		pass
+		if(GameManager.correct_experiments.size() == 6):
+			await(get_tree().create_timer(3.0).timeout)
+			get_tree().change_scene_to_file(gameOver)
 	elif(GameManager.current_state == GameManager.state.RESULT):
 		pass
 	elif(GameManager.current_state == GameManager.state.POST_RESULT):
-		pass
+		if(GameManager.correct_experiments.size() == 6):
+			await(get_tree().create_timer(3.0).timeout)
+			get_tree().change_scene_to_file(gameOver)
+		else:
+			GameManager.current_state = GameManager.state.SELECTION
 
 func handle_dialogue_end() -> void:
 	dialogue_instance.queue_free()
@@ -133,9 +141,10 @@ func run_experiment() -> void:
 	correct_experiment.visible = true
 	correct_experiment.run_animation()
 	await(get_tree().create_timer(4.0).timeout)
-	GameManager.current_state = GameManager.state.SELECTION
+	GameManager.current_state = GameManager.state.POST_RESULT
 	correct_experiment.visible = false
 	clear()
+	
 
 func _on_dica_ui_timer_timeout():
 	$DicaUi.visible = false
