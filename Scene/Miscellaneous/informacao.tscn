@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bymvsxnqjrtod"]
+
+[ext_resource type="Texture2D" uid="uid://div8lfsood8xt" path="res://assets/sprites/HUD/inform.png" id="1_sae7f"]
+[ext_resource type="Script" path="res://Scene/Miscellaneous/informacao.gd" id="2_0cime"]
+[ext_resource type="Texture2D" uid="uid://ck08lpcd2vua1" path="res://assets/sprites/HUD/letreiro.png" id="2_f0rhl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0mouq"]
+texture = ExtResource("2_f0rhl")
+modulate_color = Color(0.658824, 0.658824, 0.658824, 1)
+
+[node name="Informacao" type="Sprite2D"]
+texture = ExtResource("1_sae7f")
+script = ExtResource("2_0cime")
+
+[node name="Título" type="Label" parent="."]
+offset_left = -288.0
+offset_top = -168.0
+offset_right = 240.0
+offset_bottom = -129.0
+theme_override_font_sizes/font_size = 25
+
+[node name="Texto" type="Label" parent="."]
+offset_left = -288.0
+offset_top = -120.0
+offset_right = 295.0
+offset_bottom = 160.0
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+offset_left = 258.0
+offset_top = -167.0
+offset_right = 308.0
+offset_bottom = -137.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_0mouq")
+text = "X
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

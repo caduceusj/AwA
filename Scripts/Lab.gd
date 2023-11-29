@@ -37,6 +37,7 @@ func _ready():
 	$products/Fire/AnimationPlayer.play("light_on")
 	$DicaUi.visible = false
 	$Book.visible = false
+	$Informacao.visible = false
 	pause.visible = false
 	
 	if(GameManager.current_state == GameManager.state.INTRO):
@@ -204,3 +205,39 @@ func _on_button_pressed():
 	$Book.visible = false
 	pause.visible = false
 	$products/Fire.visible = true
+
+
+func changeInformacao(ID, title, text):
+	if(GameManager.current_state == GameManager.state.SELECTION) and GameManager.correct_experiments.has(ID):
+		$Informacao.get_child(0).text = title
+		$Informacao.get_child(1).text = text
+		$Informacao.visible = true
+
+
+func _on_texture_button_pressed():
+	changeInformacao(5, "Água e Vinho", "Quando enchemos um copo de vinho e uma camada, coloque o copo de água de cabeça para baixo apoiado pela camada para não derramar. Apoia-se a camada com o copo sobre o copo de vinho e abre-se um pequeno espaço no plástico para os 2 líquidos se encontrarem diretamente. A densidade d'água fará a água descer para o copo de baixo e o vinho subir para o copo de cima.")
+	
+func _on_texture_button_2_pressed():
+	changeInformacao(6, "Cobra de Fogo", "Quando colocado fogo no fluido de zippo, o açúcar e a mistura de soda começam a queimar também. Quando queimadas criam bolhas que ficam aprisionadas resultando na cobra preta, o processo leva um tempo podendo chegar de 10 a 20 minutos para atingir seu tamanho máximo.")
+		
+func _on_texture_button_3_pressed():
+	changeInformacao(1, "Água Furiosa", "-Azul de metileno: age como corante;
+-Glicose: com a mistura parada, reduz o azul de metileno a leucometileno, ficando incolor;
+-Soda cáustica: sua presença em um meio agitado faz com que o oxigênio do ar se incorpore ao leucometileno, deixando a mistura azul novamente.
+")
+
+func _on_texture_button_4_pressed():
+	changeInformacao(4, "Gelo Quente", "Soda cáustica + vinagre: formam o acetato de sódio, que ao ser reduzido e resfriado, se torna um líquido super resfriado, que gera cristais ao entrar em contato com sua mistura sólida. ")
+
+func _on_texture_button_5_pressed():
+	changeInformacao(2, "Bechiga Cheia", "-Bexiga: isola a tampa de uma garrafa (recipiente fechado);
+-Bicarbonato de sódio + vinagre: formam o ácido carbônico que se dissolve em dióxido de carbono, fornecendo o gás que enche a bexiga.
+")
+
+func _on_texture_button_6_pressed():
+	changeInformacao(0, "Pasta de Dente de Elefante", "-Azul de metileno: age como corante;
+-Iodeto de potássio: serve como um catalisador que acelera a liberação de Oxigênio do H2O2;
+-Água Oxigenada (H2O2): realiza uma reação que a separa em água(l) e oxigênio(g)
+
+A espuma ocorre porque há uma imensa quantidade de (bolhas gás O2) presa dentro de um líquido (H2O).
+")

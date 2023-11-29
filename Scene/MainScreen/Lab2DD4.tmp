@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dsavltsoufo77"]
+[gd_scene load_steps=54 format=3 uid="uid://dsavltsoufo77"]
 
 [ext_resource type="Script" path="res://Scripts/Lab.gd" id="1_2t6wo"]
 [ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://assets/sprites/Background.png" id="2_dwkyh"]
@@ -28,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://0buwrjgmq3uc" path="res://assets/Audios/InGame/AWA1.wav" id="26_302bs"]
 [ext_resource type="PackedScene" uid="uid://cicu8ncowthye" path="res://Scene/Miscellaneous/CompletedExperiments.tscn" id="26_u88dn"]
 [ext_resource type="PackedScene" uid="uid://bymvsxnqjrtod" path="res://Scene/Miscellaneous/informacao.tscn" id="28_m3bur"]
+[ext_resource type="Script" path="res://Scripts/Miscellaneous/informacaoButton.gd" id="28_n4uai"]
 
 [sub_resource type="Animation" id="Animation_kmgln"]
 length = 0.001
@@ -755,44 +756,12 @@ autoplay = true
 
 [node name="Botões mais Informações" type="Node" parent="."]
 
-[node name="TextureButton" type="TextureButton" parent="Botões mais Informações"]
-offset_left = 225.0
-offset_top = 169.0
-offset_right = 265.0
-offset_bottom = 209.0
-
-[node name="TextureButton2" type="TextureButton" parent="Botões mais Informações"]
-offset_left = 225.0
-offset_top = 337.0
-offset_right = 265.0
-offset_bottom = 377.0
-
-[node name="TextureButton3" type="TextureButton" parent="Botões mais Informações"]
-offset_left = 225.0
-offset_top = 506.0
-offset_right = 265.0
-offset_bottom = 546.0
-
-[node name="TextureButton4" type="TextureButton" parent="Botões mais Informações"]
-offset_left = 646.0
-offset_top = 169.0
-offset_right = 686.0
-offset_bottom = 209.0
-
-[node name="TextureButton5" type="TextureButton" parent="Botões mais Informações"]
-offset_left = 646.0
-offset_top = 337.0
-offset_right = 686.0
-offset_bottom = 377.0
-
-[node name="TextureButton6" type="TextureButton" parent="Botões mais Informações"]
-offset_left = 646.0
-offset_top = 504.0
-offset_right = 686.0
-offset_bottom = 544.0
+[node name="ButtonInf1" type="Button" parent="Botões mais Informações"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("28_n4uai")
 
 [node name="Informacao" parent="." instance=ExtResource("28_m3bur")]
-visible = false
 position = Vector2(669, 371)
 
 [connection signal="animation_finished" from="Cientista/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
@@ -808,12 +777,7 @@ position = Vector2(669, 371)
 [connection signal="mouse_entered" from="CombineButton2" to="CombineButton2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CombineButton2" to="CombineButton2" method="_on_mouse_exited"]
 [connection signal="pressed" from="Book/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Botões mais Informações/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="Botões mais Informações/TextureButton2" to="." method="_on_texture_button_2_pressed"]
-[connection signal="pressed" from="Botões mais Informações/TextureButton3" to="." method="_on_texture_button_3_pressed"]
-[connection signal="pressed" from="Botões mais Informações/TextureButton4" to="." method="_on_texture_button_4_pressed"]
-[connection signal="pressed" from="Botões mais Informações/TextureButton5" to="." method="_on_texture_button_5_pressed"]
-[connection signal="pressed" from="Botões mais Informações/TextureButton6" to="." method="_on_texture_button_6_pressed"]
+[connection signal="pressed" from="Botões mais Informações/ButtonInf1" to="." method="_on_button_inf_1_pressed"]
 
 [editable path="products/Agua"]
 [editable path="products/sodaCaustica"]
