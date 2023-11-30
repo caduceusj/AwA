@@ -19,7 +19,7 @@ script = ExtResource("1_u7ymx")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
-color = Color(0, 0, 0, 0.607843)
+color = Color(0.0235294, 0.0627451, 0.0470588, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 2
