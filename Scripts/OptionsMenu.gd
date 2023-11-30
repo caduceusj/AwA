@@ -15,8 +15,8 @@ var currentSelection = 0
 
 func handleSelection(currentSelection) :
 	if(currentSelection == 1) :
-		get_tree().change_scene_to_file(GameManager.returOptionsScene)			
-			
+		GameManager.current_state = GameManager.state.LOAD
+		get_tree().change_scene_to_file(GameManager.returOptionsScene)
 
 func changeColor(component,fontColor, shadowColor) :
 	component.add_theme_color_override("font_color",fontColor)
@@ -68,6 +68,7 @@ func _on_return_mouse_entered():
 
 func _on_return_gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT :
+		GameManager.current_state = GameManager.state.LOAD
 		get_tree().change_scene_to_file(GameManager.returOptionsScene)
 
 
