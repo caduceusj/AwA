@@ -161,9 +161,9 @@ func _on_combine_button_pressed():
 		if(is_reaction_valid()):
 			run_experiment()
 			var count = GameManager.correct_experiments.size()
-			if(count > 5) : backgroundMusic.stream = audio4
-			elif(count > 3) : backgroundMusic.stream = audio3
-			elif(count > 1) : backgroundMusic.stream = audio2
+			if(count > 4) : backgroundMusic.stream = audio4
+			elif(count > 2) : backgroundMusic.stream = audio3
+			elif(count > 0) : backgroundMusic.stream = audio2
 			backgroundMusic.play()
 		else:
 			if(correct_products_persisted.size() > 1):
