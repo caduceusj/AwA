@@ -6,4 +6,4 @@
 [node name="ProductSprite" instance=ExtResource("1_df6u4")]
 texture = ExtResource("2_exp3j")
 product_id = 14
-product_name = "Carta"
+product_name = "Fogo"
