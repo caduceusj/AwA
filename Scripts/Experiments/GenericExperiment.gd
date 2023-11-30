@@ -13,6 +13,8 @@ var product_ids: Array[int]
 
 @onready var audio = $AudioStreamPlayer
 
+var is_animation_finished: bool = false
+
 func _ready():
 	instance_products()
 	sort_product_ids()
@@ -35,3 +37,8 @@ func run_animation() -> void:
 		audio.play()
 	else:
 		get_tree().change_scene_to_packed(interaction)
+
+
+func _on_animation_finished():
+	print("ACABOU")
+	is_animation_finished = true

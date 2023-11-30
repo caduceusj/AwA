@@ -10,6 +10,7 @@ var experiments_instances: Array[GenericExperiment]
 
 var selected_products: Array[GenericProduct]
 var correct_products: Array[GenericProduct]
+var correct_products_persisted: Array[GenericProduct]
 var all_correct_products: Array[GenericProduct]
 
 var correct_experiment: GenericExperiment
@@ -17,8 +18,8 @@ var correct_experiment: GenericExperiment
 @onready var scientist_animation_player: AnimationPlayer = $Cientista/AnimationPlayer
 @onready var combine_button: Button = $CombineButton
 @onready var board_button: Button = $QuadroBotao
-@onready var text_field: TextureButton = $DicaUi
-@onready var text_field_label: Label = $DicaUi/Label
+@onready var text_field: TextureRect = $DicaUi
+@onready var text_field_label: RichTextLabel = $DicaUi/Text
 @onready var backgroundMusic =  $AudioStreamPlayer
 
 var audio1 = preload("res://assets/Audios/InGame/AWA1.wav")
@@ -55,7 +56,6 @@ func instance_experiments() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(GameManager.current_state)
 	if(GameManager.current_state == GameManager.state.INTRO):
 		if(Input.is_action_just_pressed("ui_accept") && dialogue_instance != null):
 			var dialogue_ended: bool = !(await dialogue_instance.handle_next_button())
@@ -70,7 +70,12 @@ func _process(delta):
 			await(get_tree().create_timer(3.0).timeout)
 			get_tree().change_scene_to_file(gameOver)
 	elif(GameManager.current_state == GameManager.state.RESULT):
-		pass
+		if(correct_experiment.is_animation_finished):
+			correct_experiment.is_animation_finished = false
+			await(get_tree().create_timer(2.5).timeout)
+			correct_experiment.set_visible(false)
+			clear()
+			GameManager.current_state = GameManager.state.POST_RESULT
 	elif(GameManager.current_state == GameManager.state.POST_RESULT):
 		if(GameManager.correct_experiments.size() == 6):
 			await(get_tree().create_timer(3.0).timeout)
@@ -96,8 +101,8 @@ func clear():
 	selected_products = []
 
 func showDicaUi(text):
-	$DicaUi.visible = true
-	$DicaUi/Label.text = text
+	text_field.visible = true
+	text_field_label.text = text
 	$DicaUITimer.start()	
 
 func select_product(product_id: int) -> void:
@@ -126,26 +131,23 @@ func is_reaction_valid() -> bool:
 			if(!is_product_in_list):
 				has_wrong_product = true
 # 		Mark receipt_book the corrects products
-		if(!has_wrong_product && experiment.product_instances.size() == selected_products.size()):
+		if(!has_wrong_product && experiment.product_instances.size() == correct_products.size() && experiment.product_instances.size() == selected_products.size()):
 #			Mark receipt_book the correct experiment
 			correct_experiment = experiment
 			if(GameManager.correct_experiments.find(correct_experiment.experiment_id) == -1):
 				GameManager.correct_experiments.append(correct_experiment.experiment_id)
 			is_valid = true
+		if(GameManager.correct_experiments.find(experiment.experiment_id) == -1 && correct_products.size() > 1):
+			correct_products_persisted = correct_products.duplicate()
 		correct_products.clear()
 
 	return is_valid
 	
 func run_experiment() -> void:
 	GameManager.current_state = GameManager.state.RESULT
-	showDicaUi(correct_experiment.experiment_name)
+	showDicaUi("Incrível!!\nVocê realizou o experimento " + correct_experiment.experiment_name + "!!")
 	correct_experiment.visible = true
 	correct_experiment.run_animation()
-	await(get_tree().create_timer(4.0).timeout)
-	GameManager.current_state = GameManager.state.POST_RESULT
-	correct_experiment.visible = false
-	clear()
-	
 
 func _on_dica_ui_timer_timeout():
 	$DicaUi.visible = false
@@ -164,19 +166,23 @@ func _on_combine_button_pressed():
 			elif(count > 1) : backgroundMusic.stream = audio2
 			backgroundMusic.play()
 		else:
-			print(correct_products)
-			if(correct_products.size() > 1):
+			if(correct_products_persisted.size() > 1):
 				var names: String = ""
 				
 				var count: int = 0
-				for product in correct_products:
+				for product in correct_products_persisted:
 					count += 1
 					names += product.product_name
-					if (count != correct_products.size()):
-						names += ", "
-				showDicaUi("Os " + names + " parecem ter combinado. \n Continue combinando.")
+					if (count != correct_products_persisted.size()):
+						if(count == correct_products_persisted.size() - 1):
+							names += " e "
+						else:
+							names += ", "
+						
+				showDicaUi("OLHE SÓ ISSO! Parece que " + names + " fizeram algo rolar. \nCombine-os com outras coisas... heheheh")
+				correct_products_persisted.clear()
 			else:
-				showDicaUi("Nenhum experimento realizado. \n Tente Novamente.")
+				showDicaUi("Não aconteceu naada!! Continue tentando hehehee")
 			clear()
 
 func _on_animation_player_animation_finished(anim_name):

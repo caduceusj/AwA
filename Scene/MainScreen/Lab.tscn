@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dsavltsoufo77"]
+[gd_scene load_steps=52 format=3 uid="uid://dsavltsoufo77"]
 
 [ext_resource type="Script" path="res://Scripts/Lab.gd" id="1_2t6wo"]
 [ext_resource type="Texture2D" uid="uid://cfmiv5yn5c0bt" path="res://assets/sprites/Background.png" id="2_dwkyh"]
@@ -11,14 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://c8tk7w7hr2b6x" path="res://assets/sprites/individuais/bexiga.png" id="6_qtg5v"]
 [ext_resource type="Texture2D" uid="uid://dpokrkiyy635t" path="res://assets/sprites/Componentes48x48.png" id="7_oohu0"]
 [ext_resource type="Texture2D" uid="uid://dkkf14r4l2td2" path="res://assets/sprites/tubinhosDecorativos.png" id="10_6yvhe"]
-[ext_resource type="Texture2D" uid="uid://djxkc3iwwrrqk" path="res://assets/sprites/individuais/vinho.png" id="10_rqdwu"]
+[ext_resource type="Texture2D" uid="uid://clud3201y5p3k" path="res://assets/sprites/individuais/vinho.png" id="10_rqdwu"]
 [ext_resource type="Texture2D" uid="uid://ck08lpcd2vua1" path="res://assets/sprites/HUD/letreiro.png" id="10_xep2s"]
 [ext_resource type="Texture2D" uid="uid://dhmkpp4y7q03l" path="res://assets/sprites/animations/fogao_acesso.png" id="11_5enf0"]
-[ext_resource type="Texture2D" uid="uid://bns70ncowd013" path="res://assets/sprites/individuais/zipo.png" id="11_oa8xk"]
+[ext_resource type="Texture2D" uid="uid://b5qfalkpc58pq" path="res://assets/sprites/individuais/zipo.png" id="11_oa8xk"]
 [ext_resource type="Texture2D" uid="uid://dgcluw3mi0xry" path="res://assets/sprites/HUD/Moldura.png" id="11_r7xg7"]
-[ext_resource type="Texture2D" uid="uid://d21ollvsrxu1o" path="res://assets/sprites/individuais/carta.png" id="12_i63v7"]
-[ext_resource type="Texture2D" uid="uid://bbp6cm0rh2yit" path="res://assets/sprites/individuais/areia.png" id="12_on5bd"]
-[ext_resource type="FontFile" uid="uid://ysnlin44jdcx" path="res://assets/fonts/SourceSansPro-Black.ttf" id="17_dtcsy"]
+[ext_resource type="Texture2D" uid="uid://crsya2av2ahq7" path="res://assets/sprites/individuais/carta.png" id="12_i63v7"]
+[ext_resource type="Texture2D" uid="uid://26xleo3x3hmt" path="res://assets/sprites/individuais/areia.png" id="12_on5bd"]
 [ext_resource type="Texture2D" uid="uid://boqvc8heo780j" path="res://assets/sprites/effects/LightEmit.png" id="17_n0oqe"]
 [ext_resource type="PackedScene" uid="uid://r4tdy5pltse1" path="res://Scene/MainScreen/inGameMenu.tscn" id="18_8vlsh"]
 [ext_resource type="Texture2D" uid="uid://bx2i0736ldi0q" path="res://assets/sprites/HUD/dicaUI.png" id="18_hqxlq"]
@@ -633,27 +632,37 @@ position = Vector2(128, 472)
 scale = Vector2(5.05263, 6.38334)
 texture = ExtResource("10_6yvhe")
 
-[node name="DicaUi" type="TextureButton" parent="."]
+[node name="DicaUi" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 31.0
 offset_top = 31.0
 offset_right = 531.0
-offset_bottom = 191.0
-texture_normal = ExtResource("18_hqxlq")
+offset_bottom = 256.0
+texture = ExtResource("18_hqxlq")
 
-[node name="Label" type="Label" parent="DicaUi"]
+[node name="Name" type="RichTextLabel" parent="DicaUi"]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 38.0
-offset_right = 472.0
-offset_bottom = 122.0
-theme_override_fonts/font = ExtResource("17_dtcsy")
-theme_override_font_sizes/font_size = 30
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 17.0
+offset_top = 17.0
+offset_right = 481.0
+offset_bottom = 49.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 23
+text = "Cientista louco"
+
+[node name="Text" type="RichTextLabel" parent="DicaUi"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 49.0
+offset_right = 481.0
+offset_bottom = 209.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 19
+bbcode_enabled = true
+scroll_active = false
 
 [node name="DicaUITimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 4.0
 one_shot = true
 
 [node name="CombineButton" type="Button" parent="."]
@@ -723,6 +732,7 @@ text = "Pausar"
 script = ExtResource("19_ib1j0")
 
 [node name="MarginContainer" parent="." instance=ExtResource("18_8vlsh")]
+visible = false
 layout_mode = 1
 offset_left = 1.0
 offset_top = 2.0
@@ -730,6 +740,7 @@ offset_right = 1.0
 offset_bottom = 2.0
 
 [node name="Book" parent="." instance=ExtResource("26_u88dn")]
+visible = false
 layout_mode = 1
 offset_left = 20.0
 offset_top = 6.0
@@ -792,6 +803,7 @@ offset_right = 686.0
 offset_bottom = 544.0
 
 [node name="Informacao" parent="." instance=ExtResource("28_m3bur")]
+visible = false
 position = Vector2(669, 371)
 
 [connection signal="animation_finished" from="Cientista/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
